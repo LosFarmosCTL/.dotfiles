@@ -1,0 +1,13 @@
+[user]
+    name = LosFarmosCTL
+    email = 80157503+LosFarmosCTL@users.noreply.github.com
+
+[core]
+    pager = git-split-diffs --color | less -RFX
+    excludesfile = /Users/lassepetzel/.config/git/ignore
+
+[split-diffs]
+    min-line-width = 60
+    theme-name = github-dark-dim
+[pull]
+	rebase = false
