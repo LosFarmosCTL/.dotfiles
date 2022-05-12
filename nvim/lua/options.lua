@@ -16,8 +16,6 @@ opt.softtabstop = 4
 opt.expandtab = true
 opt.list = true -- display trailing spaces and tabs
 
-opt.breakindent = true -- indent wrapped lines the same amount as the Original line
-
 -- enable undo history original
 opt.undofile = true
 
