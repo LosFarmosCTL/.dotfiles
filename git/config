@@ -11,3 +11,5 @@
     theme-name = github-dark-dim
 [pull]
 	rebase = false
+[init]
+	defaultBranch = main
