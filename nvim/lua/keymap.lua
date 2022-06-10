@@ -21,7 +21,8 @@ return {
         map({ "n", "v" }, "<Leader>P", '"+P')
 
         -- clear search highlights
-        map("n", "<Leader>l", "<CMD>nohlsearch<CR>", silent)
+        -- HACK: for some reason hlslens requires to use : instead of <CMD> or it doesn't get cleared immediately
+        map("n", "<Leader>l", ":nohlsearch<CR>", silent)
     end,
 
     lsp = {
