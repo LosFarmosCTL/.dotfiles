@@ -3,13 +3,22 @@
     email = 80157503+LosFarmosCTL@users.noreply.github.com
 
 [core]
-    pager = git-split-diffs --color | less -RFX
+    pager = delta
     excludesfile = ~/.config/git/ignore
 
-[split-diffs]
-    min-line-width = 60
-    theme-name = github-dark-dim
 [pull]
-	rebase = false
+    rebase = false
+
 [init]
-	defaultBranch = main
+    defaultBranch = main
+
+[delta]
+    navigate = true
+    light = false
+    side-by-side = true
+[interactive]
+    diffFilter = delta --color-only
+[merge]
+    conflictstyle = diff3
+[diff]
+    colorMoved = default
