@@ -29,8 +29,17 @@ return {
         setup = function(client, bufnr)
             local opts = { silent = true, buffer = bufnr }
 
-            -- TODO: keybindings for LSP
             map("n", "gD", vim.lsp.buf.declaration, opts)
+            map("n", "gd", vim.lsp.buf.definition, opts)
+            map("n", "gi", vim.lsp.buf.implementation, opts)
+            map("n", "gr", vim.lsp.buf.references, opts)
+
+            map("n", "K", vim.lsp.buf.hover, opts)
+
+            map("n", "<leader>rn", vim.lsp.buf.rename, opts)
+            map("n", "<leader>ca", vim.lsp.buf.code_action, opts)
+
+            map("n", "<leader>f", vim.lsp.buf.formatting, opts)
         end,
     },
 
