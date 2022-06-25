@@ -2,6 +2,7 @@ add_newline = false
 
 [c]
 detect_extensions = ["c", "h", "cpp", "hpp"]
+commands = [ [ "clang", "--version" ] ]
 symbol = " "
 
 [cmake]
