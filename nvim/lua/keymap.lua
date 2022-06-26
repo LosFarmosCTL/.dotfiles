@@ -39,7 +39,7 @@ return {
             map("n", "<leader>rn", vim.lsp.buf.rename, opts)
             map("n", "<leader>ca", vim.lsp.buf.code_action, opts)
 
-            map("n", "<leader>f", vim.lsp.buf.formatting, opts)
+            map("n", "<leader>f", vim.lsp.buf.format, opts)
         end,
     },
 
