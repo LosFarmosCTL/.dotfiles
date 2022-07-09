@@ -22,6 +22,12 @@ local servers = {
             },
         },
     },
+    {
+        server = "sourcekit",
+        setup = {
+            filetypes = { "swift" }
+        }
+    }
 }
 
 local cmp_capabilities = require("cmp_nvim_lsp").update_capabilities(
