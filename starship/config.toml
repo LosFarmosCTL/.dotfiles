@@ -51,5 +51,7 @@ symbol = " "
 symbol = " "
 [spack]
 symbol = "🅢 "
+[swift]
+symbol = " "
 [rust]
 symbol = " "
