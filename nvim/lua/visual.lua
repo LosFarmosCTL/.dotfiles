@@ -1,10 +1,8 @@
 vim.notify = require("notify")
 
 -- HACK: lukas-reineke/indent-blankline.nvim#118 -- fix indent chars overlapping foldtext + not being shown after opening folds
-local fix_indentline_folding = vim.api.nvim_create_augroup(
-    "fix_indentline_folding",
-    {}
-)
+local fix_indentline_folding =
+    vim.api.nvim_create_augroup("fix_indentline_folding", {})
 vim.api.nvim_create_autocmd("CursorMoved", {
     command = "IndentBlanklineRefresh",
     group = fix_indentline_folding,

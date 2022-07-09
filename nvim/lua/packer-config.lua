@@ -80,7 +80,9 @@ require("packer").startup(function(use)
 
     use({
         "iamcco/markdown-preview.nvim",
-        run = function() vim.fn["mkdp#util#install"]() end,
+        run = function()
+            vim.fn["mkdp#util#install"]()
+        end,
     })
 
     use({
@@ -151,7 +153,7 @@ require("packer").startup(function(use)
     use("hrsh7th/cmp-path")
     use("hrsh7th/cmp-nvim-lsp")
     use("saadparwaiz1/cmp_luasnip")
-    use({"petertriho/cmp-git", requires = "nvim-lua/plenary.nvim"})
+    use({ "petertriho/cmp-git", requires = "nvim-lua/plenary.nvim" })
     --}}}
 
     --                                  VERSION CONTROL                             {{{
