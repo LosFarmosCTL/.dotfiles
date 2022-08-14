@@ -72,12 +72,6 @@ return {
         end,
     },
 
-    twilight = {
-        setup = function()
-            map("n", "<Leader>t", "<CMD>Twilight<CR>")
-        end,
-    },
-
     hlslens = {
         setup = function()
             map(

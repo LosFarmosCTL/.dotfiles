@@ -107,11 +107,6 @@ require("packer").startup(function(use)
     })
 
     use({
-        "folke/twilight.nvim",
-        config = [[require('keymap').twilight.setup()]],
-    })
-
-    use({
         "folke/todo-comments.nvim",
         requires = "nvim-lua/plenary.nvim",
         config = function()
