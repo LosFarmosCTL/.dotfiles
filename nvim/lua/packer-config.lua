@@ -142,6 +142,8 @@ require("packer").startup(function(use)
     use({ "github/copilot.vim", config = [[require('plugins.copilot')]] })
     use("L3MON4D3/LuaSnip")
 
+    use("lukas-reineke/lsp-format.nvim")
+
     use({ "hrsh7th/nvim-cmp", config = [[require('plugins.cmp')]] })
     use("hrsh7th/cmp-cmdline")
     use("hrsh7th/cmp-buffer")

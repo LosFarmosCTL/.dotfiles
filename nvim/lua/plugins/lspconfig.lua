@@ -36,8 +36,14 @@ local cmp_capabilities = require("cmp_nvim_lsp").update_capabilities(
 cmp_capabilities.offsetEncoding = { "utf-16" }
 
 for _, lsp in ipairs(servers) do
+    local on_attach = function(client)
+        require("lsp-format").on_attach(client)
+
+        require("keymap").lsp.setup()
+    end
+
     local setup = {
-        on_attach = require("keymap").lsp.setup,
+        on_attach = on_attach,
         capabilities = cmp_capabilities,
     }
     -- merge in LSP specific settings
