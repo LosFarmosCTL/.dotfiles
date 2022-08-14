@@ -13,7 +13,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 require("packer").startup(function(use)
-    --                                      ESSENTIAL                               {{{
+    --                                      CORE                               {{{
     -----------------------------------------------------------------------------------
     use("wbthomason/packer.nvim")
     use("lewis6991/impatient.nvim")
