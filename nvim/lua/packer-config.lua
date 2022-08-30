@@ -84,6 +84,15 @@ require("packer").startup(function(use)
     })
 
     use("arkav/lualine-lsp-progress")
+
+    use({
+        "rmagatti/goto-preview",
+        config = function()
+            require("goto-preview").setup({
+                default_mappings = true,
+            })
+        end,
+    })
     --}}}
 
     --                              SYNTAX/CODE HIGHLIGHTING                        {{{
