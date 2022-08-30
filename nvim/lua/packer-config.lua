@@ -89,6 +89,8 @@ require("packer").startup(function(use)
         "numToStr/FTerm.nvim",
         config = [[require('plugins.fterm').setup()]],
     })
+
+    use("arkav/lualine-lsp-progress")
     --}}}
 
     --                              SYNTAX/CODE HIGHLIGHTING                        {{{
