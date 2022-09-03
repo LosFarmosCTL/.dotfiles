@@ -8,6 +8,7 @@ abbr -ag gds git diff --staged
 abbr -ag ga git add
 abbr -ag gc git commit
 abbr -ag gca git commit -a
+abbr -ag gcm git commit -m
 abbr -ag gp git push
 
 abbr -ag gb git branch
