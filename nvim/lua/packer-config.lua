@@ -152,9 +152,7 @@ require("packer").startup(function(use)
     use({
         "lewis6991/spellsitter.nvim",
         requires = "nvim-treesitter/nvim-treesitter",
-        config = function()
-            require("spellsitter").setup()
-        end,
+        config = [[require('plugins.spellsitter')]],
     })
     --}}}
 
