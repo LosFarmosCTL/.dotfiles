@@ -49,6 +49,14 @@ require("packer").startup(function(use)
         config = [[require('plugins.dressing')]]
     })
 
+    use({
+        "simrat39/symbols-outline.nvim",
+        config = function()
+            require("symbols-outline").setup()
+            require("keymap").outline.setup()
+        end,
+    })
+
     use("rcarriga/nvim-notify")
 
     use({

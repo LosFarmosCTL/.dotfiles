@@ -66,6 +66,12 @@ return {
         end,
     },
 
+    outline = {
+        setup = function()
+            map("n", "<Leader>o", "<CMD>SymbolsOutline<CR>", silent)
+        end,
+    },
+
     hlslens = {
         setup = function()
             map(
