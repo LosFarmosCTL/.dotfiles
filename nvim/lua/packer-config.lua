@@ -44,6 +44,11 @@ require("packer").startup(function(use)
         config = [[require('plugins.telescope')]],
     })
 
+    use({
+        "stevearc/dressing.nvim",
+        config = [[require('plugins.dressing')]]
+    })
+
     use("rcarriga/nvim-notify")
 
     use({
