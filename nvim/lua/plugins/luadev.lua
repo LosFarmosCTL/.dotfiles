@@ -3,9 +3,9 @@ return require("lua-dev").setup({
         settings = {
             Lua = {
                 format = {
-                    enable = false
-                }
-            }
-        }
-    }
+                    enable = false,
+                },
+            },
+        },
+    },
 })

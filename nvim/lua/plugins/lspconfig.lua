@@ -5,7 +5,7 @@ local servers = {
     { server = "tsserver", setup = {} },
     {
         server = "sumneko_lua",
-        setup = luadev
+        setup = luadev,
     },
     {
         server = "sourcekit",

@@ -4,7 +4,7 @@ require("lualine").setup({
     },
     sections = {
         lualine_c = {
-            "buffers"
+            "buffers",
         },
     },
 })

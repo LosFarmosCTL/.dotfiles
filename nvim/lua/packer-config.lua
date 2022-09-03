@@ -46,7 +46,7 @@ require("packer").startup(function(use)
 
     use({
         "stevearc/dressing.nvim",
-        config = [[require('plugins.dressing')]]
+        config = [[require('plugins.dressing')]],
     })
 
     use({
@@ -97,10 +97,10 @@ require("packer").startup(function(use)
         config = function()
             require("nvim-lightbulb").setup({
                 autocmd = {
-                    enabled = true
-                }
+                    enabled = true,
+                },
             })
-        end
+        end,
     })
 
     use({
