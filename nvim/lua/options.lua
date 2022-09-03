@@ -29,6 +29,9 @@ opt.signcolumn = "yes:1"
 -- highlight current line
 opt.cursorline = true
 
+-- enable global status line
+opt.laststatus = 3
+
 -- decrease updatetime
 opt.updatetime = 250
 
