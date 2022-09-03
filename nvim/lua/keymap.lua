@@ -23,6 +23,9 @@ return {
         -- clear search highlights
         -- HACK: for some reason hlslens requires to use : instead of <CMD> or it doesn't get cleared immediately
         map("n", "<Leader>l", ":nohlsearch<CR>", silent)
+
+        -- quickly start search+replace
+        map("n", "<C-/>", ":%s/")
     end,
 
     lsp = {
