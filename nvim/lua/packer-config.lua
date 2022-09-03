@@ -171,6 +171,8 @@ require("packer").startup(function(use)
     use("hrsh7th/cmp-nvim-lsp")
     use("saadparwaiz1/cmp_luasnip")
     use({ "petertriho/cmp-git", requires = "nvim-lua/plenary.nvim" })
+
+    use("folke/lua-dev.nvim")
     --}}}
 
     --                                  VERSION CONTROL                             {{{
