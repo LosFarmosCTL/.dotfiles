@@ -92,6 +92,18 @@ require("packer").startup(function(use)
     })
 
     use({
+        "kosayoda/nvim-lightbulb",
+        requires = "antoinemadec/FixCursorHold.nvim",
+        config = function()
+            require("nvim-lightbulb").setup({
+                autocmd = {
+                    enabled = true
+                }
+            })
+        end
+    })
+
+    use({
         "numToStr/FTerm.nvim",
         config = [[require('plugins.fterm').setup()]],
     })
