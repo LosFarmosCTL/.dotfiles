@@ -66,15 +66,6 @@ return {
         end,
     },
 
-    dial = {
-        setup = function()
-            -- map ({'n', 'v'}, '<C-a>', '<Plug>(dial-increment)')
-            -- map ({'n', 'v'}, '<C-x>', '<Plug>(dial-decrement)')
-            -- map ('v', 'g<C-a>', '<Plug>(dial-increment-additional)')
-            -- map ('v', 'g<C-x>', '<Plug>(dial-decrement-additional)')
-        end,
-    },
-
     hlslens = {
         setup = function()
             map(
