@@ -88,7 +88,12 @@ require("packer").startup(function(use)
         config = [[require('plugins.fterm').setup()]],
     })
 
-    use("arkav/lualine-lsp-progress")
+    use({
+        "j-hui/fidget.nvim",
+        config = function()
+            require("fidget").setup()
+        end,
+    })
 
     use({
         "rmagatti/goto-preview",
