@@ -199,8 +199,6 @@ require("packer").startup(function(use)
     use("tpope/vim-surround")
     use({ "mizlan/iswap.nvim", config = [[require('keymap').iswap.setup()]] })
 
-    -- use 'booperlv/nvim-gomove' TODO: figure out some usable keybindings, alt+hjkl is used by my window manager
-
     use({
         "numToStr/Comment.nvim",
         config = function()
