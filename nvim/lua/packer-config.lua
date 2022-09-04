@@ -118,9 +118,8 @@ require("packer").startup(function(use)
     use({
         "rmagatti/goto-preview",
         config = function()
-            require("goto-preview").setup({
-                default_mappings = true,
-            })
+            require("goto-preview").setup()
+            require("keymap").goto_preview.setup()
         end,
     })
     --}}}

@@ -51,6 +51,15 @@ return {
         end,
     },
 
+    goto_preview = {
+        setup = function()
+            map("n", "gpd", require('goto-preview').goto_preview_definition, silent)
+            map("n", "gpi", require('goto-preview').goto_preview_implementation, silent)
+            map("n", "gpr", require('goto-preview').goto_preview_references, silent)
+            map("n", "gP", require('goto-preview').close_all_win, silent)
+        end,
+    },
+
     telescope = {
         setup = function()
             map("n", "<Leader>e", "<CMD>Telescope find_files<CR>", silent)
