@@ -1,3 +1,5 @@
+vim.opt.fillchars = vim.opt.fillchars + 'diff:╱'
+
 vim.notify = require("notify")
 
 -- HACK: lukas-reineke/indent-blankline.nvim#118 -- fix indent chars overlapping foldtext + not being shown after opening folds
