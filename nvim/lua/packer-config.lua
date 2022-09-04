@@ -234,6 +234,8 @@ require("packer").startup(function(use)
             require("project_nvim").setup()
         end,
     })
+
+    use("andweeb/presence.nvim")
     --}}}
 
     if packer_bootstrap then
