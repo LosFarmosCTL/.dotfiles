@@ -29,6 +29,8 @@ return {
 
         -- quickly start search+replace
         map("n", "<C-/>", ":%s/")
+
+        map("n", "<Leader>q", ":bdelete<CR>", silent)
     end,
 
     lsp = {
