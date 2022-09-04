@@ -1,4 +1,7 @@
-local map = vim.keymap.set
+local function map(mode, lhs, rhs, opts)
+    opts = opts or {}
+    vim.keymap.set(mode, lhs, rhs, opts)
+end
 
 local silent = { silent = true }
 
