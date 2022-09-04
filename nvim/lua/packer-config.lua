@@ -23,12 +23,13 @@ require("packer").startup(function(use)
     --                                  UI AND NAVIGATION                           {{{
     -----------------------------------------------------------------------------------
     use({
-        "projekt0n/github-nvim-theme",
-        config = [[require('plugins.github-theme')]],
+        "folke/tokyonight.nvim",
+        config = [[require('plugins.tokyonight')]],
     })
+
     use({
         "nvim-lualine/lualine.nvim",
-        after = "github-nvim-theme",
+        after = "tokyonight.nvim",
         requires = "kyazdani42/nvim-web-devicons",
         config = [[require('plugins.lualine')]],
     })
