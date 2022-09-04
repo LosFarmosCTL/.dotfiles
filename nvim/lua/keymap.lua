@@ -127,24 +127,45 @@ return {
                 return "<Ignore>"
             end, { expr = true })
 
-            map({ "n", "v" }, "<leader>hs", "<CMD>Gitsigns stage_hunk<CR>")
-            map({ "n", "v" }, "<leader>hr", "<CMD>Gitsigns reset_hunk<CR>")
-            map("n", "<leader>hS", gs.stage_buffer)
-            map("n", "<leader>hu", gs.undo_stage_hunk)
-            map("n", "<leader>hR", gs.reset_buffer)
-            map("n", "<leader>hp", gs.preview_hunk)
-            map("n", "<leader>hb", function()
-                gs.blame_line({ full = true })
-            end)
-            map("n", "<l eader>tb", gs.toggle_current_line_blame)
-            map("n", "<leader>hd", gs.diffthis)
-            map("n", "<leader>hD", function()
+            map({ "n", "v" }, "<leader>gs", "<CMD>Gitsigns stage_hunk<CR>")
+            map({ "n", "v" }, "<leader>gr", "<CMD>Gitsigns reset_hunk<CR>")
+            map("n", "<leader>gu", gs.undo_stage_hunk)
+
+            map("n", "<leader>gS", gs.stage_buffer)
+            map("n", "<leader>gR", gs.reset_buffer)
+
+            map("n", "<leader>gK", gs.preview_hunk)
+            map("n", "<leader>gd", gs.diffthis)
+            map("n", "<leader>gD", function()
                 gs.diffthis("~")
             end)
-            map("n", "<leader>td", gs.toggle_deleted)
 
-            -- Text object
-            map({ "o", "x" }, "ih", "<CMD><C-U>Gitsigns select_hunk<CR>")
+            map("n", "<leader>gb", function()
+                gs.blame_line({ full = true })
+            end)
+
+            map("n", "<leader>gtb", gs.toggle_current_line_blame)
+            map("n", "<leader>gtd", gs.toggle_deleted)
+        end,
+    },
+
+    -- TODO: look into the more advanced git navigation features in fugitive
+    fugitive = {
+        setup = function()
+            map("n", "<Leader>gB", "<CMD>Git blame<CR>", silent)
+            map("n", "<Leader>gl", "<CMD>Git log<CR>", silent)
+
+            map("n", "<Leader>gG", "<CMD>Gread<CR>", silent) -- git checkout -- filename
+
+            map("n", "<Leader>gc", "<CMD>Git commit<CR>", silent)
+            map("n", "<Leader>gp", "<CMD>Git push<CR>", silent)
+            map("n", "<Leader>gP", "<CMD>Git pull<CR>", silent)
+
+            map("n", "<Leader>gM", "<CMD>GRename ", silent)
+
+            map("n", "<Leader>gm", "<CMD>Gvdiffsplit!<CR>", silent) -- start 3-way diff for merge
+
+            map("n", "<Leader>gH", "<CMD>GBrowse<CR>", silent)
         end,
     },
 }

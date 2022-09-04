@@ -189,8 +189,10 @@ require("packer").startup(function(use)
 
     --                                  VERSION CONTROL                             {{{
     -----------------------------------------------------------------------------------
-    -- TODO: set up keymaps
-    use("tpope/vim-fugitive")
+    use({
+        "tpope/vim-fugitive",
+        config = [[require("keymap").fugitive.setup()]],
+    })
     use("tpope/vim-rhubarb")
 
     use({
