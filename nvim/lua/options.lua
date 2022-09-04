@@ -26,9 +26,6 @@ opt.smartcase = true
 -- always display signcolumn
 opt.signcolumn = "yes:1"
 
--- highlight current line
-opt.cursorline = true
-
 -- enable global status line
 opt.laststatus = 3
 
