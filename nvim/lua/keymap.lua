@@ -54,6 +54,7 @@ return {
     telescope = {
         setup = function()
             map("n", "<Leader>e", "<CMD>Telescope find_files<CR>", silent)
+            map("n", "<leader><leader>e", "<CMD>Telescope projects<CR>", silent)
         end,
     },
 
