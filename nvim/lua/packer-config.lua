@@ -165,6 +165,11 @@ require("packer").startup(function(use)
         requires = "nvim-treesitter/nvim-treesitter",
         config = [[require('plugins.spellsitter')]],
     })
+
+    use({
+        "RRethy/vim-illuminate",
+        config = [[require('plugins.illuminate')]],
+    })
     --}}}
 
     --                              LSP AND AUTOCOMPLETION                          {{{
