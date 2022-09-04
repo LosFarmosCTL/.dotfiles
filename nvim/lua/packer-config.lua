@@ -190,6 +190,13 @@ require("packer").startup(function(use)
     use({ "petertriho/cmp-git", requires = "nvim-lua/plenary.nvim" })
 
     use("folke/lua-dev.nvim")
+
+    use({
+        "ray-x/lsp_signature.nvim",
+        config = function ()
+            require("lsp_signature").setup()
+        end
+    })
     --}}}
 
     --                                  VERSION CONTROL                             {{{
