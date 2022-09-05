@@ -2,9 +2,8 @@ require("lualine").setup({
     options = {
         theme = "tokyonight",
     },
-    sections = {
-        lualine_c = {
-            "buffers",
-        },
+    tabline = {
+        lualine_b = { "buffers" },
+        lualine_y = { "tabs" },
     },
 })
