@@ -123,6 +123,15 @@ require("packer").startup(function(use)
             require("keymap").goto_preview.setup()
         end,
     })
+
+    use {
+        "folke/trouble.nvim",
+        requires = "kyazdani42/nvim-web-devicons",
+        config = function()
+            require("trouble").setup()
+            require("keymap").trouble.setup()
+        end
+    }
     --}}}
 
     --                              SYNTAX/CODE HIGHLIGHTING                        {{{

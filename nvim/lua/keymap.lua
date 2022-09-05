@@ -38,9 +38,9 @@ return {
             local opts = { silent = true, buffer = bufnr }
 
             map("n", "gD", vim.lsp.buf.declaration, opts)
-            map("n", "gd", vim.lsp.buf.definition, opts)
-            map("n", "gi", vim.lsp.buf.implementation, opts)
-            map("n", "gr", vim.lsp.buf.references, opts)
+            map("n", "gr", "<CMD>Trouble lsp_references<CR>", silent)
+            map("n", "gd", "<CMD>Trouble lsp_definitions<CR>", silent)
+            map("n", "gi", "<CMD>Trouble lsp_implementations<CR>", silent)
 
             map("n", "K", vim.lsp.buf.hover, opts)
 
@@ -79,6 +79,16 @@ return {
         setup = function()
             map("n", "<Leader>e", "<CMD>Telescope find_files<CR>", silent)
             map("n", "<leader><leader>e", "<CMD>Telescope projects<CR>", silent)
+
+            require("telescope").setup({
+                defaults = {
+                    mappings = {
+                        i = { ["<C-t>"] = require("trouble.providers.telescope").open_with_trouble },
+                        n = { ["<C-t>"] = require("trouble.providers.telescope").open_with_trouble },
+                    }
+                }
+            })
+
         end,
     },
 
@@ -191,6 +201,14 @@ return {
             map("n", "<Leader>gm", "<CMD>Gvdiffsplit!<CR>", silent) -- start 3-way diff for merge
 
             map("n", "<Leader>gH", "<CMD>GBrowse<CR>", silent)
+        end,
+    },
+
+    trouble = {
+        setup = function()
+            map("n", "<Leader>tq", "<CMD>TroubleClose<CR>", silent)
+            map("n", "<Leader>td", "<CMD>Trouble workspace_diagnostics<CR>", silent)
+            map("n", "<Leader>tt", "<CMD>Trouble todo<CR>", silent)
         end,
     },
 }
