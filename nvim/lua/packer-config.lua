@@ -177,6 +177,7 @@ require("packer").startup(function(use)
     -----------------------------------------------------------------------------------
     use({ "neovim/nvim-lspconfig", config = [[require('plugins.lspconfig')]] })
     use({ "github/copilot.vim", config = [[require('plugins.copilot')]] })
+    -- TODO: actually set up anything and don't just have it installed for cmp
     use("L3MON4D3/LuaSnip")
 
     use("lukas-reineke/lsp-format.nvim")
