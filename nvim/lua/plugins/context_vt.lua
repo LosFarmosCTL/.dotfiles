@@ -1,4 +1,3 @@
--- TODO: change highlight color
 require("nvim_context_vt").setup({
     min_rows = 20,
     custom_parser = function(node, ft, opts)
