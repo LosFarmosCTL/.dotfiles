@@ -106,12 +106,6 @@ return {
         end,
     },
 
-    outline = {
-        setup = function()
-            map("n", "<Leader>o", "<CMD>SymbolsOutline<CR>", silent)
-        end,
-    },
-
     hlslens = {
         setup = function()
             map(
@@ -209,6 +203,12 @@ return {
             map("n", "<Leader>tq", "<CMD>TroubleClose<CR>", silent)
             map("n", "<Leader>td", "<CMD>Trouble workspace_diagnostics<CR>", silent)
             map("n", "<Leader>tt", "<CMD>Trouble todo<CR>", silent)
+        end,
+    },
+
+    sidebar = {
+        setup = function()
+            map("n", "<leader>o", "<CMD>SidebarNvimToggle<CR>", silent)
         end,
     },
 }
