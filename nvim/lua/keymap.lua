@@ -53,10 +53,25 @@ return {
 
     goto_preview = {
         setup = function()
-            map("n", "gpd", require('goto-preview').goto_preview_definition, silent)
-            map("n", "gpi", require('goto-preview').goto_preview_implementation, silent)
-            map("n", "gpr", require('goto-preview').goto_preview_references, silent)
-            map("n", "gP", require('goto-preview').close_all_win, silent)
+            map(
+                "n",
+                "gpd",
+                require("goto-preview").goto_preview_definition,
+                silent
+            )
+            map(
+                "n",
+                "gpi",
+                require("goto-preview").goto_preview_implementation,
+                silent
+            )
+            map(
+                "n",
+                "gpr",
+                require("goto-preview").goto_preview_references,
+                silent
+            )
+            map("n", "gP", require("goto-preview").close_all_win, silent)
         end,
     },
 

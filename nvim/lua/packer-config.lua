@@ -193,9 +193,9 @@ require("packer").startup(function(use)
 
     use({
         "ray-x/lsp_signature.nvim",
-        config = function ()
+        config = function()
             require("lsp_signature").setup()
-        end
+        end,
     })
     --}}}
 

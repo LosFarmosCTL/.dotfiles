@@ -1,4 +1,4 @@
-vim.opt.fillchars = vim.opt.fillchars + 'diff:╱'
+vim.opt.fillchars = vim.opt.fillchars + "diff:╱"
 
 vim.notify = require("notify")
 
