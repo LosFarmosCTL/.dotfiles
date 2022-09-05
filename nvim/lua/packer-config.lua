@@ -238,6 +238,11 @@ require("packer").startup(function(use)
             require("Comment").setup()
         end,
     })
+
+    use({
+        "julian/vim-textobj-variable-segment",
+        requires = "kana/vim-textobj-user",
+    })
     --}}}
 
     --                                    MISCELLANEOUS                                   {{{
