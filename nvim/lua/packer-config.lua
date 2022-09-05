@@ -34,7 +34,7 @@ require("packer").startup(function(use)
         config = [[require('plugins.lualine')]],
     })
 
-    use({ -- TODO: set up telescope keymaps/additional config
+    use({
         "nvim-telescope/telescope.nvim",
         requires = {
             "nvim-lua/plenary.nvim",
