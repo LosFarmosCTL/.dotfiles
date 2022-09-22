@@ -22,3 +22,7 @@
     conflictstyle = diff3
 [diff]
     colorMoved = default
+[credential "https://github.com"]
+    helper = !/usr/local/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+    helper = !/usr/local/bin/gh auth git-credential
