@@ -89,7 +89,7 @@ return {
 
             map("n", "<leader>gl", "<CMD>Telescope git_commits<CR>", silent)
             map("n", "<leader>gL", "<CMD>Telescope git_bcommits<CR>", silent)
-            map("n", "<leader>gb", "<CMD>Telescope git_branches<CR>", silent)
+            map("n", "<leader>tgb", "<CMD>Telescope git_branches<CR>", silent)
 
             require("telescope").setup({
                 defaults = {
