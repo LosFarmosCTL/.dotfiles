@@ -94,12 +94,15 @@ return {
             require("telescope").setup({
                 defaults = {
                     mappings = {
-                        i = { ["<C-t>"] = require("trouble.providers.telescope").open_with_trouble },
-                        n = { ["<C-t>"] = require("trouble.providers.telescope").open_with_trouble },
-                    }
-                }
+                        i = {
+                            ["<C-t>"] = require("trouble.providers.telescope").open_with_trouble,
+                        },
+                        n = {
+                            ["<C-t>"] = require("trouble.providers.telescope").open_with_trouble,
+                        },
+                    },
+                },
             })
-
         end,
     },
 
@@ -212,7 +215,12 @@ return {
     trouble = {
         setup = function()
             map("n", "<Leader>tq", "<CMD>TroubleClose<CR>", silent)
-            map("n", "<Leader>td", "<CMD>Trouble workspace_diagnostics<CR>", silent)
+            map(
+                "n",
+                "<Leader>td",
+                "<CMD>Trouble workspace_diagnostics<CR>",
+                silent
+            )
             map("n", "<Leader>tt", "<CMD>Trouble todo<CR>", silent)
         end,
     },

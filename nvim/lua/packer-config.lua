@@ -116,19 +116,19 @@ require("packer").startup(function(use)
         end,
     })
 
-    use {
+    use({
         "folke/trouble.nvim",
         requires = "kyazdani42/nvim-web-devicons",
         config = function()
             require("trouble").setup()
             require("keymap").trouble.setup()
-        end
-    }
+        end,
+    })
 
-    use {
+    use({
         "sidebar-nvim/sidebar.nvim",
         config = [[require('plugins.sidebar')]],
-    }
+    })
     --}}}
 
     --                              SYNTAX/CODE HIGHLIGHTING                        {{{

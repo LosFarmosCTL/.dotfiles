@@ -1,7 +1,7 @@
 require("illuminate").configure({
     delay = 500,
     filetypes_denylist = {
-        "SidebarNvim"
+        "SidebarNvim",
     },
 })
 
