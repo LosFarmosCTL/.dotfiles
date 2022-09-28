@@ -182,7 +182,14 @@ require("packer").startup(function(use)
     --                              LSP AND AUTOCOMPLETION                          {{{
     -----------------------------------------------------------------------------------
     use({ "neovim/nvim-lspconfig", config = [[require('plugins.lspconfig')]] })
+    use({
+        "jose-elias-alvarez/null-ls.nvim",
+        config = [[require('plugins.null-ls')]],
+        requires = "nvim-lua/plenary.nvim",
+    })
+
     use({ "github/copilot.vim", config = [[require('plugins.copilot')]] })
+
     -- TODO: actually set up anything and don't just have it installed for cmp
     use("L3MON4D3/LuaSnip")
 
