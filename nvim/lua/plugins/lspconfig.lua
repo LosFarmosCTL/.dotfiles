@@ -4,6 +4,7 @@ local servers = {
     { server = "clangd", setup = {} },
     { server = "tsserver", setup = {} },
     { server = "cssls", setup = {} },
+    { server = "html", setup = {} },
     {
         server = "sumneko_lua",
         setup = luadev,
