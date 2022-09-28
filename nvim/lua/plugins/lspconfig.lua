@@ -3,6 +3,7 @@ local luadev = require("plugins.luadev")
 local servers = {
     { server = "clangd", setup = {} },
     { server = "tsserver", setup = {} },
+    { server = "cssls", setup = {} },
     {
         server = "sumneko_lua",
         setup = luadev,
@@ -19,6 +20,7 @@ local cmp_capabilities = require("cmp_nvim_lsp").update_capabilities(
     vim.lsp.protocol.make_client_capabilities()
 )
 cmp_capabilities.offsetEncoding = { "utf-16" }
+cmp_capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 for _, lsp in ipairs(servers) do
     local on_attach = function(client, bufnr)
