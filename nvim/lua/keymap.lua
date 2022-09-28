@@ -81,7 +81,7 @@ return {
             map("n", "<leader><leader>e", "<CMD>Telescope projects<CR>", silent)
             map("n", "<leader>ge", "<CMD>Telescope git_files<CR>", silent)
 
-            map("n", "<leader>tg", "<CMD>Telescope live_grep<CR>", silent)
+            map("n", "<leader>tlg", "<CMD>Telescope live_grep<CR>", silent)
             map("n", "<leader>tb", "<CMD>Telescope buffers<CR>", silent)
             map("n", "<leader>th", "<CMD>Telescope help_tags<CR>", silent)
             map("n", "<leader>tc", "<CMD>Telescope command_history<CR>", silent)
