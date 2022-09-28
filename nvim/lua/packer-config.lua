@@ -193,7 +193,10 @@ require("packer").startup(function(use)
     -- TODO: actually set up anything and don't just have it installed for cmp
     use("L3MON4D3/LuaSnip")
 
-    use("lukas-reineke/lsp-format.nvim")
+    use({
+        "lukas-reineke/lsp-format.nvim",
+        config = [[require('plugins.lsp-format')]],
+    })
 
     use({ "hrsh7th/nvim-cmp", config = [[require('plugins.cmp')]] })
     use("hrsh7th/cmp-cmdline")
