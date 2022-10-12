@@ -239,6 +239,12 @@ require("packer").startup(function(use)
         config = [[require('plugins.autopairs')]],
     })
 
+    use({
+        "windwp/nvim-ts-autotag",
+        requires = "nvim-treesitter",
+        config = [[require('nvim-ts-autotag').setup()]],
+    })
+
     use("tpope/vim-surround")
     use({ "mizlan/iswap.nvim", config = [[require('keymap').iswap.setup()]] })
 
