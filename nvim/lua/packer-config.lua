@@ -206,6 +206,8 @@ require("packer").startup(function(use)
     use("saadparwaiz1/cmp_luasnip")
     use({ "petertriho/cmp-git", requires = "nvim-lua/plenary.nvim" })
 
+    use("onsails/lspkind-nvim")
+
     use("folke/lua-dev.nvim")
 
     use({

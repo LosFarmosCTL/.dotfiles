@@ -1,4 +1,5 @@
 local cmp = require("cmp")
+local lspkind = require("lspkind")
 
 cmp.setup({
     snippet = {
@@ -33,6 +34,9 @@ cmp.setup({
         ["<C-e>"] = cmp.mapping.abort(),
         ["<CR>"] = cmp.mapping.confirm({ select = true }),
     }),
+    formatting = {
+        format = lspkind.cmp_format({ mode = 'symbol' }),
+    }
 })
 
 cmp.setup.cmdline("/", {
