@@ -53,6 +53,9 @@ yabai -m rule --add app="^Problem Reporter$" manage=off
 # sticky applications
 yabai -m rule --add app="^Digital Colour Meter$" sticky=on
 
+# prevent input popups from calendar to be tiled
+yabai -m rule --add app="^Calendar$" title="^$" manage=off
+
 # disable the finder file details popup from being managed
 yabai -m rule --add app="^Finder$" title=".*Info$" manage=off
 yabai -m rule --add app="^Finder$" title="^Copy$" manage=off
