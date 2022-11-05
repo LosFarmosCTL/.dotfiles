@@ -167,6 +167,7 @@ require("packer").startup(function(use)
         config = [[require('plugins.context_vt')]],
     })
 
+    -- TODO: remove spellsitter, merged into nvim core starting with 0.8
     use({
         "lewis6991/spellsitter.nvim",
         requires = "nvim-treesitter/nvim-treesitter",
