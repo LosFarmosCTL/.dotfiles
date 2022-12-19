@@ -74,6 +74,9 @@ yabai -m rule --add app="^Safari$" title="^Websites$" manage=off
 yabai -m rule --add app="^Safari$" title="^Extensions$" manage=off
 yabai -m rule --add app="^Safari$" title="^Advanced$" manage=off
 
+# force-manage chatterino
+yabai -m rule --add app="^Chatterino$" title="^Chatterino Nightly" manage=on
+
 # disable the discord updater popup from being managed while discord is starting
 yabai -m rule --add app="^Discord$" title="^Discord Updater$" manage=off
 
