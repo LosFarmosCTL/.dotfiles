@@ -1,7 +1,12 @@
-vim.g.tokyonight_style = "night"
-vim.g.tokyonight_sidebars = { "packer", "Outline" }
+return {
+  {
+    'folke/tokyonight.nvim',
+    priority = 1000,
+    init = function()
+      vim.cmd.colorscheme 'tokyonight-night'
 
-vim.cmd([[colorscheme tokyonight-night]])
-
-vim.api.nvim_set_hl(0, "DiffAdd", { bg = "#283B4D" })
-vim.api.nvim_set_hl(0, "DiffDelete", { bg = "#3C2C3C", fg = "#4d384d" })
+      -- You can configure highlights by doing something like:
+      -- vim.cmd.hi 'Comment gui=none'
+    end,
+  },
+}

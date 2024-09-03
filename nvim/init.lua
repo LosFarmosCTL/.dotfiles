@@ -1,11 +1,12 @@
-require("impatient")
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
-require("options")
+require 'options'
 
-require("keymap").setup()
+require 'keymaps'
 
-require("packer-config")
+require 'autocmds'
 
-require("visual")
+require 'lazy-bootstrap'
 
-require("lsp")
+require 'lazy-plugins'

@@ -1,57 +1,82 @@
-local cmp = require("cmp")
-local lspkind = require("lspkind")
+return {
+  {
+    'hrsh7th/nvim-cmp',
+    event = 'InsertEnter',
+    dependencies = {
+      -- snippet engine
+      {
+        'L3MON4D3/LuaSnip',
+        build = (function()
+          return 'make install_jsregexp'
+        end)(),
+        dependencies = {
+          -- include premade snippets for a range of languages
+          {
+            'rafamadriz/friendly-snippets',
+            config = function()
+              require('luasnip.loaders.from_vscode').lazy_load()
+            end,
+          },
+        },
+      },
+      'saadparwaiz1/cmp_luasnip',
 
-cmp.setup({
-    snippet = {
-        expand = function(args)
-            require("luasnip").lsp_expand(args.body)
-        end,
+      -- completion sources
+      'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/cmp-path',
     },
-    sources = cmp.config.sources({
-        { name = "nvim_lsp" },
-        { name = "luasnip" },
-    }, {
-        { name = "git" },
-        { name = "buffer" },
-    }),
-    mapping = cmp.mapping.preset.insert({
-        ["<C-b>"] = cmp.mapping.scroll_docs(-4),
-        ["<C-f>"] = cmp.mapping.scroll_docs(4),
-        ["<Tab>"] = function(fallback)
-            if cmp.visible() then
-                cmp.select_next_item()
-            else
-                local copilot_keys = vim.fn["copilot#Accept"]()
-                if copilot_keys ~= "" then
-                    vim.api.nvim_feedkeys(copilot_keys, "i", true)
-                else
-                    fallback()
-                end
+    config = function()
+      local cmp = require 'cmp'
+      local luasnip = require 'luasnip'
+      luasnip.config.setup {}
+
+      cmp.setup {
+        snippet = {
+          expand = function(args)
+            luasnip.lsp_expand(args.body)
+          end,
+        },
+        completion = { completeopt = 'menu,menuone,noinsert' },
+
+        mapping = cmp.mapping.preset.insert {
+          -- [n]ext completion item
+          ['<C-n>'] = cmp.mapping.select_next_item(),
+          -- [p]revious completion item
+          ['<C-p>'] = cmp.mapping.select_prev_item(),
+
+          -- scroll documentation [b]ack / [f]orward
+          ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+          ['<C-f>'] = cmp.mapping.scroll_docs(4),
+
+          -- accept ([y]es) completion.
+          ['<C-y>'] = cmp.mapping.confirm { select = true },
+
+          -- manually trigger completion
+          ['<C-Space>'] = cmp.mapping.complete {},
+
+          -- move left/right inside of snippet items (e.g. function parameters)
+          ['<C-l>'] = cmp.mapping(function()
+            if luasnip.expand_or_locally_jumpable() then
+              luasnip.expand_or_jump()
             end
-        end,
-        ["<S-Tab>"] = cmp.mapping.select_prev_item(),
-        ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
-        ["<C-e>"] = cmp.mapping.abort(),
-        ["<CR>"] = cmp.mapping.confirm({ select = true }),
-    }),
-    formatting = {
-        format = lspkind.cmp_format({ mode = 'symbol' }),
-    }
-})
-
-cmp.setup.cmdline("/", {
-    mapping = cmp.mapping.preset.cmdline(),
-    sources = {
-        { name = "buffer" },
-    },
-})
-
-cmp.setup.cmdline(":", {
-    mapping = cmp.mapping.preset.cmdline(),
-    sources = {
-        { name = "path" },
-        { name = "cmdline" },
-    },
-})
-
-require("cmp_git").setup()
+          end, { 'i', 's' }),
+          ['<C-h>'] = cmp.mapping(function()
+            if luasnip.locally_jumpable(-1) then
+              luasnip.jump(-1)
+            end
+          end, { 'i', 's' }),
+        },
+        sources = {
+          {
+            name = 'lazydev',
+            -- set group index to 0 to skip loading LuaLS completions as lazydev recommends it
+            group_index = 0,
+          },
+          { name = 'nvim_lsp' },
+          { name = 'luasnip' },
+          { name = 'path' },
+        },
+      }
+    end,
+  },
+}

@@ -1,23 +1,17 @@
-require("nvim-treesitter.configs").setup({
-    ensure_installed = "all",
-
-    highlight = { enable = true },
-
-    indent = { enable = true },
-
-    incremental_selection = {
-        enable = true,
-        keymaps = {
-            init_selection = "gnn",
-            node_incremental = "grn",
-            scope_incremental = "grc",
-            node_decremental = "grm",
-        },
+return {
+  {
+    'nvim-treesitter/nvim-treesitter',
+    build = ':TSUpdate',
+    opts = {
+      ensure_installed = {},
+      auto_install = true,
+      highlight = { enable = true },
+      indent = { enable = true },
+      -- TODO: take a closer look at this
+      incremental_selection = { enable = true },
     },
-
-    -- TODO: textobjects config
-})
-
-vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
-vim.opt.foldlevel = 99
+    config = function(_, opts)
+      require('nvim-treesitter.configs').setup(opts)
+    end,
+  },
+}

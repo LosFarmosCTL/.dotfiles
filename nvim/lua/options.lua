@@ -1,40 +1,53 @@
-local opt = vim.opt
+------------------------------------------------
+------------------ UI options ------------------
+------------------------------------------------
 
--- enable full color support
-opt.termguicolors = true
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.signcolumn = 'yes'
 
--- set relative line numbers
-opt.number = true
-opt.relativenumber = true
+vim.opt.cursorline = true
+vim.opt.scrolloff = 10
+vim.opt.mouse = 'a'
 
--- setup tab indentation
-opt.autoindent = true
-opt.smartindent = true
+vim.opt.splitright = true
+vim.opt.splitbelow = true
 
-opt.shiftwidth = 4
-opt.softtabstop = 4
-opt.expandtab = true
-opt.list = true -- display trailing spaces and tabs
+-- show tabs, trailing and forced spaces
+vim.opt.list = true
+vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
--- enable undo history original
-opt.undofile = true
+-- show search/replace while typing
+vim.opt.inccommand = 'split'
 
--- smart case sensitive searching
-opt.ignorecase = true
-opt.smartcase = true
+-- disable builtin mode indicator, since it's included in the status bar
+vim.opt.showmode = false
 
--- always display signcolumn
-opt.signcolumn = "yes:1"
+-- show linebreaks indented at the same level
+vim.opt.breakindent = true
+vim.opt.linebreak = true
 
--- enable global status line
-opt.laststatus = 3
+------------------------------------------------
+--------------- Behavior options ---------------
+------------------------------------------------
 
--- decrease updatetime
-opt.updatetime = 250
+-- indent 2 spaces
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.expandtab = true
 
--- show fold column
-opt.foldcolumn = "auto:3"
-opt.foldminlines = 4
-opt.foldnestmax = 3
+vim.opt.undofile = true
 
-opt.spell = true
+vim.opt.virtualedit = 'block'
+
+-- case-insensitive search
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+
+vim.opt.timeoutlen = 10000
+
+vim.filetype.add {
+  extension = {
+    swiftinterface = 'swift',
+  },
+}
