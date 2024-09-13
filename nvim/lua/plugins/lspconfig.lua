@@ -85,6 +85,7 @@ return {
             },
           },
         },
+        jdtls = {},
       }
 
       require('mason').setup()
