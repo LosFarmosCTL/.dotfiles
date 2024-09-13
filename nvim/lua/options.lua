@@ -8,10 +8,12 @@ vim.opt.signcolumn = 'yes'
 
 vim.opt.cursorline = true
 vim.opt.scrolloff = 10
-vim.opt.mouse = 'a'
 
 vim.opt.splitright = true
 vim.opt.splitbelow = true
+
+-- disable mouse interactions
+vim.opt.mouse = ''
 
 -- show tabs, trailing and forced spaces
 vim.opt.list = true
