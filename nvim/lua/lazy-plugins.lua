@@ -21,5 +21,5 @@ require('lazy').setup {
 
   require 'plugins.treesitter',
 
-  -- TODO: add debugging and linting stuff
+  require 'plugins.lint',
 }
