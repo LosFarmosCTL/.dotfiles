@@ -46,7 +46,8 @@ vim.opt.virtualedit = 'block'
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
-vim.opt.timeoutlen = 10000
+-- decrese time to trigger CursorHold autocmd
+vim.opt.updatetime = 250
 
 vim.filetype.add {
   extension = {
