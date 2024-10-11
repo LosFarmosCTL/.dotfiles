@@ -85,6 +85,7 @@ return {
             },
           },
         },
+        bashls = {},
         jdtls = {},
       }
 
