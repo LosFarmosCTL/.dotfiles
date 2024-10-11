@@ -1,5 +1,6 @@
 require('lazy').setup {
   'tpope/vim-sleuth',
+  { 'windwp/nvim-ts-autotag', opts = {} },
 
   { 'stevearc/dressing.nvim', opts = {} },
 
