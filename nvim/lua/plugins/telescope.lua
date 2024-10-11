@@ -17,6 +17,12 @@ return {
       { 'nvim-tree/nvim-web-devicons' },
     },
     config = function()
+      require('telescope').setup {
+        defaults = {
+          file_ignore_patterns = { '.git/', '.venv/', 'node_modules/' },
+        },
+      }
+
       -- enable extensions if installed
       pcall(require('telescope').load_extension, 'fzf')
       pcall(require('telescope').load_extension, 'project')
