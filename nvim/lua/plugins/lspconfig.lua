@@ -87,6 +87,9 @@ return {
         },
         bashls = {},
         jdtls = {},
+        ts_ls = {},
+        html = {},
+        cssls = {},
       }
 
       require('mason').setup()
