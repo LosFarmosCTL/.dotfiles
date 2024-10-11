@@ -2,8 +2,6 @@ return {
   {
     'echasnovski/mini.nvim',
     config = function()
-      require('mini.pairs').setup()
-
       -- around/inside textobjects
       require('mini.ai').setup { n_lines = 500 }
 

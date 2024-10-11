@@ -4,6 +4,8 @@ require('lazy').setup {
 
   { 'stevearc/dressing.nvim', opts = {} },
 
+  { 'windwp/nvim-autopairs', event = 'InsertEnter', config = true },
+
   require 'plugins.gitsigns',
 
   require 'plugins.which-key',
