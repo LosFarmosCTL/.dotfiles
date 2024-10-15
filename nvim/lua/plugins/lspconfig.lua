@@ -121,6 +121,8 @@ return {
         },
       }
 
+      -- metals can't be installed via mason
+      require('lspconfig').metals.setup {}
       -- sourcekit-lsp is provided via the swift toolchain and can't be installed using mason
       require('lspconfig').sourcekit.setup {
         filetypes = { 'swift', 'objective-c', 'objective-cpp' },
