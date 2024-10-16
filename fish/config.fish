@@ -13,4 +13,6 @@ if status is-interactive
     set fish_greeting
 
     starship init fish | source
+    # clear starship modules after exectuting command
+    enable_transience
 end
