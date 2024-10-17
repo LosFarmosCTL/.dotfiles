@@ -14,14 +14,14 @@
 
 [delta]
     navigate = true
-    light = false
-    side-by-side = true
+    line-numbers = true
 [interactive]
     diffFilter = delta --color-only
 [merge]
     conflictstyle = diff3
 [diff]
     colorMoved = default
+
 [credential "https://github.com"]
     helper = !/usr/local/bin/gh auth git-credential
 [credential "https://gist.github.com"]
