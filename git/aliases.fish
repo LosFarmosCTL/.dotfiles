@@ -1,7 +1,8 @@
 abbr -ag gco git checkout
 
 abbr -ag gs git status -sb
-abbr -ag gl git log --graph
+abbr -ag gl git log --graph --oneline
+abbr -ag gll git log --graph
 abbr -ag gd git diff
 abbr -ag gds git diff --staged
 
