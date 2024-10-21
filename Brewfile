@@ -13,6 +13,7 @@ brew "go"
 brew "imagemagick"
 brew "jq"
 brew "lolcat"
+brew "mas"
 brew "maven"
 brew "metals"
 brew "neovim"
@@ -51,3 +52,10 @@ cask "swish"
 cask "vscodium"
 cask "warp"
 cask "whatsapp"
+mas "AudioBookBinder", id: 413969927
+mas "AusweisApp", id: 948660805
+mas "DevCleaner", id: 1388020431
+mas "Keynote", id: 409183694
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
+mas "Xcode", id: 497799835
