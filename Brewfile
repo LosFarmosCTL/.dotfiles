@@ -55,6 +55,7 @@ cask "warp"
 cask "whatsapp"
 mas "AudioBookBinder", id: 413969927
 mas "AusweisApp", id: 948660805
+mas "Craft", id: 1487937127
 mas "DevCleaner", id: 1388020431
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
