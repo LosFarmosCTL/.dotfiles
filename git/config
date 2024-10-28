@@ -7,7 +7,7 @@
     excludesfile = ~/.config/git/ignore
 
 [pull]
-    rebase = false
+    rebase = true
 
 [init]
     defaultBranch = main
