@@ -76,6 +76,8 @@ return {
           { name = 'luasnip' },
           { name = 'path' },
         },
+        ---@diagnostic disable-next-line: missing-fields
+        formatting = { format = require('nvim-highlight-colors').format },
       }
     end,
   },
