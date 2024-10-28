@@ -54,3 +54,5 @@ vim.filetype.add {
     swiftinterface = 'swift',
   },
 }
+
+vim.opt.shell = '/opt/homebrew/bin/fish'
