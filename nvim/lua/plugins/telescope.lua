@@ -19,7 +19,20 @@ return {
     config = function()
       require('telescope').setup {
         defaults = {
-          file_ignore_patterns = { '.git/', '.venv/', 'node_modules/' },
+          file_ignore_patterns = {
+            '.git/',
+
+            -- python
+            '.venv/',
+
+            -- node
+            'node_modules/',
+
+            -- swift
+            '.build/',
+            '.index_build/',
+            '.swiftpm/',
+          },
         },
       }
 
