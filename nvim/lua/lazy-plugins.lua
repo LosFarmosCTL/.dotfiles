@@ -27,4 +27,6 @@ require('lazy').setup {
   require 'plugins.treesitter',
 
   require 'plugins.lint',
+
+  require 'plugins.peek',
 }
