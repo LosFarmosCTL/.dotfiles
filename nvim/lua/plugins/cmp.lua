@@ -52,7 +52,13 @@ return {
           ['<C-y>'] = cmp.mapping.confirm { select = true },
 
           -- manually trigger completion
-          ['<C-Space>'] = cmp.mapping.complete {},
+          ['<C-Space>'] = cmp.mapping(function()
+            if cmp.visible() then
+              cmp.abort()
+            else
+              cmp.complete()
+            end
+          end),
 
           -- move left/right inside of snippet items (e.g. function parameters)
           ['<C-l>'] = cmp.mapping(function()
