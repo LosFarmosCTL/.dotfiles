@@ -18,6 +18,8 @@ require('lazy').setup {
   require 'plugins.conform',
   require 'plugins.cmp',
 
+  require 'plugins.copilot',
+
   require 'plugins.tokyonight',
 
   require 'plugins.todo-comments',
