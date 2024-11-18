@@ -23,4 +23,8 @@ vim.keymap.set('n', '<leader>K', vim.diagnostic.open_float, { desc = 'Open diagn
 -- easier terminal mode exit
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
+-- center current line after scrolling
+vim.keymap.set('n', '<C-d>', '<C-d>zz')
+vim.keymap.set('n', '<C-u>', '<C-u>zz')
+
 vim.keymap.set('i', '<BS>', '<Nop>')
