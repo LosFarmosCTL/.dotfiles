@@ -30,8 +30,6 @@ return {
       { 'nvim-lua/plenary.nvim' },
     },
     build = 'make tiktoken',
-    opts = {
-      debug = true,
-    },
+    opts = {},
   },
 }
