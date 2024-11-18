@@ -36,7 +36,18 @@ return {
           enable = false,
         },
       }
-      vim.notify = require('mini.notify').make_notify()
+
+      local mini_notify = require('mini.notify').make_notify()
+      ---@diagnostic disable-next-line: duplicate-set-field
+      vim.notify = function(msg, level, _)
+        if level == 'warn' then
+          level = 3
+        elseif level == 'error' then
+          level = 4
+        end
+
+        mini_notify(msg, level)
+      end
     end,
   },
 }
