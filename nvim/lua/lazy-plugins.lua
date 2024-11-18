@@ -6,7 +6,7 @@ require('lazy').setup {
 
   { 'windwp/nvim-autopairs', event = 'InsertEnter', opts = { map_bs = false } },
 
-  { 'brenoprata10/nvim-highlight-colors', opts = {} },
+  -- { 'brenoprata10/nvim-highlight-colors', opts = {} }, brenoprata10/nvim-highlight-colors#126
 
   require 'plugins.gitsigns',
 
