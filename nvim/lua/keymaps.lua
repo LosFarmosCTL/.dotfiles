@@ -13,7 +13,7 @@ vim.keymap.set('n', '<C-S-l>', '<C-w>>', { desc = 'Increase split width' })
 vim.keymap.set('n', '<C-S-k>', '<C-w>-', { desc = 'Decrease split height' })
 vim.keymap.set('n', '<C-S-j>', '<C-w>+', { desc = 'Increase split height' })
 
-vim.keymap.set('n', '<leader>bd', '<CMD>bdelete<CR>', { desc = '[Buffer] [D]elete' })
+vim.keymap.set('n', '<leader>bd', '<CMD>bdelete<CR>', { desc = '[B]uffer [D]elete' })
 
 -- yank to system clipboard
 vim.keymap.set({ 'n', 'v' }, '<leader>y', '"+y', { desc = 'Copy to system clipboard' })
