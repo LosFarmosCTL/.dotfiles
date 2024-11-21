@@ -18,7 +18,6 @@ return {
           vim.keymap.set(mode, l, r, opts)
         end
 
-        -- TODO: possibly use ]h (hunk) instead
         map('n', ']h', function()
           if vim.wo.diff then
             vim.cmd.normal { ']c', bang = true }
