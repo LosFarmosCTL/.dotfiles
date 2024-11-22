@@ -122,13 +122,31 @@ return {
         },
       }
 
-      -- metals can't be installed via mason
-      require('lspconfig').metals.setup {}
       -- sourcekit-lsp is provided via the swift toolchain and can't be installed using mason
       require('lspconfig').sourcekit.setup {
         filetypes = { 'swift', 'objective-c', 'objective-cpp' },
         capabilities = capabilities,
       }
+    end,
+  },
+
+  -- configures metals LSP for scala
+  {
+    'scalameta/nvim-metals',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+    },
+    ft = { 'scala', 'sbt', 'java' },
+    config = function(self)
+      local nvim_metals_group = vim.api.nvim_create_augroup('nvim-metals', { clear = true })
+      vim.api.nvim_create_autocmd('FileType', {
+        pattern = self.ft,
+        callback = function()
+          local config = require('metals').bare_config()
+          require('metals').initialize_or_attach(config)
+        end,
+        group = nvim_metals_group,
+      })
     end,
   },
 
