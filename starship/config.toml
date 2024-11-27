@@ -163,7 +163,6 @@ symbol = "󱘗 "
 
 [scala]
 symbol = " "
-disabled = true
 
 [swift]
 symbol = " "
