@@ -28,6 +28,8 @@ return {
         lua = { 'stylua' },
         python = { 'ruff_format', 'ruff_fix' },
         css = { 'prettierd', 'prettier', stop_after_first = true },
+        javascript = { 'prettierd', 'prettier', stop_after_first = true },
+        typescript = { 'prettierd', 'prettier', stop_after_first = true },
       },
     },
   },
