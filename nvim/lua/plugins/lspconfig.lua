@@ -90,6 +90,7 @@ return {
         ts_ls = {},
         html = {},
         cssls = {},
+        jsonls = {},
         basedpyright = {
           setting = {
             basedpyright = {
