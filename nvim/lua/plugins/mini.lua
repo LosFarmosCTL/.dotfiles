@@ -22,14 +22,6 @@ return {
       end
 
       require('mini.misc').setup()
-      MiniMisc.setup_auto_root {
-        'Package.swift',
-        'package.js',
-        'go.mod',
-        'pom.xml',
-        '.git',
-        'Makefile',
-      }
 
       require('mini.notify').setup {
         lsp_progress = {

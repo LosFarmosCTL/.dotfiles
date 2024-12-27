@@ -20,7 +20,6 @@ quick-terminal-position = bottom
 quick-terminal-autohide = false
 
 # open new tabs inside of the same directory as the current one
-# TODO: implement new tab in CWD using neovim
 window-inherit-working-directory = true
 
 # use custom shortcuts for german accent characters
