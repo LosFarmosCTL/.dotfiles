@@ -27,3 +27,6 @@ keybind = opt+u>u=text:ü
 keybind = opt+u>a=text:ä
 keybind = opt+u>o=text:ö
 keybind = opt+shift+2=text:€
+
+# disable prompt cursor shell integration, doesn't play nice with fish vi mode
+shell-integration-features = no-cursor
