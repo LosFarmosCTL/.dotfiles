@@ -8,8 +8,10 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- auto rooter
+vim.g.cwd_before_auto_root = vim.uv.cwd()
+local auto_root_group = vim.api.nvim_create_augroup('auto-root', { clear = true })
 vim.api.nvim_create_autocmd('BufEnter', {
-  group = vim.api.nvim_create_augroup('auto-root', { clear = true }),
+  group = auto_root_group,
   callback = function(data)
     local root_files = {
       'Package.swift',
@@ -29,6 +31,21 @@ vim.api.nvim_create_autocmd('BufEnter', {
       if stdout ~= nil then
         stdout:write(('\x1b]7;file://%s%s\a'):format(vim.fn.hostname(), root))
       end
+
+      -- TODO: add rooted project to telescope project prompt
+      -- local project_actions = require 'telescope._extensions.project.actions'
+      -- project_actions.add_project_cwd()
+    end
+  end,
+})
+
+-- send OSC 7 sequence to reset back to the original working directory
+vim.api.nvim_create_autocmd('VimLeave', {
+  group = auto_root_group,
+  callback = function()
+    local stdout = vim.uv.new_tty(1, false)
+    if stdout ~= nil then
+      stdout:write(('\x1b]7;file://%s%s\a'):format(vim.fn.hostname(), vim.g.cwd_before_auto_root))
     end
   end,
 })
