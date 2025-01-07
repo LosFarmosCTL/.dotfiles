@@ -28,5 +28,9 @@ keybind = opt+u>a=text:ä
 keybind = opt+u>o=text:ö
 keybind = opt+shift+2=text:€
 
+# move threw prompts using vi style keybinding
+keybind = cmd+j=jump_to_prompt:1
+keybind = cmd+k=jump_to_prompt:-1
+
 # disable prompt cursor shell integration, doesn't play nice with fish vi mode
 shell-integration-features = no-cursor
