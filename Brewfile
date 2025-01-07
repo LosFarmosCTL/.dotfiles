@@ -1,5 +1,6 @@
 brew "act"
 brew "asciinema"
+brew "bottom"
 brew "btop"
 brew "ccache"
 brew "cmake"
