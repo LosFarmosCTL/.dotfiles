@@ -34,3 +34,6 @@ keybind = cmd+k=jump_to_prompt:-1
 
 # disable prompt cursor shell integration, doesn't play nice with fish vi mode
 shell-integration-features = no-cursor
+
+# hide mouse cursor while typing
+mouse-hide-while-typing = true
