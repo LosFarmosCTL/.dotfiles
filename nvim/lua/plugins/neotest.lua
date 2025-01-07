@@ -3,6 +3,7 @@ return {
     'nvim-neotest/neotest',
     dependencies = {
       'stevanmilic/neotest-scala',
+      'nvim-neotest/neotest-python',
 
       'nvim-neotest/nvim-nio',
       'nvim-lua/plenary.nvim',
@@ -19,6 +20,7 @@ return {
             runner = 'sbt',
             framework = 'scalatest',
           },
+          require 'neotest-python',
         },
       }
 
