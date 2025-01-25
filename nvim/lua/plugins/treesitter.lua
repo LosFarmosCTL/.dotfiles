@@ -5,7 +5,7 @@ return {
     opts = {
       ensure_installed = {},
       auto_install = true,
-      highlight = { enable = true },
+      highlight = { enable = true, disable = { 'dockerfile' } },
       indent = { enable = true },
       -- TODO: take a closer look at this
       incremental_selection = { enable = true },
