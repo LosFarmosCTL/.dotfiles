@@ -9,15 +9,14 @@ brew "colima"
 brew "cowsay"
 brew "deno"
 brew "docker"
+brew "docker-buildx"
 brew "fastfetch"
 brew "fd"
 brew "ffmpeg"
-brew "fish"
 brew "gh"
 brew "git-delta"
 brew "gitlab-runner"
 brew "go"
-brew "imagemagick"
 brew "jq"
 brew "lolcat"
 brew "mas"
@@ -38,6 +37,7 @@ brew "uv"
 brew "vapor"
 brew "yt-dlp"
 brew "coursier/formulas/coursier"
+brew "fish-shell/fish-beta-4/fish"
 brew "oven-sh/bun/bun"
 cask "adguard"
 cask "alt-tab"
@@ -52,6 +52,7 @@ cask "gimp"
 cask "grandperspective"
 cask "maccy"
 cask "mp3tag"
+cask "openvpn-connect"
 cask "rapidapi"
 cask "raycast"
 cask "scroll-reverser"
@@ -67,6 +68,7 @@ mas "AudioBookBinder", id: 413969927
 mas "AusweisApp", id: 948660805
 mas "Craft", id: 1487937127
 mas "DevCleaner", id: 1388020431
+mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
