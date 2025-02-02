@@ -26,6 +26,9 @@ window-inherit-working-directory = true
 keybind = opt+u>u=text:ü
 keybind = opt+u>a=text:ä
 keybind = opt+u>o=text:ö
+keybind = opt+u>shift+u=text:Ü
+keybind = opt+u>shift+a=text:Ä
+keybind = opt+u>shift+o=text:Ö
 keybind = opt+shift+2=text:€
 
 # move threw prompts using vi style keybinding
