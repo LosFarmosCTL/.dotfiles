@@ -1,4 +1,5 @@
 abbr -ag ls ls -AFhlO
+abbr -ag rmrf rm -rf
 abbr -ag c clear
 
 abbr -ag caffeinate caffeinate -d -i -u -s
