@@ -131,6 +131,8 @@ return {
             require('lspconfig')[server_name].setup(server)
           end,
         },
+        ensure_installed = {},
+        automatic_installation = true,
       }
 
       -- sourcekit-lsp is provided via the swift toolchain and can't be installed using mason
