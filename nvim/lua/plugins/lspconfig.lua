@@ -147,7 +147,7 @@ return {
     dependencies = {
       'nvim-lua/plenary.nvim',
     },
-    ft = { 'scala', 'sbt', 'java' },
+    ft = { 'scala', 'sbt' },
     config = function(self)
       local nvim_metals_group = vim.api.nvim_create_augroup('nvim-metals', { clear = true })
       vim.api.nvim_create_autocmd('FileType', {
