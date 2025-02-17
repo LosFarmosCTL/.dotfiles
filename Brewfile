@@ -23,6 +23,7 @@ brew "mas"
 brew "maven"
 brew "neovim"
 brew "node"
+brew "ollama", restart_service: :changed
 brew "onefetch"
 brew "qt"
 brew "ripgrep"
@@ -58,6 +59,7 @@ cask "raycast"
 cask "scroll-reverser"
 cask "sf-symbols"
 cask "shottr"
+cask "spotify"
 cask "stats"
 cask "subler"
 cask "swish"
@@ -68,6 +70,7 @@ mas "AudioBookBinder", id: 413969927
 mas "AusweisApp", id: 948660805
 mas "Craft", id: 1487937127
 mas "DevCleaner", id: 1388020431
+mas "Goodnotes", id: 1444383602
 mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
