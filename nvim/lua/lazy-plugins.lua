@@ -1,10 +1,7 @@
 require('lazy').setup {
   'tpope/vim-sleuth',
-  { 'windwp/nvim-ts-autotag', opts = {} },
 
   { 'stevearc/dressing.nvim', opts = {} },
-
-  { 'windwp/nvim-autopairs', event = 'InsertEnter', opts = { map_bs = false } },
 
   -- { 'brenoprata10/nvim-highlight-colors', opts = {} }, brenoprata10/nvim-highlight-colors#126
 
@@ -17,6 +14,7 @@ require('lazy').setup {
   require 'plugins.lspconfig',
   require 'plugins.conform',
   require 'plugins.cmp',
+  require 'plugins.autopairs',
 
   require 'plugins.neotest',
 
