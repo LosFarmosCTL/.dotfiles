@@ -1,12 +1,10 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
-require 'options'
+require 'config.options'
 
-require 'keymaps'
+require 'config.keymaps'
 
-require 'autocmds'
+require 'config.autocmds'
 
-require 'lazy-bootstrap'
-
-require 'lazy-plugins'
+require 'config.lazy'

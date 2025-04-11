@@ -29,4 +29,6 @@ vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' }
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
 
+vim.keymap.set('n', '<C-c>', 'ciw')
+
 vim.keymap.set('i', '<BS>', '<Nop>')
