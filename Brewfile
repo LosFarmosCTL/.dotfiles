@@ -39,6 +39,7 @@ brew "vapor"
 brew "yt-dlp"
 brew "coursier/formulas/coursier"
 brew "fish-shell/fish-beta-4/fish"
+brew "nextfire/tap/apple-music-discord-rpc"
 brew "oven-sh/bun/bun"
 cask "adguard"
 cask "alt-tab"
@@ -46,6 +47,7 @@ cask "appcleaner"
 cask "arc"
 cask "chatgpt"
 cask "chatterino"
+cask "discord"
 cask "fluor"
 cask "font-sf-mono-nerd-font-ligaturized"
 cask "ghostty"
@@ -66,7 +68,6 @@ cask "swish"
 cask "vscodium"
 cask "whatsapp"
 cask "zen-browser"
-mas "AudioBookBinder", id: 413969927
 mas "AusweisApp", id: 948660805
 mas "Craft", id: 1487937127
 mas "DevCleaner", id: 1388020431
