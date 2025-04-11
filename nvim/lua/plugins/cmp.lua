@@ -24,12 +24,16 @@ return {
       -- completion sources
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-path',
+
+      -- icons
+      'onsails/lspkind.nvim',
     },
     config = function()
       local cmp = require 'cmp'
       local luasnip = require 'luasnip'
-      luasnip.config.setup {}
+      local lspkind = require 'lspkind'
 
+      luasnip.config.setup {}
       cmp.setup {
         snippet = {
           expand = function(args)
@@ -83,7 +87,11 @@ return {
           { name = 'path' },
         },
         ---@diagnostic disable-next-line: missing-fields
-        -- formatting = { format = require('nvim-highlight-colors').format },
+        formatting = {
+          format = lspkind.cmp_format {
+            mode = 'symbol',
+          },
+        },
       }
     end,
   },
