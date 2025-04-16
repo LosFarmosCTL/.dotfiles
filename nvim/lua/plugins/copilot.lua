@@ -1,31 +1,37 @@
 return {
   {
-    'github/copilot.vim', -- FIXME: copilot.lua?
+    'zbirenbaum/copilot.lua',
+    event = 'VeryLazy',
     config = function()
-      vim.cmd 'Copilot disable'
-      vim.keymap.set('i', '<A-j>', '<Plug>(copilot-next)', {})
-      vim.keymap.set('i', '<A-k>', '<Plug>(copilot-previous)', {})
+      -- TODO: decide on whether I want auto triggering suggestions or not
+      require('copilot').setup {
+        suggestion = {
+          auto_trigger = true,
+          keymap = {
+            accept = '<Tab>',
+            next = '<A-j>',
+            prev = '<A-k>',
+          },
+        },
+        panel = { enabled = false },
+      }
 
-      vim.keymap.set('i', '<C-`>', function()
-        vim.cmd 'Copilot enable'
-        vim.fn['copilot#Suggest']()
-
-        local augroup = vim.api.nvim_create_augroup('copilot', { clear = true })
-        vim.api.nvim_create_autocmd('InsertLeave', {
-          group = augroup,
-          callback = function()
-            vim.cmd 'Copilot disable'
-            vim.api.nvim_clear_autocmds { group = 'copilot' }
-          end,
-        })
-      end, { desc = 'Trigger Copilot' })
+      Snacks.toggle({
+        name = 'Copilot suggestions',
+        get = function()
+          return not vim.b.copilot_suggestion_hidden
+        end,
+        set = function(state)
+          vim.b.copilot_suggestion_hidden = not state
+        end,
+      }):map '<leader>oc'
     end,
   },
   -- TODO: copilot chat
   {
     'CopilotC-Nvim/CopilotChat.nvim',
     dependencies = {
-      { 'github/copilot.vim' },
+      { 'zbirenbaum/copilot.lua' },
       { 'nvim-lua/plenary.nvim' },
     },
     build = 'make tiktoken',
