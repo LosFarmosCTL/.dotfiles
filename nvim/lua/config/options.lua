@@ -12,6 +12,9 @@ vim.opt.scrolloff = 10
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
+-- global statusline
+vim.opt.laststatus = 3
+
 -- disable mouse interactions
 vim.opt.mouse = ''
 
