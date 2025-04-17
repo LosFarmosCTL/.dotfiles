@@ -24,9 +24,9 @@ return {
           map('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
           map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
 
-          -- editing
-          map('<leader>r', vim.lsp.buf.rename, '[R]ename')
-          map('<leader>.', vim.lsp.buf.code_action, 'Code Action')
+          -- code editing
+          map('<leader>cr', vim.lsp.buf.rename, '[c]ode [r]ename')
+          map('<leader>ca', vim.lsp.buf.code_action, '[c]ode [a]ction')
 
           local client = vim.lsp.get_client_by_id(event.data.client_id)
           -- HACK: inlayHintProvider does not appear in sourcekit server_capabilities even though it is supported

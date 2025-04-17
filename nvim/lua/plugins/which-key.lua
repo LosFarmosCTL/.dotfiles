@@ -15,6 +15,7 @@ return {
         { '<leader>s', group = '[S]earch' },
         { '<leader>t', group = '[T]est' },
         { '<leader>o', group = '[O]ptions' },
+        { '<leader>c', group = '[C]ode' },
       }
     end,
   },
