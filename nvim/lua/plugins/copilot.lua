@@ -17,7 +17,7 @@ return {
       }
 
       -- stylua: ignore
-      require('snacks').toggle({
+      Snacks.toggle({
         name = '[C]opilot suggestions',
         get = function() return not vim.b.copilot_suggestion_hidden end,
         set = function(state) vim.b.copilot_suggestion_hidden = not state end,

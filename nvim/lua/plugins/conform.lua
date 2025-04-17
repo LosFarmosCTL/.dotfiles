@@ -43,7 +43,7 @@ return {
       require('conform').setup(opts)
 
       -- stylua: ignore
-      require('snacks').toggle({
+      Snacks.toggle({
         name = 'Auto[f]ormat on save',
         get = function() return not vim.g.disable_autoformat end,
         set = function(state)
