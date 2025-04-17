@@ -11,6 +11,16 @@ return {
         changedelete = { text = '~' },
       },
     },
+    config = function(_, opts)
+      require('gitsigns').setup(opts)
+
+      -- stylua: ignore
+      Snacks.toggle({
+        name = 'Git line [b]lame',
+        get = function() return require('gitsigns.config').config.current_line_blame end,
+        set = function(_) require('gitsigns').toggle_current_line_blame() end,
+      }):map('<leader>ob')
+    end,
     -- stylua: ignore
     keys = {
       { ']h', function() if vim.wo.diff then vim.cmd.normal { ']c', bang = true } else require('gitsigns').nav_hunk 'next' end end, },
@@ -26,7 +36,8 @@ return {
       { '<leader>ghp', function() require('gitsigns').preview_hunk_inline() end, desc = 'git [h]unk preview', },
       { '<leader>gb', function() require('gitsigns').blame_line() end, desc = 'git [b]lame line', },
       { '<leader>gd', function() require('gitsigns').diffthis() end, desc = 'git [d]iff against index', },
-      { '<leader>ob', function() require('gitsigns').toggle_current_line_blame() end, desc = '[T]oggle git show [b]lame line', },
+
+      { '<leader>ob' }
     },
   },
 }
