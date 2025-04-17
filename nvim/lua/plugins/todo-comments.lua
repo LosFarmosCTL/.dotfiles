@@ -1,12 +1,13 @@
 return {
   {
     'folke/todo-comments.nvim',
-    event = 'VimEnter',
+    event = 'VeryLazy',
     dependencies = { 'nvim-lua/plenary.nvim' },
-    config = function()
-      require('todo-comments').setup { signs = false }
-
-      vim.keymap.set('n', '<leader>st', '<cmd>TodoTelescope<CR>', { desc = '[S]earch [T]odos' })
-    end,
+    opts = {
+      signs = false,
+    },
+    keys = {
+      { '<leader>st', '<cmd>TodoTelescope<CR>', desc = '[S]earch [T]odos' },
+    },
   },
 }

@@ -1,20 +1,20 @@
 return {
   {
     'folke/which-key.nvim',
-    event = 'VimEnter',
+    event = 'VeryLazy',
     config = function()
-      require('which-key').setup()
+      local wk = require 'which-key'
+      ---@diagnostic disable-next-line: missing-fields
+      wk.setup {
+        preset = 'helix',
+      }
 
-      -- TODO: document existing key chains
-      require('which-key').add {
+      wk.add {
         { '<leader>b', group = '[B]uffer' },
-        { '<leader>c', group = '[C]ode' },
-        { '<leader>d', group = '[D]ocument' },
-        { '<leader>r', group = '[R]ename' },
+        { '<leader>g', group = '[G]it' },
         { '<leader>s', group = '[S]earch' },
-        { '<leader>w', group = '[W]orkspace' },
-        { '<leader>t', group = '[T]oggle' },
-        { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
+        { '<leader>t', group = '[T]est' },
+        { '<leader>o', group = '[O]ptions' },
       }
     end,
   },

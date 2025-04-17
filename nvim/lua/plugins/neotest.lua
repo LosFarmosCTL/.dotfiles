@@ -10,11 +10,10 @@ return {
       'antoinemadec/FixCursorHold.nvim',
       'nvim-treesitter/nvim-treesitter',
     },
+    event = 'VeryLazy',
     config = function()
-      local neotest = require 'neotest'
-
       ---@diagnostic disable-next-line: missing-fields
-      neotest.setup {
+      require('neotest').setup {
         adapters = {
           require 'neotest-scala' {
             runner = 'sbt',
@@ -23,12 +22,15 @@ return {
           require 'neotest-python',
         },
       }
-
-      vim.keymap.set('n', '<leader>tr', neotest.run.run, { desc = '[T]ests: [R]un' })
-      vim.keymap.set('n', '<leader>tf', function()
-        neotest.run.run(vim.fn.expand '%')
-      end, { desc = '[T]ests: Run [F]ile' })
-      vim.keymap.set('n', '<leader>ts', neotest.summary.toggle, { desc = '[T]ests: Show [S]ummary' })
     end,
+    -- stylua: ignore
+    keys = {
+      { '<leader>tr', function() require('neotest').run.run() end, desc = '[T]ests: [r]un nearest', },
+      { '<leader>tR', function() require('neotest').run.run(vim.fn.expand '%') end, desc = '[T]ests: [Run] file', },
+      { '<leader>tl', function() require('neotest').run.run_last() end, desc = '[T]ests: [l]ast run', },
+      { '<leader>to', function() require('neotest').output.open { enter = true, auto_close = true } end, desc = '[T]ests: show [o]utput', },
+      { '<leader>tO', function() require('neotest').output_panel.toggle() end, desc = '[T]ests: [O]utput panel', },
+      { '<leader>ts', function() require('neotest').summary.toggle() end, desc = '[T]ests: Show [s]ummary', },
+    },
   },
 }

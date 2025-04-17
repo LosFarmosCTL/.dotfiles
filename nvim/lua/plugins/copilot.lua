@@ -17,7 +17,7 @@ return {
       }
 
       Snacks.toggle({
-        name = 'Copilot suggestions',
+        name = '[C]opilot suggestions',
         get = function()
           return not vim.b.copilot_suggestion_hidden
         end,

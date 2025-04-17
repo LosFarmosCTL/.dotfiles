@@ -9,7 +9,6 @@ return {
       require('mini.surround').setup()
 
       require('mini.files').setup()
-      vim.keymap.set('n', '<leader>\\', MiniFiles.open, { desc = 'Show file explorer' })
 
       -- square bracket navigation
       require('mini.bracketed').setup()
@@ -24,5 +23,9 @@ return {
 
       require('mini.misc').setup()
     end,
+    -- stylua: ignore
+    keys = {
+      { '<leader>\\', function() require('mini.files').open() end, desc = 'Show file explorer', }, 
+    },
   },
 }
