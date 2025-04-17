@@ -3,7 +3,7 @@ return {
     'neovim/nvim-lspconfig',
     dependencies = {
       -- automatically install LSPs
-      { 'williamboman/mason.nvim', config = true },
+      { 'williamboman/mason.nvim', opts = {} },
       'williamboman/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
 
@@ -15,7 +15,7 @@ return {
     },
     config = function()
       vim.api.nvim_create_autocmd('LspAttach', {
-        group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
+        group = vim.api.nvim_create_augroup('lsp-attach-set-keymap', { clear = true }),
         callback = function(event)
           local map = function(keys, func, desc)
             vim.keymap.set('n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
@@ -102,7 +102,8 @@ return {
             local server = servers[server_name] or {}
             -- don't override explicitly set capabilities by the nvim-cmp defaults
             server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-            require('lspconfig')[server_name].setup(server)
+            vim.lsp.config(server_name, server)
+            vim.lsp.enable(server_name)
           end,
         },
         ensure_installed = {},
@@ -110,10 +111,11 @@ return {
       }
 
       -- sourcekit-lsp is provided via the swift toolchain and can't be installed using mason
-      require('lspconfig').sourcekit.setup {
+      vim.lsp.config('sourcekit', {
         filetypes = { 'swift', 'objective-c', 'objective-cpp' },
         capabilities = capabilities,
-      }
+      })
+      vim.lsp.enable 'sourcekit'
     end,
   },
 
