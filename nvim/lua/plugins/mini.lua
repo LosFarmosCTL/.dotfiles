@@ -13,14 +13,6 @@ return {
       -- square bracket navigation
       require('mini.bracketed').setup()
 
-      local statusline = require 'mini.statusline'
-      statusline.setup()
-      -- display cursor position in statusline as LINE:COLUMN
-      ---@diagnostic disable-next-line: duplicate-set-field
-      statusline.section_location = function()
-        return '%2l:%-2v'
-      end
-
       require('mini.misc').setup()
     end,
     -- stylua: ignore
