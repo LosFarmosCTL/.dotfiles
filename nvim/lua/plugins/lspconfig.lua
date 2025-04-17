@@ -9,9 +9,6 @@ return {
 
       -- status updates for LSP
       { 'j-hui/fidget.nvim', opts = {} },
-
-      -- completion capabilities for nvim-cmp
-      'hrsh7th/cmp-nvim-lsp',
     },
     config = function()
       vim.api.nvim_create_autocmd('LspAttach', {
@@ -43,10 +40,6 @@ return {
           end
         end,
       })
-
-      -- add completion capabilities using nvim-cmp
-      local capabilities = vim.lsp.protocol.make_client_capabilities()
-      capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
       local servers = {
         clangd = {},
@@ -100,8 +93,6 @@ return {
         handlers = {
           function(server_name)
             local server = servers[server_name] or {}
-            -- don't override explicitly set capabilities by the nvim-cmp defaults
-            server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
             vim.lsp.config(server_name, server)
             vim.lsp.enable(server_name)
           end,
@@ -113,7 +104,6 @@ return {
       -- sourcekit-lsp is provided via the swift toolchain and can't be installed using mason
       vim.lsp.config('sourcekit', {
         filetypes = { 'swift', 'objective-c', 'objective-cpp' },
-        capabilities = capabilities,
       })
       vim.lsp.enable 'sourcekit'
     end,

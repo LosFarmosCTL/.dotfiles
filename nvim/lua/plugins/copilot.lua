@@ -31,6 +31,24 @@ return {
         get = function() return not vim.b.copilot_suggestion_hidden end,
         set = function(state) vim.b.copilot_suggestion_hidden = not state end,
       }):map '<leader>oc'
+
+      -- disable copilot suggestions while completion menu is open
+      local augroup = vim.api.nvim_create_augroup('copilot-blink-cmp', { clear = true })
+      vim.api.nvim_create_autocmd('User', {
+        group = augroup,
+        pattern = 'BlinkCmpMenuOpen',
+        callback = function()
+          require('copilot.suggestion').dismiss()
+          vim.b.copilot_suggestion_hidden = true
+        end,
+      })
+      vim.api.nvim_create_autocmd('User', {
+        group = augroup,
+        pattern = 'BlinkCmpMenuClose',
+        callback = function()
+          vim.b.copilot_suggestion_hidden = false
+        end,
+      })
     end,
   },
   -- TODO: copilot chat
