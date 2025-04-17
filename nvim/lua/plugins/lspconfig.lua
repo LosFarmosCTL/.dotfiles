@@ -32,11 +32,14 @@ return {
           map('<leader>.', vim.lsp.buf.code_action, 'Code Action')
 
           local client = vim.lsp.get_client_by_id(event.data.client_id)
-          -- toggle inlay hints
-          if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
-            map('<leader>th', function()
-              vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
-            end, '[T]oggle Inlay [H]ints')
+          -- HACK: inlayHintProvider does not appear in sourcekit server_capabilities even though it is supported
+          if client and (client.server_capabilities.inlayHintProvider or client.name == 'sourcekit') then
+            -- stylua: ignore
+            Snacks.toggle({
+              name = 'Inlay [hints]',
+              get = function() return vim.lsp.inlay_hint.is_enabled { bufnr = event.buf } end,
+              set = function(value) vim.lsp.inlay_hint.enable(value, { bufnr = event.buf }) end,
+            }):map('<leader>oh')
           end
         end,
       })
