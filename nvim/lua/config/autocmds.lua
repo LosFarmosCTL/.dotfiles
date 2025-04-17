@@ -21,7 +21,7 @@ vim.api.nvim_create_autocmd('BufEnter', {
       '.git',
       'Makefile',
     }
-    local root = MiniMisc.find_root(data.buf, root_files)
+    local root = require('mini.misc').find_root(data.buf, root_files)
 
     if root then
       vim.fn.chdir(root)
