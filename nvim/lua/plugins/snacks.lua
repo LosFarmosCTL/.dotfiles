@@ -31,14 +31,14 @@ return {
     },
     -- stylua: ignore
     keys = {
-      { '<leader>gg', function() Snacks.lazygit() end,  desc = 'Show LazyGit'},
+      { '<leader>gg', function() require('snacks').lazygit() end,  desc = 'Show LazyGit'},
 
       -- jump to next occurence of symbol using `n` if no search is active
       { 'n', function()
-          if vim.v.hlsearch == 0 then Snacks.words.jump(1, true)
+          if vim.v.hlsearch == 0 then require('snacks').words.jump(1, true)
           else vim.cmd 'normal! n' end end, },
       { 'N', function()
-          if vim.v.hlsearch == 0 then Snacks.words.jump(-1, true)
+          if vim.v.hlsearch == 0 then require('snacks').words.jump(-1, true)
           else vim.cmd 'normal! N' end end, },
     },
   },

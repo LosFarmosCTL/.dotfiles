@@ -16,14 +16,11 @@ return {
         panel = { enabled = false },
       }
 
-      Snacks.toggle({
+      -- stylua: ignore
+      require('snacks').toggle({
         name = '[C]opilot suggestions',
-        get = function()
-          return not vim.b.copilot_suggestion_hidden
-        end,
-        set = function(state)
-          vim.b.copilot_suggestion_hidden = not state
-        end,
+        get = function() return not vim.b.copilot_suggestion_hidden end,
+        set = function(state) vim.b.copilot_suggestion_hidden = not state end,
       }):map '<leader>oc'
     end,
   },

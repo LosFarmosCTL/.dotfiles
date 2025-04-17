@@ -42,17 +42,13 @@ return {
     config = function(_, opts)
       require('conform').setup(opts)
 
-      Snacks.toggle({
-        name = 'Auto[F]ormat on save',
-        get = function()
-          return not vim.g.disable_autoformat
-        end,
+      -- stylua: ignore
+      require('snacks').toggle({
+        name = 'Auto[f]ormat on save',
+        get = function() return not vim.g.disable_autoformat end,
         set = function(state)
-          if state then
-            vim.g.disable_autoformat = false
-          else
-            vim.g.disable_autoformat = true
-          end
+          if state then vim.g.disable_autoformat = false
+          else vim.g.disable_autoformat = true end
         end,
       }):map '<leader>of'
     end,
