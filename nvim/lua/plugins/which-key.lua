@@ -11,11 +11,12 @@ return {
 
       wk.add {
         { '<leader>b', group = '[B]uffer' },
+        { '<leader>c', group = '[C]ode' },
+        { '<leader>f', group = '[F]ind' },
         { '<leader>g', group = '[G]it' },
+        { '<leader>o', group = '[O]ptions' },
         { '<leader>s', group = '[S]earch' },
         { '<leader>t', group = '[T]est' },
-        { '<leader>o', group = '[O]ptions' },
-        { '<leader>c', group = '[C]ode' },
       }
     end,
   },

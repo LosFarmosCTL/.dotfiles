@@ -5,7 +5,7 @@ return {
     opts = {
       options = {
         disabled_filetypes = { 'snacks_dashboard' },
-        ignore_focus = { 'TelescopePrompt' },
+        ignore_focus = { 'snacks_picker_input' },
         globalstatus = true,
       },
       sections = {

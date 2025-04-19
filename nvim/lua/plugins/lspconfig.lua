@@ -15,14 +15,19 @@ return {
         group = vim.api.nvim_create_augroup('lsp-attach-set-keymap', { clear = true }),
         callback = function(event)
           local map = function(keys, func, desc)
-            vim.keymap.set('n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
+            vim.keymap.set('n', keys, func, { buffer = event.buf, desc = desc })
           end
 
-          -- code navigation
-          map('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
-          map('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
-          map('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
-          map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
+          -- code navigation 
+          -- stylua: ignore start
+          map('gd', function() Snacks.picker.lsp_definitions() end, 'LSP: [G]oto [D]efinition')
+          map('gr', function() Snacks.picker.lsp_references() end, 'LSP: [G]oto [R]eferences')
+          map('gI', function() Snacks.picker.lsp_implementations() end, 'LSP: [G]oto [I]mplementation')
+          map('gD', function() Snacks.picker.lsp_declarations() end, 'LSP: [G]oto [D]eclaration')
+
+          map('<leader>ss', function() Snacks.picker.lsp_workspace_symbols() end, '[s]earch [s]ymbols')
+          map('<leader>sS', function() Snacks.picker.lsp_symbols() end, '[s]earch [S]ymbols in current file')
+          -- stylua: ignore end
 
           -- code editing
           map('<leader>cr', vim.lsp.buf.rename, '[c]ode [r]ename')
@@ -30,6 +35,7 @@ return {
 
           local client = vim.lsp.get_client_by_id(event.data.client_id)
           -- HACK: inlayHintProvider does not appear in sourcekit server_capabilities even though it is supported
+          -- TODO: add Snacks.rename.rename_file(), conditional on workspace/didRenameFiles and workspace/willRenameFiles -- <leader>cR
           if client and (client.server_capabilities.inlayHintProvider or client.name == 'sourcekit') then
             -- stylua: ignore
             Snacks.toggle({

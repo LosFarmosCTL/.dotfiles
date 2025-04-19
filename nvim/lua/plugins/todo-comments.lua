@@ -6,8 +6,9 @@ return {
     opts = {
       signs = false,
     },
+    -- stylua: ignore
     keys = {
-      { '<leader>st', '<cmd>TodoTelescope<CR>', desc = '[S]earch [T]odos' },
+      { '<leader>st', function() Snacks.picker.todo_comments() end, desc = '[s]earch [t]odos', },
     },
   },
 }

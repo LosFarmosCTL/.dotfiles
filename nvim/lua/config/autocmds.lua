@@ -31,10 +31,6 @@ vim.api.nvim_create_autocmd('BufEnter', {
       if stdout ~= nil then
         stdout:write(('\x1b]7;file://%s%s\a'):format(vim.fn.hostname(), root))
       end
-
-      -- TODO: add rooted project to telescope project prompt
-      -- local project_actions = require 'telescope._extensions.project.actions'
-      -- project_actions.add_project_cwd()
     end
   end,
 })
