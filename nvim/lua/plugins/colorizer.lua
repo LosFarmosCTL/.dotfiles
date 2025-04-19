@@ -1,9 +1,16 @@
 return {
   {
-    'norcalli/nvim-colorizer.lua',
-    event = { 'VeryLazy' },
+    'catgoose/nvim-colorizer.lua',
+    event = 'BufReadPre',
     opts = {
-      css = { rgb_fn = true, hsl_fn = true, css = true, css_fn = true, RRGGBBAA = true },
+      user_default_options = {
+        css = true,
+        css_fn = true,
+        tailwind = 'both',
+        tailwind_opts = {
+          update_names = true,
+        },
+      },
     },
   },
 }
