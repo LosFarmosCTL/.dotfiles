@@ -10,7 +10,6 @@ return {
       'antoinemadec/FixCursorHold.nvim',
       'nvim-treesitter/nvim-treesitter',
     },
-    event = 'VeryLazy',
     config = function()
       ---@diagnostic disable-next-line: missing-fields
       require('neotest').setup {

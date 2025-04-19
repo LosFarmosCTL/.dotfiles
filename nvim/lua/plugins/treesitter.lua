@@ -1,6 +1,8 @@
 return {
   {
     'nvim-treesitter/nvim-treesitter',
+    event = { 'BufReadPost', 'BufWritePost', 'BufNewFile', 'VeryLazy' },
+    lazy = vim.fn.argc(-1) == 0,
     build = ':TSUpdate',
     opts = {
       ensure_installed = {},

@@ -1,9 +1,9 @@
 return {
   {
     'zbirenbaum/copilot.lua',
-    event = 'VeryLazy',
+    event = 'BufReadPost',
+    cmd = 'Copilot',
     config = function()
-      -- TODO: decide on whether I want auto triggering suggestions or not
       require('copilot').setup {
         suggestion = {
           auto_trigger = true,
@@ -58,6 +58,7 @@ return {
       { 'zbirenbaum/copilot.lua' },
       { 'nvim-lua/plenary.nvim' },
     },
+    event = 'VeryLazy',
     build = 'make tiktoken',
     opts = {},
   },
