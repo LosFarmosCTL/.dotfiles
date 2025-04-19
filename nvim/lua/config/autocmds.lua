@@ -1,7 +1,11 @@
+local function augroup(name)
+  return vim.api.nvim_create_augroup(name, { clear = true })
+end
+
 -- highlight on yank
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
-  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
+  group = augroup 'highlight-yank',
   callback = function()
     vim.highlight.on_yank()
   end,
@@ -9,7 +13,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 -- auto rooter
 vim.g.cwd_before_auto_root = vim.uv.cwd()
-local auto_root_group = vim.api.nvim_create_augroup('auto-root', { clear = true })
+local auto_root_group = augroup 'auto-root'
 vim.api.nvim_create_autocmd('BufEnter', {
   group = auto_root_group,
   callback = function(data)
