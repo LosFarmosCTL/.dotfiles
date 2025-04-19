@@ -10,8 +10,6 @@ return {
 
       -- square bracket navigation
       require('mini.bracketed').setup()
-
-      require('mini.misc').setup()
     end,
   },
 }

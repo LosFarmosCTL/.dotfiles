@@ -13,16 +13,7 @@ local auto_root_group = vim.api.nvim_create_augroup('auto-root', { clear = true 
 vim.api.nvim_create_autocmd('BufEnter', {
   group = auto_root_group,
   callback = function(data)
-    local root_files = {
-      'Package.swift',
-      'package.json',
-      'go.mod',
-      'pom.xml',
-      '.git',
-      'Makefile',
-    }
-    local root = require('mini.misc').find_root(data.buf, root_files)
-
+    local root = Snacks.git.get_root(data.buf)
     if root then
       vim.fn.chdir(root)
 
