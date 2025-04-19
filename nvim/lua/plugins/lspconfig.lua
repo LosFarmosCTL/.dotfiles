@@ -32,7 +32,6 @@ return {
 
           -- code editing
           map('<leader>cr', vim.lsp.buf.rename, '[r]ename symbol')
-          map('<leader>ca', vim.lsp.buf.code_action, '[a]ction')
 
           local client = vim.lsp.get_client_by_id(event.data.client_id)
           -- HACK: inlayHintProvider does not appear in sourcekit server_capabilities even though it is supported
@@ -120,6 +119,29 @@ return {
       })
       vim.lsp.enable 'sourcekit'
     end,
+  },
+
+  -- preview code actions
+  {
+    'aznhe21/actions-preview.nvim',
+    opts = {
+      backend = 'snacks',
+      snacks = {
+        layout = {
+          preset = 'ivy',
+        },
+      },
+    },
+    keys = {
+      {
+        '<leader>ca',
+        function()
+          require('actions-preview').code_actions()
+        end,
+        mode = { 'n', 'v' },
+        desc = '[a]ction',
+      },
+    },
   },
 
   -- configures metals LSP for scala
