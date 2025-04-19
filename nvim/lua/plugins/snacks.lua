@@ -25,7 +25,7 @@ return {
         },
       },
       quickfile = {},
-      -- TODO: `rename` module, depends on what file browser I'll use
+      rename = {},
       scratch = {}, -- TODO: keymaps for scratch buffers, maybe configure even more quick evals
       statuscolumn = { -- TODO: investigate the entire statuscolumn + signs + folds etc. situation some more
         folds = {

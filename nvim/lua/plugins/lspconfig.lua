@@ -30,19 +30,25 @@ return {
           -- stylua: ignore end
 
           -- code editing
-          map('<leader>cr', vim.lsp.buf.rename, '[c]ode [r]ename')
-          map('<leader>ca', vim.lsp.buf.code_action, '[c]ode [a]ction')
+          map('<leader>cr', vim.lsp.buf.rename, '[r]ename symbol')
+          map('<leader>ca', vim.lsp.buf.code_action, '[a]ction')
 
           local client = vim.lsp.get_client_by_id(event.data.client_id)
           -- HACK: inlayHintProvider does not appear in sourcekit server_capabilities even though it is supported
-          -- TODO: add Snacks.rename.rename_file(), conditional on workspace/didRenameFiles and workspace/willRenameFiles -- <leader>cR
-          if client and (client.server_capabilities.inlayHintProvider or client.name == 'sourcekit') then
+          if client and (client.supports_method(client, vim.lsp.protocol.Methods.textDocument_inlayHint) or client.name == 'sourcekit') then
             -- stylua: ignore
             Snacks.toggle({
               name = 'Inlay [hints]',
               get = function() return vim.lsp.inlay_hint.is_enabled { bufnr = event.buf } end,
               set = function(value) vim.lsp.inlay_hint.enable(value, { bufnr = event.buf }) end,
             }):map('<leader>oh')
+          end
+          -- stylua: ignore
+          if client and (
+              client.supports_method(client, vim.lsp.protocol.Methods.workspace_didRenameFiles, event.buf)
+              or client.supports_method(client, vim.lsp.protocol.Methods.workspace_willRenameFiles, event.buf)
+            ) then
+            map('<leader>cR', function() Snacks.rename.rename_file() end, "[R]ename file")
           end
         end,
       })
