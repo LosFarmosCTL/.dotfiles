@@ -1,5 +1,7 @@
 local map = vim.keymap.set
 
+map('n', '<leader>qq', '<cmd>qa<CR>', { desc = 'Quit neovim' })
+
 -- clear search highlights
 map('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
