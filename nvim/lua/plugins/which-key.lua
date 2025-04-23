@@ -14,6 +14,7 @@ return {
         { '<leader>c', group = '[C]ode' },
         { '<leader>f', group = '[F]ind' },
         { '<leader>g', group = '[G]it' },
+        { '<leader>l', group = '[L]sp' },
         { '<leader>o', group = '[O]ptions' },
         { '<leader>s', group = '[S]earch' },
         { '<leader>t', group = '[T]est' },

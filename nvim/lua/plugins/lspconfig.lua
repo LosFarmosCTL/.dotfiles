@@ -19,6 +19,8 @@ return {
             vim.keymap.set('n', keys, func, { buffer = event.buf, desc = desc })
           end
 
+          map('<leader>lr', '<CMD>LspRestart<CR>', '[l]sp [r]estart')
+
           -- code navigation 
           -- stylua: ignore start
           map('gd', function() Snacks.picker.lsp_definitions() end, 'LSP: [G]oto [D]efinition')
@@ -43,6 +45,7 @@ return {
               set = function(value) vim.lsp.inlay_hint.enable(value, { bufnr = event.buf }) end,
             }):map('<leader>oh')
           end
+
           -- stylua: ignore
           if client and (
               client.supports_method(client, vim.lsp.protocol.Methods.workspace_didRenameFiles, event.buf)

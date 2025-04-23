@@ -78,6 +78,8 @@ return {
       { '<leader>f.', function() Snacks.picker.resume() end, desc = '[f]ind resume' },
 
       { '<leader>\\', function() Snacks.explorer() end, desc = 'Show file explorer' },
+
+      { '<leader>li', function() Snacks.picker.lsp_config() end, desc = '[l]sp info' },
     },
   },
 }
