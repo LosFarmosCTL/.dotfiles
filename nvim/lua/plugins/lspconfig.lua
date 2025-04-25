@@ -73,6 +73,7 @@ return {
         ts_ls = {},
         html = {},
         cssls = {},
+        tailwindcss = {},
         jsonls = {},
         eslint = {
           on_attach = function(_, bufnr)
