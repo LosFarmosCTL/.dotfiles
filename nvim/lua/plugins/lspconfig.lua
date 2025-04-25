@@ -76,7 +76,20 @@ return {
         tailwindcss = {},
         jsonls = {},
         eslint = {
-          on_attach = function(_, bufnr)
+          on_attach = function(client, bufnr)
+            vim.api.nvim_buf_create_user_command(0, 'EslintFixAll', function()
+              client:exec_cmd({
+                title = 'Fix all Eslint errors for current buffer',
+                command = 'eslint.applyAllFixes',
+                arguments = {
+                  {
+                    uri = vim.uri_from_bufnr(bufnr),
+                    version = vim.lsp.util.buf_versions[bufnr],
+                  },
+                },
+              }, { bufnr = bufnr })
+            end, {})
+
             vim.api.nvim_create_autocmd('BufWritePre', {
               buffer = bufnr,
               command = 'EslintFixAll',
