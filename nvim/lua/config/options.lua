@@ -57,6 +57,9 @@ vim.filetype.add {
   extension = {
     swiftinterface = 'swift',
   },
+  filename = {
+    ['.swift-format'] = 'json',
+  },
 }
 
 vim.opt.shell = '/opt/homebrew/bin/fish'
