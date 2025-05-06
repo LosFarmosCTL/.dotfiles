@@ -42,7 +42,7 @@ local auto_root_group = augroup 'auto-root'
 vim.api.nvim_create_autocmd('BufEnter', {
   group = auto_root_group,
   callback = function(data)
-    local root = Snacks.git.get_root(data.buf)
+    local root = require('snacks').git.get_root(data.buf)
     if root then
       vim.fn.chdir(root)
 
