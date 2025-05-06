@@ -11,7 +11,6 @@ return {
       bigfile = {},
       dashboard = { example = 'advanced' },
       explorer = {},
-      -- TODO: Snacks.git.blame_line() ?
       image = {},
       input = {},
       lazygit = {
