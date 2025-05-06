@@ -12,6 +12,7 @@ return {
       dashboard = { example = 'advanced' },
       dim = {},
       explorer = {},
+      gitbrowse = {},
       image = {},
       input = {},
       lazygit = {
@@ -101,6 +102,8 @@ return {
       { '<leader>f.', function() Snacks.picker.resume() end, desc = '[f]ind resume' },
 
       { '<leader>\\', function() Snacks.explorer() end, desc = 'Show file explorer' },
+
+      { '<leader>go', function() Snacks.gitbrowse() end, desc = 'git [o]pen repository in browser' },
 
       { '<leader>li', function() Snacks.picker.lsp_config() end, desc = '[l]sp info' },
     },
