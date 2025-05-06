@@ -14,7 +14,17 @@ return {
       -- TODO: Snacks.git.blame_line() ?
       image = {},
       input = {},
-      lazygit = {},
+      lazygit = {
+        configure = true,
+        config = {
+          git = {
+            paging = {
+              colorArg = 'always',
+              pager = 'delta --dark --paging=never',
+            },
+          },
+        },
+      },
       notifier = {},
       picker = {
         hidden = true,
