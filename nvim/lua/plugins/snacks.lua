@@ -6,9 +6,9 @@ return {
     requires = {
       'nvim-tree/nvim-web-devicons',
     },
-    -- TODO: keybinds for gitbrowse + maybe dim, bufdelete
     opts = {
       bigfile = {},
+      bufdelete = {},
       dashboard = { example = 'advanced' },
       dim = {},
       explorer = {},
@@ -102,10 +102,12 @@ return {
       { '<leader>f.', function() Snacks.picker.resume() end, desc = '[f]ind resume' },
 
       { '<leader>\\', function() Snacks.explorer() end, desc = 'Show file explorer' },
-
       { '<leader>go', function() Snacks.gitbrowse() end, desc = 'git [o]pen repository in browser' },
-
       { '<leader>li', function() Snacks.picker.lsp_config() end, desc = '[l]sp info' },
+
+      { '<leader>bd', function() Snacks.bufdelete.delete() end, desc = '[b]uffer [d]elete' },
+      { '<leader>bD', function() Snacks.bufdelete.other() end, desc = '[b]uffer [D]elete others' },
+      { '<leader>b<C-d>', function() Snacks.bufdelete.all() end, desc = '[b]uffer [d]elete all' },
     },
   },
 }
