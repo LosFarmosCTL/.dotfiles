@@ -30,6 +30,7 @@ return {
         swift = { 'swift-format' },
         lua = { 'stylua' },
         python = { 'ruff_format', 'ruff_fix' },
+        html = { 'prettierd', 'prettier', stop_after_first = true },
         css = { 'prettierd', 'prettier', stop_after_first = true },
         javascript = { 'prettierd', 'prettier', stop_after_first = true },
         javascriptreact = { 'prettierd', 'prettier', stop_after_first = true },
