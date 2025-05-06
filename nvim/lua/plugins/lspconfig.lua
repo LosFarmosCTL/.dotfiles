@@ -40,7 +40,7 @@ return {
           if client and (client.supports_method(client, vim.lsp.protocol.Methods.textDocument_inlayHint) or client.name == 'sourcekit') then
             -- stylua: ignore
             Snacks.toggle({
-              name = 'Inlay [hints]',
+              name = 'Inlay [h]ints',
               get = function() return vim.lsp.inlay_hint.is_enabled { bufnr = event.buf } end,
               set = function(value) vim.lsp.inlay_hint.enable(value, { bufnr = event.buf }) end,
             }):map('<leader>oh')
