@@ -10,6 +10,7 @@ return {
     opts = {
       bigfile = {},
       dashboard = { example = 'advanced' },
+      dim = {},
       explorer = {},
       image = {},
       input = {},
@@ -45,6 +46,19 @@ return {
       toggle = {},
       words = {},
     },
+    config = function(_, opts)
+      require('snacks').setup(opts)
+
+      -- stylua: ignore
+      Snacks.toggle({
+        name = '[D]im',
+        get = function() return Snacks.dim.enabled end,
+        set = function(state)
+          if state then Snacks.dim.enable()
+          else Snacks.dim.disable() end
+        end,
+      }):map('<leader>od')
+    end,
     -- stylua: ignore
     keys = {
       { '<leader>gg', function() Snacks.lazygit() end,  desc = 'Show LazyGit'},
