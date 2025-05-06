@@ -10,7 +10,7 @@ return {
     opts = {
       bigfile = {},
       dashboard = { example = 'advanced' },
-      explorer = {}, -- TODO: keybindings - investigate vs oil.nvim
+      explorer = {},
       -- TODO: Snacks.git.blame_line() ?
       image = {},
       input = {},
