@@ -33,7 +33,7 @@ return {
       { '<leader>gr', function() require('gitsigns').reset_hunk() end, desc = 'git [r]eset hunk', },
       { '<leader>gS', function() require('gitsigns').stage_buffer() end, desc = 'git [S]tage buffer', },
       { '<leader>gR', function() require('gitsigns').reset_buffer() end, desc = 'git [R]eset buffer', },
-      { '<leader>ghp', function() require('gitsigns').preview_hunk_inline() end, desc = 'git [h]unk preview', },
+      { '<leader>gp', function() require('gitsigns').preview_hunk_inline() end, desc = 'git [p]reviw hunk', },
       { '<leader>gb', function() require('gitsigns').blame_line() end, desc = 'git [b]lame line', },
       { '<leader>gd', function() require('gitsigns').diffthis() end, desc = 'git [d]iff against index', },
 
