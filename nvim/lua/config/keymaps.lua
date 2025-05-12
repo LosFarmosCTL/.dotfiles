@@ -2,6 +2,9 @@ local map = vim.keymap.set
 
 map('n', '<leader>qq', '<cmd>qa<CR>', { desc = 'Quit neovim' })
 
+-- lazy.nvim
+map('n', '<leader>L', '<cmd>Lazy<CR>', { desc = 'Open [L]azy' })
+
 -- clear search highlights
 map('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
