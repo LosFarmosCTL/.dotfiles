@@ -107,14 +107,17 @@ return {
       }
 
       -- install additional tools (such as formatters/linters) using mason
-      local ensure_installed = vim.tbl_keys(servers or {})
-      vim.list_extend(ensure_installed, {
-        'stylua',
-        'ruff',
-        'prettierd',
-        'swiftlint',
-      })
-      require('mason-tool-installer').setup { ensure_installed = ensure_installed }
+      local mason_tool_installer = require 'mason-tool-installer'
+      mason_tool_installer.setup {
+        ensure_installed = {
+          'stylua',
+          'ruff',
+          'prettierd',
+          'swiftlint',
+        },
+        auto_update = true,
+      }
+      mason_tool_installer.run_on_start()
 
       -- set up lspconfig via mason
       require('mason-lspconfig').setup {
