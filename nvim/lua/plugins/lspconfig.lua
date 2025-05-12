@@ -74,6 +74,7 @@ return {
         html = {},
         cssls = {},
         tailwindcss = {},
+        astro = {},
         jsonls = {},
         eslint = {
           on_attach = function(client, bufnr)
