@@ -76,6 +76,7 @@ return {
         tailwindcss = {},
         astro = {},
         jsonls = {},
+        yamlls = {},
         eslint = {
           on_attach = function(client, bufnr)
             vim.api.nvim_buf_create_user_command(0, 'EslintFixAll', function()

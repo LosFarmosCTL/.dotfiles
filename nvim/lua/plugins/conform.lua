@@ -38,6 +38,7 @@ return {
         typescript = prettier,
         typescriptreact = prettier,
         json = prettier,
+        yaml = prettier,
         markdown = prettier,
       },
     },
