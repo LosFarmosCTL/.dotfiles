@@ -105,8 +105,6 @@ return {
         },
       }
 
-      require('mason').setup()
-
       -- install additional tools (such as formatters/linters) using mason
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
