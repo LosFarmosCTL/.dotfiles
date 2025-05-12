@@ -122,11 +122,11 @@ return {
           function(server_name)
             local server = servers[server_name] or {}
             vim.lsp.config(server_name, server)
-            vim.lsp.enable(server_name)
           end,
         },
         ensure_installed = vim.tbl_keys(servers),
         automatic_installation = true,
+        automatic_enable = true,
       }
 
       -- sourcekit-lsp is provided via the swift toolchain and can't be installed using mason
