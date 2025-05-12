@@ -29,7 +29,6 @@ return {
         end
       end,
       formatters_by_ft = {
-        swift = { 'swift-format' },
         lua = { 'stylua' },
         python = { 'ruff_format', 'ruff_fix' },
         html = prettier,
