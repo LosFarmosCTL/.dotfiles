@@ -75,6 +75,7 @@ return {
         cssls = {},
         tailwindcss = {},
         astro = {},
+        mdx_analyzer = {},
         jsonls = {},
         yamlls = {},
         eslint = {

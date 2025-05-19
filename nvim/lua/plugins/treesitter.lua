@@ -16,4 +16,18 @@ return {
       require('nvim-treesitter.configs').setup(opts)
     end,
   },
+  {
+    'davidmh/mdx.nvim',
+    event = { 'BufEnter *.mdx' },
+    config = function()
+      vim.filetype.add {
+        extension = {
+          mdx = 'mdx',
+        },
+      }
+
+      require('mdx').setup()
+    end,
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
+  },
 }
