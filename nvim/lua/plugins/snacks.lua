@@ -66,11 +66,17 @@ return {
 
       -- jump to next occurence of symbol using `n` if no search is active
       { 'n', function()
-          if vim.v.hlsearch == 0 then Snacks.words.jump(1, true)
-          else vim.cmd 'normal! n' end end, },
+        if vim.v.hlsearch == 0 then Snacks.words.jump(1, true)
+        else
+          local ok, _ = pcall(function() vim.cmd('normal! n') end)
+          if not ok then vim.notify('No match found for: ' .. vim.fn.getreg('/'), vim.log.levels.WARN) end
+        end end, },
       { 'N', function()
-          if vim.v.hlsearch == 0 then Snacks.words.jump(-1, true)
-          else vim.cmd 'normal! N' end end, },
+        if vim.v.hlsearch == 0 then Snacks.words.jump(-1, true)
+        else
+          local ok, _ = pcall(function() vim.cmd('normal! N') end)
+          if not ok then vim.notify('No match found for: ' .. vim.fn.getreg('/'), vim.log.levels.WARN) end
+        end end, },
 
       -- lsp_config, resume, recent
       { '<leader><space>', function() Snacks.picker.files() end, desc = 'Find files' },
