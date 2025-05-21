@@ -4,7 +4,7 @@ return {
     event = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
     dependencies = {
       -- automatically install LSPs
-      { 'williamboman/mason.nvim', opts = {} },
+      { 'williamboman/mason.nvim', opts = {}, lazy = false },
       'williamboman/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
 
