@@ -11,7 +11,84 @@ return {
       -- status updates for LSP
       { 'j-hui/fidget.nvim', opts = {} },
     },
-    config = function()
+    opts = {
+      clangd = {},
+      gopls = {},
+      lua_ls = {
+        settings = {
+          Lua = {
+            completion = {
+              callSnippet = 'Replace',
+            },
+          },
+        },
+      },
+      bashls = {},
+      jdtls = {},
+      ts_ls = {},
+      html = {},
+      cssls = {
+        settings = {
+          css = {
+            lint = {
+              unknownAtRules = 'ignore',
+            },
+          },
+        },
+      },
+      tailwindcss = {},
+      astro = {},
+      mdx_analyzer = {},
+      jsonls = {},
+      yamlls = {},
+      eslint = {
+        on_attach = function(client, bufnr)
+          vim.api.nvim_buf_create_user_command(0, 'EslintFixAll', function()
+            client:exec_cmd({
+              title = 'Fix all Eslint errors for current buffer',
+              command = 'eslint.applyAllFixes',
+              arguments = {
+                {
+                  uri = vim.uri_from_bufnr(bufnr),
+                  version = vim.lsp.util.buf_versions[bufnr],
+                },
+              },
+            }, { bufnr = bufnr })
+          end, {})
+
+          vim.api.nvim_create_autocmd('BufWritePre', {
+            buffer = bufnr,
+            command = 'EslintFixAll',
+          })
+        end,
+      },
+      basedpyright = {
+        setting = {
+          basedpyright = {
+            disableOrganizeImports = true,
+          },
+        },
+      },
+      sourcekit = {
+        filetypes = { 'swift', 'objective-c', 'objective-cpp' },
+      },
+    },
+    config = function(_, opts)
+      -- set up LSP configs
+      for name, config in pairs(opts) do
+        vim.lsp.config(name, config)
+      end
+
+      -- sourcekit-lsp is provided via the swift toolchain and can't be installed using mason
+      vim.lsp.enable 'sourcekit'
+      require('mason-lspconfig').setup {
+        ensure_installed = vim.tbl_filter(function(name)
+          return name ~= 'sourcekit'
+        end, vim.tbl_keys(opts)),
+
+        automatic_enable = true,
+      }
+
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('lsp-attach-set-keymap', { clear = true }),
         callback = function(event)
@@ -55,91 +132,21 @@ return {
           end
         end,
       })
-
-      local servers = {
-        clangd = {},
-        gopls = {},
-        lua_ls = {
-          settings = {
-            Lua = {
-              completion = {
-                callSnippet = 'Replace',
-              },
-            },
-          },
-        },
-        bashls = {},
-        jdtls = {},
-        ts_ls = {},
-        html = {},
-        cssls = {},
-        tailwindcss = {},
-        astro = {},
-        mdx_analyzer = {},
-        jsonls = {},
-        yamlls = {},
-        eslint = {
-          on_attach = function(client, bufnr)
-            vim.api.nvim_buf_create_user_command(0, 'EslintFixAll', function()
-              client:exec_cmd({
-                title = 'Fix all Eslint errors for current buffer',
-                command = 'eslint.applyAllFixes',
-                arguments = {
-                  {
-                    uri = vim.uri_from_bufnr(bufnr),
-                    version = vim.lsp.util.buf_versions[bufnr],
-                  },
-                },
-              }, { bufnr = bufnr })
-            end, {})
-
-            vim.api.nvim_create_autocmd('BufWritePre', {
-              buffer = bufnr,
-              command = 'EslintFixAll',
-            })
-          end,
-        },
-        basedpyright = {
-          setting = {
-            basedpyright = {
-              disableOrganizeImports = true,
-            },
-          },
-        },
-      }
-
-      -- install additional tools (such as formatters/linters) using mason
-      local mason_tool_installer = require 'mason-tool-installer'
-      mason_tool_installer.setup {
-        ensure_installed = {
-          'stylua',
-          'ruff',
-          'prettierd',
-          'swiftlint',
-        },
-        auto_update = true,
-      }
-      mason_tool_installer.run_on_start()
-
-      -- set up lspconfig via mason
-      require('mason-lspconfig').setup {
-        handlers = {
-          function(server_name)
-            local server = servers[server_name] or {}
-            vim.lsp.config(server_name, server)
-          end,
-        },
-        ensure_installed = vim.tbl_keys(servers),
-        automatic_installation = true,
-        automatic_enable = true,
-      }
-
-      -- sourcekit-lsp is provided via the swift toolchain and can't be installed using mason
-      vim.lsp.config('sourcekit', {
-        filetypes = { 'swift', 'objective-c', 'objective-cpp' },
-      })
-      vim.lsp.enable 'sourcekit'
     end,
+  },
+
+  -- automatically install formatters/linters/etc. using Mason
+  {
+    'mason-tool-installer.nvim',
+    opts = {
+      ensure_installed = {
+        'stylua',
+        'ruff',
+        'prettierd',
+        'swiftlint',
+      },
+      auto_update = true,
+    },
   },
 
   -- preview code actions
