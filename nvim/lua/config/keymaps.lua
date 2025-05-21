@@ -39,6 +39,3 @@ map('n', '<C-u>', '<C-u>zz')
 
 -- quicklly replace word under cursor
 map('n', '<C-c>', 'ciw')
-
--- disable backspace
-map('i', '<BS>', '<Nop>')
