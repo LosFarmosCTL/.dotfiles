@@ -26,7 +26,9 @@ map('n', '<leader>bd', '<CMD>bdelete<CR>', { desc = '[B]uffer [D]elete' })
 map({ 'n', 'v' }, '<leader>y', '"+y', { desc = 'Copy to system clipboard' })
 
 -- Diagnostic keymaps
-map('n', '<leader>K', vim.diagnostic.open_float, { desc = 'Open diagnostic hover' })
+map('n', '<leader>K', function()
+  vim.diagnostic.open_float { source = true }
+end, { desc = 'Open diagnostic hover' })
 
 -- easier terminal mode exit
 map('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
