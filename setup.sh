@@ -12,6 +12,7 @@ xcode-select --install
 
 # set up homebrew and install dependencies
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew install mas
 brew bundle install
 
 # set up symlinks
@@ -28,7 +29,7 @@ ln -s $PWD/nvim/ ~/.config/nvim/
 ln -s $PWD/starship/ ~/.config/starship/
 ln -s $PWD/tmux/ ~/.config/tmux/
 
-# set up terminal colorscripts
+# set up shell color scripts
 git clone https://gitlab.com/dwt1/shell-color-scripts.git && cd shell-color-scripts
 sudo make install
 
