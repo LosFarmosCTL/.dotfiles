@@ -24,6 +24,7 @@ return {
         },
       },
       bashls = {},
+      dockerls = {},
       jdtls = {},
       ts_ls = {},
       html = {},
