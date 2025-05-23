@@ -27,3 +27,9 @@ ln -s $PWD/git/ ~/.config/git/
 ln -s $PWD/nvim/ ~/.config/nvim/
 ln -s $PWD/starship/ ~/.config/starship/
 ln -s $PWD/tmux/ ~/.config/tmux/
+
+# set up terminal colorscripts
+git clone https://gitlab.com/dwt1/shell-color-scripts.git && cd shell-color-scripts
+sudo make install
+
+sudo cp completions/colorscript.fish /usr/share/fish/vendor_completions.d
