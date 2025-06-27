@@ -17,6 +17,15 @@ return {
     end,
   },
   {
+    -- TODO: toggle for enable/disable?
+    'nvim-treesitter/nvim-treesitter-context',
+    event = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    opts = {
+      -- TODO: maybe min_window_height?
+    },
+  },
+  {
     'davidmh/mdx.nvim',
     event = { 'BufEnter *.mdx' },
     config = function()
