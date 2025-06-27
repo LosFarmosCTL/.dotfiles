@@ -6,7 +6,7 @@ map('n', '<leader>qq', '<cmd>qa<CR>', { desc = 'Quit neovim' })
 map('n', '<leader>L', '<cmd>Lazy<CR>', { desc = 'Open [L]azy' })
 
 -- clear search highlights
-map('n', '<Esc>', '<cmd>nohlsearch<CR>')
+map('n', '<leader><Esc>', '<cmd>nohlsearch<CR>')
 
 -- split navigation
 map('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
