@@ -75,6 +75,11 @@ return {
       },
     },
     config = function(_, opts)
+      -- remove default keybindings
+      for _, key in ipairs { 'gra', 'gri', 'grn', 'grr' } do
+        vim.keymap.del('n', key)
+      end
+
       -- set up LSP configs
       for name, config in pairs(opts) do
         vim.lsp.config(name, config)
