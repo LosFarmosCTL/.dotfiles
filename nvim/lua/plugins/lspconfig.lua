@@ -106,10 +106,18 @@ return {
 
           -- code navigation 
           -- stylua: ignore start
-          map('gd', function() Snacks.picker.lsp_definitions() end, 'LSP: [G]oto [D]efinition')
-          map('gr', function() Snacks.picker.lsp_references() end, 'LSP: [G]oto [R]eferences')
-          map('gI', function() Snacks.picker.lsp_implementations() end, 'LSP: [G]oto [I]mplementation')
-          map('gD', function() Snacks.picker.lsp_declarations() end, 'LSP: [G]oto [D]eclaration')
+          map('gd', function() Snacks.picker.lsp_definitions({
+            layout = { preset = 'ivy', },
+          }) end, 'LSP: [G]oto [D]efinition')
+          map('gr', function() Snacks.picker.lsp_references({
+            layout = { preset = 'ivy', },
+          }) end, 'LSP: [G]oto [R]eferences')
+          map('gI', function() Snacks.picker.lsp_implementations({
+            layout = { preset = 'ivy', },
+          }) end, 'LSP: [G]oto [I]mplementation')
+          map('gD', function() Snacks.picker.lsp_declarations({
+            layout = { preset = 'ivy', },
+          }) end, 'LSP: [G]oto [D]eclaration')
 
           map('<leader>ss', function() Snacks.picker.lsp_workspace_symbols() end, '[s]earch [s]ymbols')
           map('<leader>sS', function() Snacks.picker.lsp_symbols() end, '[s]earch [S]ymbols in current file')
