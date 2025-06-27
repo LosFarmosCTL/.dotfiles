@@ -18,6 +18,7 @@ return {
         { '<leader>o', group = '[O]ptions' },
         { '<leader>s', group = '[S]earch' },
         { '<leader>t', group = '[T]est' },
+        { '<leader>x', group = 'Trouble' },
       }
     end,
   },
