@@ -44,7 +44,7 @@ return {
       yamlls = {},
       eslint = {
         on_attach = function(client, bufnr)
-          vim.api.nvim_buf_create_user_command(0, 'EslintFixAll', function()
+          vim.api.nvim_buf_create_user_command(bufnr, 'EslintFixAll', function()
             client:exec_cmd({
               title = 'Fix all Eslint errors for current buffer',
               command = 'eslint.applyAllFixes',
