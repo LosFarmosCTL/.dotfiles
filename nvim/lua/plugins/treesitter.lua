@@ -15,6 +15,8 @@ return {
     config = function(_, opts)
       require('nvim-treesitter.configs').setup(opts)
     end,
+    -- NOTE: not technically a dependency, ensures markview.nvim is loaded before treesitter
+    dependencies = { 'OXY2DEV/markview.nvim' },
   },
   {
     -- TODO: toggle for enable/disable?
