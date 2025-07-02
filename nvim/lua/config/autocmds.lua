@@ -50,6 +50,7 @@ vim.api.nvim_create_autocmd('BufEnter', {
       local stdout = vim.uv.new_tty(1, false)
       if stdout ~= nil then
         stdout:write(('\x1b]7;file://%s%s\a'):format(vim.fn.hostname(), root))
+        stdout:close()
       end
     end
   end,
