@@ -2,6 +2,7 @@ return {
   {
     'OXY2DEV/markview.nvim',
     lazy = false,
+    priority = 49, -- make sure to load before treesitter
     opts = {
       preview = {
         icon_provider = 'devicons',
