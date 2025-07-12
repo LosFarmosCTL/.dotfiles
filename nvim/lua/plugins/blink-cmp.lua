@@ -1,3 +1,4 @@
+-- TODO: think about using <C-h> and <C-l> for snippet navigation
 return {
   {
     'saghen/blink.cmp',
