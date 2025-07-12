@@ -1,6 +1,9 @@
 local map = vim.keymap.set
 
-map('n', '<leader>qq', '<cmd>qa<CR>', { desc = 'Quit neovim' })
+map('n', '<C-q>', '<cmd>qa<CR>', { desc = 'Quit neovim' })
+map('n', '<C-S-q>', '<cmd>qa!<CR>', { desc = 'Quit neovim without saving' })
+map('n', '<leader>w', '<cmd>w<CR>', { desc = 'Save file' })
+
 
 -- lazy.nvim
 map('n', '<leader>L', '<cmd>Lazy<CR>', { desc = 'Open [L]azy' })
