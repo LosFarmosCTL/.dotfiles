@@ -53,8 +53,8 @@ return {
             'filename',
             path = 1,
             symbols = {
-              modified = ' ●',
-              readonly = ' ',
+              modified = '●',
+              readonly = '',
             },
           },
         },
@@ -69,6 +69,16 @@ return {
           },
           { "'󰙨 ' .. vim.g.xcodebuild_test_plan", color = { fg = '#a6e3a1', bg = '#161622' } },
           { xcodebuild_device, color = { fg = '#f9e2af', bg = '#161622' } },
+        },
+        lualine_y = {
+          'location',
+        },
+        lualine_z = {
+          {
+            'tabs',
+            separator = { left = '', right = '' },
+            section_separators = { left = '', right = '' },
+          },
         },
       },
     },

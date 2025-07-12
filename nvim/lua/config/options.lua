@@ -13,8 +13,8 @@ vim.opt.splitright = true
 vim.opt.splitbelow = true
 vim.opt.splitkeep = 'screen'
 
--- global statusline
-vim.opt.laststatus = 3
+vim.opt.laststatus = 3 -- global statusline
+vim.opt.showtabline = 0
 
 -- disable mouse interactions
 vim.opt.mouse = ''
