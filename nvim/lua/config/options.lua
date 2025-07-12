@@ -33,6 +33,9 @@ vim.opt.showmode = false
 vim.opt.breakindent = true
 vim.opt.linebreak = true
 
+-- use box drawing characters for rendering deleted sections in diffview
+vim.opt.fillchars:append { diff = '╱' }
+
 ------------------------------------------------
 --------------- Behavior options ---------------
 ------------------------------------------------

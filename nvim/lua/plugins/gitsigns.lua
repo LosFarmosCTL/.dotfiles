@@ -35,7 +35,6 @@ return {
       { '<leader>gR', function() require('gitsigns').reset_buffer() end, desc = 'git [R]eset buffer', },
       { '<leader>gp', function() require('gitsigns').preview_hunk_inline() end, desc = 'git [p]reviw hunk', },
       { '<leader>gb', function() require('gitsigns').blame_line() end, desc = 'git [b]lame line', },
-      { '<leader>gd', function() require('gitsigns').diffthis() end, desc = 'git [d]iff against index', },
 
       { '<leader>ob' }
     },
