@@ -8,6 +8,9 @@ map('n', '<leader>w', '<cmd>w<CR>', { desc = 'Save file' })
 map('n', ';', ':')
 map('n', ':', ';')
 
+-- remap [jk] to g[jk] to navigate between visual instead of logical lines (when wrapped)
+map('n', 'j', 'gj')
+map('n', 'k', 'gk')
 
 -- lazy.nvim
 map('n', '<leader>L', '<cmd>Lazy<CR>', { desc = 'Open [L]azy' })
