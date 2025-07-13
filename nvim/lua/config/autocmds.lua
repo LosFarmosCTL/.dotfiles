@@ -20,6 +20,8 @@ vim.api.nvim_create_autocmd('FileType', {
     'neotest-output',
     'neotest-output-panel',
     'help',
+    'fugitiveblame',
+    'git',
   },
   callback = function(event)
     vim.bo[event.buf].buflisted = false
