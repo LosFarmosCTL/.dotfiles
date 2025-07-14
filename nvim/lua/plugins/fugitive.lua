@@ -7,7 +7,9 @@ return {
         '<leader>gc',
         function()
           vim.ui.input({ prompt = 'Commit message: ' }, function(input)
-            vim.cmd('Git commit -m "' .. input .. '"')
+            if input then
+              vim.cmd('Git commit -m "' .. input .. '"')
+            end
           end)
         end,
         desc = 'git [c]ommit',
