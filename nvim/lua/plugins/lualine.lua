@@ -76,7 +76,7 @@ return {
         lualine_z = {
           {
             'tabs',
-            separator = { left = '', right = '' },
+            component_separators = { left = '', right = '' },
             section_separators = { left = '', right = '' },
           },
         },
