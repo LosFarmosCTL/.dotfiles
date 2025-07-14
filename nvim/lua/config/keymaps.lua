@@ -18,6 +18,12 @@ map('n', '<leader>L', '<cmd>Lazy<CR>', { desc = 'Open [L]azy' })
 -- clear search highlights
 map('n', '<leader><Esc>', '<cmd>nohlsearch<CR>')
 
+-- tab navigation
+map('n', '<leader><tab><tab>', '<cmd>tabnew<CR>')
+map('n', '<leader><tab>d', '<cmd>tabclose<CR>')
+map('n', '<leader><tab>[', '<cmd>tabprevious<CR>')
+map('n', '<leader><tab>]', '<cmd>tabnext<CR>')
+
 -- split navigation
 map('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
 map('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
