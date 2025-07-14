@@ -20,6 +20,7 @@ return {
         { '<leader>t', group = '[T]est' },
         { '<leader>q', group = 'Trouble' },
         { '<leader>x', group = '[X]Code' },
+        { '<leader>xc', group = '[C]lean' },
       }
     end,
   },

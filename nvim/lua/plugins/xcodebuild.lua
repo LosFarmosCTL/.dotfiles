@@ -49,10 +49,10 @@ return {
 
       { '<leader>xi', '<cmd>XcodebuildInstallApp<cr>', desc = '[X]Code [I]nstall App' },
       { '<leader>xu', '<cmd>XcodebuildUninstallApp<cr>', desc = '[X]Code [U]ninstall App' },
-      { '<leader>xr', '<cmd>XcodebuildRun<cr>', desc = '[X]Code Build and [R]un' },
+      { '<leader>xr', '<cmd>XcodebuildBuildRun<cr>', desc = '[X]Code Build and [R]un' },
 
       { '<leader>xd', '<cmd>XcodebuildSelectDevice<cr>', desc = '[X]Code [S]elect Device' },
-      { '<leader>xu', '<cmd>XcodebuildSelectScheme<cr>', desc = '[X]Code [S]elect Scheme' },
+      { '<leader>xs', '<cmd>XcodebuildSelectScheme<cr>', desc = '[X]Code [S]elect Scheme' },
       { '<leader>xa', '<cmd>XcodebuildAssetsManager<cr>', desc = '[X]Code [A]ssets Manager' },
       -- TODO: investigate how to prevent neotest overlap
       -- TODO: code coverage?
