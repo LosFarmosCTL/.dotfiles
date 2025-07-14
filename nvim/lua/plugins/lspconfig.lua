@@ -24,6 +24,7 @@ return {
         },
       },
       bashls = {},
+      fish_lsp = {},
       dockerls = {},
       jdtls = {},
       ts_ls = {},
