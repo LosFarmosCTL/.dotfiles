@@ -37,13 +37,11 @@ return {
       },
       quickfile = {},
       rename = {},
-      scratch = {}, -- TODO: keymaps for scratch buffers, maybe configure even more quick evals
       statuscolumn = { -- TODO: investigate the entire statuscolumn + signs + folds etc. situation some more
         folds = {
           open = true,
         },
       },
-      terminal = {}, -- FIXME: vi mode in fish kinda fucks everything up
       toggle = {},
       words = {},
     },
