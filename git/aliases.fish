@@ -7,10 +7,13 @@ abbr -ag gd git diff
 abbr -ag gds git diff --staged
 
 abbr -ag ga git add
-abbr -ag gr git restore
 abbr -ag gc git commit
 abbr -ag gca git commit -a
 abbr -ag gcm git commit -m
+
+abbr -ag gr git rebase
+abbr -ag grc git rebase --continue
+abbr -ag gra git rebase --abort
 
 abbr -ag gp git push
 abbr -ag gP git pull
