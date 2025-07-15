@@ -15,4 +15,4 @@ abbr -ag gcm git commit -m
 abbr -ag gp git push
 abbr -ag gP git pull
 
-abbr -ag gb git branch
+abbr -ag gb git branch -av
