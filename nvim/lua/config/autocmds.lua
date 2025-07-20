@@ -44,17 +44,48 @@ local auto_root_group = augroup 'auto-root'
 vim.api.nvim_create_autocmd('BufEnter', {
   group = auto_root_group,
   callback = function(data)
+    local home_dir = vim.fn.expand '~'
     local root = require('snacks').git.get_root(data.buf)
+
     if root then
       vim.fn.chdir(root)
+    end
 
-      -- send OSC 7 escape sequence to notify terminal about new working directory
-      local stdout = vim.uv.new_tty(1, false)
-      if stdout ~= nil then
-        stdout:write(('\x1b]7;file://%s%s\a'):format(vim.fn.hostname(), root))
-        stdout:close()
+    local current_file_path = vim.api.nvim_buf_get_name(0)
+    local is_real_file = (current_file_path ~= '' and vim.api.nvim_get_option_value('buftype', { buf = 0 }) == '')
+
+    local filename = is_real_file and vim.fn.fnamemodify(current_file_path, ':t')
+    local project_name = root and vim.fn.fnamemodify(root, ':t')
+
+    local working_directory = vim.fn.getcwd()
+    if working_directory == home_dir then
+      working_directory = '~'
+    else
+      working_directory = vim.fn.fnamemodify(working_directory, ':t')
+    end
+
+    local window_title_parts = { '' }
+    if project_name then -- project root found
+      table.insert(window_title_parts, project_name)
+      if filename then -- editing a file within the project
+        table.insert(window_title_parts, '-')
+        table.insert(window_title_parts, filename)
+      end
+    else -- no project root found
+      if filename then -- editing a file outside any detected project
+        table.insert(window_title_parts, filename)
+      else -- no file is open and no project root
+        table.insert(window_title_parts, working_directory)
       end
     end
+
+    -- send OSC 7 sequence to notify the terminal about the current working directory, this allows
+    -- terminal emulators supporting it (like Ghostty) to open new tabs in this location
+    io.stdout:write(('\x1b]7;file://%s%s\a'):format(vim.fn.hostname(), root or vim.fn.getcwd()))
+    -- send OSC 0 sequence to set the terminal tab title
+    io.stdout:write(('\x1b]0;%s\a'):format(table.concat(window_title_parts, ' ')))
+
+    io.stdout:flush()
   end,
 })
 
