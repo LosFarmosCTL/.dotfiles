@@ -41,7 +41,7 @@ vim.api.nvim_create_autocmd('FileType', {
 -- auto rooter
 vim.g.cwd_before_auto_root = vim.uv.cwd()
 local auto_root_group = augroup 'auto-root'
-vim.api.nvim_create_autocmd('BufEnter', {
+vim.api.nvim_create_autocmd({ 'BufReadPost', 'BufNewFile', 'BufEnter' }, {
   group = auto_root_group,
   callback = function(data)
     local home_dir = vim.fn.expand '~'
