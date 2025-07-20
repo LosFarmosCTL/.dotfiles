@@ -84,6 +84,8 @@ return {
       { '<leader>fr', function() Snacks.picker.recent() end, desc = '[f]ind [r]ecent files' },
       { '<leader>fc', function() Snacks.picker.files({ cwd = vim.fn.stdpath('config') }) end, desc = '[f]ind neovim [c]onfig file' },
 
+      { '<leader>s<space>', function() Snacks.picker.pickers({ layout = { preset = "vscode" } }) end, desc = '[s]search [p]pickers' },
+
       { '<leader>/', function() Snacks.picker.lines() end, desc = 'Search current buffer' },
       { '<leader>s/', function() Snacks.picker.grep_buffers() end, desc = '[s]earch open buffers' },
       { '<leader>sg', function() Snacks.picker.grep() end, desc = '[s]earch by [g]rep' },
