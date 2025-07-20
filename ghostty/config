@@ -6,7 +6,7 @@ font-family = "ComicCodeLigatures Nerd Font"
 font-family-bold = "ComicCodeLigatures Nerd Font Bold"
 font-family-italic = "ComicCodeLigatures Nerd Font Italic"
 font-family-bold-italic = "ComicCodeLigatures Nerd Font Bold Italic"
-window-title-font-family = "SFProText Nerd Font"
+window-title-font-family = "SFProDisplay Nerd Font"
 
 # use combined tab- and titlebar
 macos-titlebar-style = tabs
