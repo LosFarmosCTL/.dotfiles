@@ -6,6 +6,9 @@
     pager = delta
     excludesfile = ~/.config/git/ignore
 
+[push]
+    autoSetupRemote = true
+
 [pull]
     rebase = true
 
