@@ -96,6 +96,20 @@ return {
         automatic_enable = true,
       }
 
+      -- report LSP progress via OSC 9 sequences to show native progress bar in e.g. Ghostty
+      vim.api.nvim_create_autocmd('LspProgress', {
+        callback = function(event)
+          local value = event.data.params.value
+          if value.kind == 'begin' then
+            io.stdout:write '\027]9;4;1;0\027\\'
+          elseif value.kind == 'end' then
+            io.stdout:write '\027]9;4;0\027\\'
+          elseif value.kind == 'report' then
+            io.stdout:write(string.format('\027]9;4;1;%d\027\\', value.percentage))
+          end
+        end,
+      })
+
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('lsp-attach-set-keymap', { clear = true }),
         callback = function(event)
