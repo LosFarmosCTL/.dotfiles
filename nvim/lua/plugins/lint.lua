@@ -8,6 +8,10 @@ return {
         swift = { 'swiftlint' },
       }
 
+      local swiftlint = lint.linters.swiftlint()
+      swiftlint.args = { '--force-exclude' }
+      lint.linters.swiftlint = swiftlint
+
       local lint_augroup = vim.api.nvim_create_augroup('lint', { clear = true })
       vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWritePost', 'InsertLeave' }, {
         group = lint_augroup,
