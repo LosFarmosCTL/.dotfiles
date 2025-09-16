@@ -1,0 +1,26 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "autoupdate": false,
+  "permission": {
+    "bash": {
+      "git status": "allow",
+      "git diff": "allow",
+      "npm run build": "allow",
+      "ls": "allow",
+      "pwd": "allow",
+      "*": "ask"
+    }
+  },
+  "formatter": {
+    "swift-format": {
+      "command": ["swift", "format", "-i", "$FILE"],
+      "extensions": [".swift"]
+    }
+  },
+  "lsp": {
+    "sourcekit-lsp": {
+      "command": ["sourcekit-lsp"],
+      "extensions": [".swift"]
+    }
+  }
+}

@@ -91,6 +91,7 @@ create_symlink "$PWD/gh/" ~/.config/gh/
 create_symlink "$PWD/ghostty/" ~/.config/ghostty/
 create_symlink "$PWD/git/" ~/.config/git/
 create_symlink "$PWD/nvim/" ~/.config/nvim/
+create_symlink "$PWD/opencode/" ~/.config/opencode/
 create_symlink "$PWD/starship/" ~/.config/starship/
 create_symlink "$PWD/tmux/" ~/.config/tmux/
 
