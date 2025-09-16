@@ -6,7 +6,7 @@ return {
     event = 'VeryLazy',
     dependencies = {
       { 'MunifTanjim/nui.nvim' },
-      { 'nvim-telescope/telescope.nvim' },
+      { 'folke/snacks.nvim' },
     },
     opts = {
       code_coverage = { enabled = true },
