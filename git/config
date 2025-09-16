@@ -18,12 +18,16 @@
 [delta]
     navigate = true
     line-numbers = true
+
 [interactive]
     diffFilter = delta --color-only
+
 [merge]
     conflictstyle = diff3
+
 [diff]
     colorMoved = default
+    external = difft
 
 [credential "https://github.com"]
     helper = !/opt/homebrew/bin/gh auth git-credential
