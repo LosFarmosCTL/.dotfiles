@@ -24,6 +24,11 @@ log "Adjusting key repeat speed..."
 defaults write -g KeyRepeat -int 1
 defaults write -g InitialKeyRepeat -int 30
 
+# Adjust menu bar spacing and padding
+log "Adjusting menu bar spacing and padding..."
+defaults -currentHost write -globalDomain NSStatusItemSpacing -int 10
+defaults -currentHost write -globalDomain NSStatusItemSelectionPadding -int 4
+
 # Install CLI devtools if not already installed
 if ! xcode-select -p >/dev/null 2>&1; then
     log "Installing Xcode CLI tools..."
