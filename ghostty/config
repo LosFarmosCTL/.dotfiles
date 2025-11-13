@@ -20,6 +20,16 @@ quick-terminal-autohide = false
 # open new tabs inside of the same directory as the current one
 window-inherit-working-directory = true
 
+# keybinds for moving between and resizing splits
+keybind = cmd+l=goto_split:right
+keybind = cmd+h=goto_split:left
+keybind = cmd+j=goto_split:down
+keybind = cmd+k=goto_split:up
+keybind = cmd+shift+l=resize_split:right,10
+keybind = cmd+shift+h=resize_split:left,10
+keybind = cmd+shift+j=resize_split:down,10
+keybind = cmd+shift+k=resize_split:up,10
+
 # use custom shortcuts for german accent characters
 keybind = opt+u>u=text:ü
 keybind = opt+u>a=text:ä
