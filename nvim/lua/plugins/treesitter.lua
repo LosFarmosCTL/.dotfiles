@@ -21,14 +21,19 @@ return {
     'davidmh/mdx.nvim',
     event = { 'BufEnter *.mdx' },
     config = function()
-      vim.filetype.add {
-        extension = {
-          mdx = 'mdx',
-        },
-      }
+      vim.filetype.add { extension = { mdx = 'mdx' } }
 
       require('mdx').setup()
     end,
     dependencies = { 'nvim-treesitter/nvim-treesitter' },
+  },
+  {
+    'Wansmer/treesj',
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    opts = { use_default_keymaps = false },
+    -- stylua: ignore
+    keys = {
+      { '<space>j', function() require('treesj').toggle() end },
+    },
   },
 }
