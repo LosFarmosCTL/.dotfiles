@@ -29,6 +29,9 @@ log "Adjusting menu bar spacing and padding..."
 defaults -currentHost write -globalDomain NSStatusItemSpacing -int 10
 defaults -currentHost write -globalDomain NSStatusItemSelectionPadding -int 4
 
+# Show the dock immmediately when moving the cursor to the bottom edge of the screen
+defaults write com.apple.dock autohide-delay -float 0
+
 # Install CLI devtools if not already installed
 if ! xcode-select -p >/dev/null 2>&1; then
     log "Installing Xcode CLI tools..."
