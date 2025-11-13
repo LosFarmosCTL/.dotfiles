@@ -16,11 +16,5 @@
       "command": ["swift", "format", "-i", "$FILE"],
       "extensions": [".swift"]
     }
-  },
-  "lsp": {
-    "sourcekit-lsp": {
-      "command": ["sourcekit-lsp"],
-      "extensions": [".swift"]
-    }
   }
 }
