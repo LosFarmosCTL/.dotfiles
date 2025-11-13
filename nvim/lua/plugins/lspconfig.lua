@@ -41,6 +41,7 @@ return {
       tailwindcss = {},
       astro = {},
       mdx_analyzer = {},
+      copilot = {},
       jsonls = {},
       yamlls = {},
       eslint = {

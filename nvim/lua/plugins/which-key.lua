@@ -5,11 +5,11 @@ return {
     config = function()
       local wk = require 'which-key'
       ---@diagnostic disable-next-line: missing-fields
-      wk.setup {
-        preset = 'helix',
-      }
+      wk.setup { preset = 'helix' }
 
+      -- TODO: look into setting icons for keymaps
       wk.add {
+        { '<leader>a', group = '[A]I' },
         { '<leader>b', group = '[B]uffer' },
         { '<leader>c', group = '[C]ode' },
         { '<leader>f', group = '[F]ind' },
