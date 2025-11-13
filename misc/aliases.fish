@@ -1,4 +1,6 @@
 abbr -ag ls ls -AFhlO
+abbr -ag lss ls -ltr
+
 abbr -ag rmrf rm -rf
 abbr -ag c clear
 
