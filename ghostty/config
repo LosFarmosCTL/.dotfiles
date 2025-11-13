@@ -16,6 +16,7 @@ window-width = 1000
 keybind = global:ctrl+enter=toggle_quick_terminal
 quick-terminal-position = bottom
 quick-terminal-autohide = false
+quick-terminal-size = 40%
 
 # open new tabs inside of the same directory as the current one
 window-inherit-working-directory = true
@@ -39,7 +40,7 @@ keybind = opt+u>shift+a=text:Ä
 keybind = opt+u>shift+o=text:Ö
 keybind = opt+shift+2=text:€
 
-# move threw prompts using vi style keybinding
+# move through prompts using vi style keybinding
 keybind = cmd+j=jump_to_prompt:1
 keybind = cmd+k=jump_to_prompt:-1
 
