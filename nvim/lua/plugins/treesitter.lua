@@ -22,8 +22,6 @@ return {
     event = { 'BufEnter *.mdx' },
     config = function()
       vim.filetype.add { extension = { mdx = 'mdx' } }
-
-      require('mdx').setup()
     end,
     dependencies = { 'nvim-treesitter/nvim-treesitter' },
   },
