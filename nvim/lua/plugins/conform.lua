@@ -3,7 +3,7 @@ local prettier = { 'prettierd', 'prettier', stop_after_first = true }
 return {
   {
     'stevearc/conform.nvim',
-    event = { 'BufWritePre' },
+    event = { 'BufWritePre', 'VeryLazy' },
     cmd = { 'ConformInfo' },
     keys = {
       {
@@ -42,6 +42,8 @@ return {
         yaml = prettier,
         markdown = prettier,
         astro = prettier,
+        c = { 'clang_format' },
+        cpp = { 'clang_format' },
       },
     },
     config = function(_, opts)

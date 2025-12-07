@@ -174,6 +174,7 @@ return {
         'ruff',
         'prettierd',
         'swiftlint',
+        'clang-format',
       },
       auto_update = true,
     },
