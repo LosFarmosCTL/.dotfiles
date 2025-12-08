@@ -21,3 +21,11 @@ abbr -ag gp git push
 abbr -ag gP git pull
 
 abbr -ag gb git branch -av
+
+function git
+    if test "$argv[1]" = show
+        command git show --ext-diff $argv[2..]
+    else
+        command git $argv
+    end
+end
