@@ -6,13 +6,19 @@ return {
     config = function(_, opts)
       require('supermaven-nvim').setup(opts)
 
-      -- stylua: ignore
       Snacks.toggle({
         name = '[C]opilot/Supermaven suggestions',
-        get = function() return require('supermaven-nvim.api').is_running() end,
-        set = function()
-          require('supermaven-nvim.api').toggle()
-          require('sidekick.nes').toggle()
+        get = function()
+          return require('supermaven-nvim.api').is_running() and require('sidekick.nes').enabled
+        end,
+        set = function(state)
+          if state then
+            require('supermaven-nvim.api').start()
+            require('sidekick.nes').enable()
+          else
+            require('supermaven-nvim.api').stop()
+            require('sidekick.nes').disable()
+          end
         end,
       }):map '<leader>oc'
     end,
