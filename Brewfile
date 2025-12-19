@@ -1,4 +1,6 @@
 brew "asciinema"
+brew "bat"
+brew "cmake"
 brew "devcontainer"
 brew "difftastic"
 brew "fastfetch"
@@ -8,19 +10,26 @@ brew "fish"
 brew "gh"
 brew "git-delta"
 brew "go"
+brew "openjdk"
+brew "gradle"
 brew "imagemagick"
 brew "jq"
 brew "lazygit"
 brew "mas"
-brew "tree-sitter"
 brew "neovim"
 brew "node"
+brew "nushell"
+brew "ollama"
 brew "onefetch"
 brew "opencode"
 brew "ripgrep"
+brew "rust"
 brew "scc"
 brew "starship"
+brew "tmux"
 brew "tree"
+brew "tree-sitter"
+brew "tree-sitter-cli"
 brew "vapor"
 brew "xcbeautify"
 brew "xcode-build-server"
@@ -31,19 +40,24 @@ cask "adguard"
 cask "alt-tab"
 cask "appcleaner"
 cask "arc"
+cask "boring-notch"
 cask "chatterino"
 cask "discord"
+cask "firefox"
 cask "fluor"
 cask "ghostty"
 cask "grandperspective"
+cask "helium-browser"
+cask "intellij-idea-ce"
+cask "minecraft"
 cask "mp3tag"
-cask "music-presence"
 cask "openvpn-connect"
 cask "orbstack"
 cask "rapidapi"
 cask "scroll-reverser"
 cask "sf-symbols"
 cask "shottr"
+cask "signal"
 cask "sketch"
 cask "subler"
 cask "swish"
@@ -53,6 +67,7 @@ cask "whatsapp"
 cask "zen"
 mas "AusweisApp", id: 948660805
 mas "Craft", id: 1487937127
+mas "Dark Reader for Safari", id: 1438243180
 mas "DevCleaner", id: 1388020431
 mas "Developer", id: 640199958
 mas "Goodnotes", id: 1444383602
@@ -60,4 +75,7 @@ mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
+mas "SponsorBlock", id: 1573461917
+mas "Vimlike", id: 1584519802
+mas "Wayback Machine", id: 1472432422
 mas "Xcode", id: 497799835
