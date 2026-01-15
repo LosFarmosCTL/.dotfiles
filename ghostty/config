@@ -39,6 +39,7 @@ keybind = opt+u>shift+u=text:Ü
 keybind = opt+u>shift+a=text:Ä
 keybind = opt+u>shift+o=text:Ö
 keybind = opt+shift+2=text:€
+keybind = opt+s=text:ß
 
 # move through prompts using vi style keybinding
 keybind = cmd+j=jump_to_prompt:1
