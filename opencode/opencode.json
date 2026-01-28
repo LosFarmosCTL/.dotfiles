@@ -3,12 +3,21 @@
   "autoupdate": false,
   "permission": {
     "bash": {
+      "*": "ask",
       "git status": "allow",
-      "git diff": "allow",
-      "npm run build": "allow",
-      "ls": "allow",
-      "pwd": "allow",
-      "*": "ask"
+      "git diff *": "allow",
+      "git show *": "allow",
+      "git log *": "allow",
+      "git branch *": "allow",
+      "ls *": "allow",
+      "cat *": "allow",
+      "find *": "allow",
+      "grep *": "allow",
+      "head *": "allow",
+      "tail *": "allow",
+      "tree *": "allow",
+      "wc *": "allow",
+      "ack *": "allow"
     }
   },
   "formatter": {
