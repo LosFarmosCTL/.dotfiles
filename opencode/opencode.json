@@ -17,7 +17,8 @@
       "tail *": "allow",
       "tree *": "allow",
       "wc *": "allow",
-      "ack *": "allow"
+      "ack *": "allow",
+      "echo *": "allow"
     }
   },
   "formatter": {
