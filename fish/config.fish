@@ -8,6 +8,8 @@ if status is-interactive
 
     set fish_greeting
 
+    zoxide init fish | source
+
     starship init fish | source
     # clear starship modules after exectuting command
     # @fish-lsp-disable-next-line 7001
