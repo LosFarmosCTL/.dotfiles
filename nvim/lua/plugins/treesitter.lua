@@ -2,6 +2,7 @@ return {
   {
     'nvim-treesitter/nvim-treesitter',
     lazy = false,
+    branch = 'main',
     build = ':TSUpdate',
     config = function()
       local ts = require 'nvim-treesitter'
@@ -77,6 +78,51 @@ return {
     dependencies = { 'OXY2DEV/markview.nvim' },
   },
   {
+    'nvim-treesitter/nvim-treesitter-textobjects',
+    branch = 'main',
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    config = function()
+      require('nvim-treesitter-textobjects').setup {}
+    end,
+    keys = function()
+      -- stylua: ignore
+      local function sel(query)
+        return function() require('nvim-treesitter-textobjects.select').select_textobject(query, 'textobjects') end
+      end
+
+      -- stylua: ignore
+      local function swap_n(query)
+        return function() require('nvim-treesitter-textobjects.swap').swap_next(query) end
+      end
+
+      -- stylua: ignore
+      local function swap_p(query)
+        return function() require('nvim-treesitter-textobjects.swap').swap_previous(query) end
+      end
+
+      return {
+        { 'af', sel '@function.outer', mode = { 'x', 'o' }, desc = 'Select outer function' },
+        { 'if', sel '@function.inner', mode = { 'x', 'o' }, desc = 'Select inner function' },
+        { 'ac', sel '@class.outer', mode = { 'x', 'o' }, desc = 'Select outer class' },
+        { 'ic', sel '@class.inner', mode = { 'x', 'o' }, desc = 'Select inner class' },
+        { 'ae', sel '@call.outer', mode = { 'x', 'o' }, desc = 'Select outer call' },
+        { 'ie', sel '@call.inner', mode = { 'x', 'o' }, desc = 'Select inner call' },
+        { 'as', sel '@statement.outer', mode = { 'x', 'o' }, desc = 'Select outer statement' },
+        { 'is', sel '@statement.inner', mode = { 'x', 'o' }, desc = 'Select inner statement' },
+
+        { '<leader>jf', swap_n '@function.outer', desc = 'Swap with next function' },
+        { '<leader>kf', swap_p '@function.outer', desc = 'Swap with previous function' },
+        { '<leader>js', swap_n '@statement.outer', desc = 'Swap with next statement' },
+        { '<leader>ks', swap_p '@statement.outer', desc = 'Swap with previous statement' },
+        { '<leader>ji', swap_n '@conditional.outer', desc = 'Swap with next `if`' },
+        { '<leader>ki', swap_p '@conditional.outer', desc = 'Swap with previous `if`' },
+
+        { '<C-s>', swap_n '@parameter.inner', desc = 'Swap argument right' },
+        { '<C-S-s>', swap_p '@parameter.inner', desc = 'Swap argument left' },
+      }
+    end,
+  },
+  {
     'davidmh/mdx.nvim',
     event = { 'BufEnter *.mdx' },
     config = function()
@@ -90,7 +136,7 @@ return {
     opts = { use_default_keymaps = false },
     -- stylua: ignore
     keys = {
-      { '<space>j', function() require('treesj').toggle() end },
+      { '<space>J', function() require('treesj').toggle() end, desc = 'Split/[J]oin block' },
     },
   },
 }
