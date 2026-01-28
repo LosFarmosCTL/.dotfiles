@@ -9,15 +9,15 @@ return {
       Snacks.toggle({
         name = '[C]opilot/Supermaven suggestions',
         get = function()
-          return require('supermaven-nvim.api').is_running() and require('sidekick.nes').enabled
+          return require('supermaven-nvim.api').is_running() -- and require('sidekick.nes').enabled
         end,
         set = function(state)
           if state then
             require('supermaven-nvim.api').start()
-            require('sidekick.nes').enable()
+            -- require('sidekick.nes').enable()
           else
             require('supermaven-nvim.api').stop()
-            require('sidekick.nes').disable()
+            -- require('sidekick.nes').disable()
           end
         end,
       }):map '<leader>oc'

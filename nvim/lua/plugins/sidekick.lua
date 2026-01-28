@@ -10,6 +10,9 @@ return {
           },
         },
       },
+      nes = {
+        enabled = false,
+      },
     },
     -- stylua: ignore
     keys = {
