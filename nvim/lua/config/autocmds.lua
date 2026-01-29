@@ -2,15 +2,6 @@ local function augroup(name)
   return vim.api.nvim_create_augroup(name, { clear = true })
 end
 
--- highlight on yank
-vim.api.nvim_create_autocmd('TextYankPost', {
-  desc = 'Highlight when yanking (copying) text',
-  group = augroup 'highlight-yank',
-  callback = function()
-    vim.highlight.on_yank()
-  end,
-})
-
 -- close certain filetypes with q -- idea taken from folke/LazyVim
 vim.api.nvim_create_autocmd('FileType', {
   group = augroup 'close-filetypes-with-q',
