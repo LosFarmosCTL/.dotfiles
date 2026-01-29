@@ -36,8 +36,6 @@ map('n', '<C-S-l>', '<C-w>>', { desc = 'Increase split width' })
 map('n', '<C-S-k>', '<C-w>-', { desc = 'Decrease split height' })
 map('n', '<C-S-j>', '<C-w>+', { desc = 'Increase split height' })
 
-map('n', '<leader>bd', '<CMD>bdelete<CR>', { desc = '[B]uffer [D]elete' })
-
 -- yank to system clipboard
 map({ 'n', 'v' }, '<leader>y', '"+y', { desc = 'Yank to system clipboard' })
 
