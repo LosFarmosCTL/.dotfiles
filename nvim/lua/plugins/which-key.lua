@@ -19,8 +19,11 @@ return {
         { '<leader>s', group = '[S]earch' },
         { '<leader>t', group = '[T]est' },
         { '<leader>q', group = 'Trouble' },
+        { '<leader>j', group = 'Swap with next...' },
+        { '<leader>k', group = 'Swap with previous...' },
         { '<leader>x', group = '[X]Code' },
         { '<leader>xc', group = '[C]lean' },
+        { '<leader><tab>', group = 'Tabs' },
       }
     end,
   },

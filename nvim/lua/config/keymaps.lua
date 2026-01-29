@@ -16,13 +16,13 @@ map('n', 'k', 'gk')
 map('n', '<leader>L', '<cmd>Lazy<CR>', { desc = 'Open [L]azy' })
 
 -- clear search highlights
-map('n', '<leader><Esc>', '<cmd>nohlsearch<CR>')
+map('n', '<leader><Esc>', '<cmd>nohlsearch<CR>', { desc = 'Clear search highlights' })
 
 -- tab navigation
-map('n', '<leader><tab><tab>', '<cmd>tabnew<CR>')
-map('n', '<leader><tab>d', '<cmd>tabclose<CR>')
-map('n', '<leader><tab>[', '<cmd>tabprevious<CR>')
-map('n', '<leader><tab>]', '<cmd>tabnext<CR>')
+map('n', '<leader><tab><tab>', '<cmd>tabnew<CR>', { desc = '[n]ew tab' })
+map('n', '<leader><tab>d', '<cmd>tabclose<CR>', { desc = '[d]elete tab' })
+map('n', '<leader><tab>[', '<cmd>tabprevious<CR>', { desc = '[p]revious tab' })
+map('n', '<leader><tab>]', '<cmd>tabnext<CR>', { desc = '[n]ext tab' })
 
 -- split navigation
 map('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
@@ -39,7 +39,7 @@ map('n', '<C-S-j>', '<C-w>+', { desc = 'Increase split height' })
 map('n', '<leader>bd', '<CMD>bdelete<CR>', { desc = '[B]uffer [D]elete' })
 
 -- yank to system clipboard
-map({ 'n', 'v' }, '<leader>y', '"+y', { desc = 'Copy to system clipboard' })
+map({ 'n', 'v' }, '<leader>y', '"+y', { desc = 'Yank to system clipboard' })
 
 -- Diagnostic keymaps
 map('n', '<leader>K', function()
