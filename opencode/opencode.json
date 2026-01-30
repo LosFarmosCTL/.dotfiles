@@ -13,12 +13,14 @@
       "cat *": "allow",
       "find *": "allow",
       "grep *": "allow",
+      "rg *": "allow",
       "head *": "allow",
       "tail *": "allow",
       "tree *": "allow",
       "wc *": "allow",
       "ack *": "allow",
-      "echo *": "allow"
+      "echo *": "allow",
+      "curl *": "allow"
     }
   },
   "formatter": {
