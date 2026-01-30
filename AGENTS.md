@@ -30,16 +30,6 @@ This is a personal macOS dotfiles repository containing Lua-based Neovim configu
 
 ## Build/Test Commands
 
-### Formatting
-
-```bash
-# Format Lua files with stylua
-stylua nvim/
-
-# Format specific file
-stylua nvim/lua/plugins/lspconfig.lua
-```
-
 ### Linting
 
 ```bash
