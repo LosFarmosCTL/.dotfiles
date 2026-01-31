@@ -1,9 +1,9 @@
 return {
   {
     'igorlfs/nvim-dap-view',
-    lazy = false,
     dependencies = {
       'mfussenegger/nvim-dap',
+      'theHamsta/nvim-dap-virtual-text',
     },
     -- stylua: ignore
     keys = {
@@ -27,6 +27,7 @@ return {
   },
   {
     'theHamsta/nvim-dap-virtual-text',
+    event = 'VeryLazy',
     dependencies = {
       'mfussenegger/nvim-dap',
       'nvim-treesitter/nvim-treesitter',

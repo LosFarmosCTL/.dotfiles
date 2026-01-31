@@ -18,10 +18,6 @@ end
 return {
   {
     'mfussenegger/nvim-dap',
-    dependencies = {
-      'rcarriga/nvim-dap-ui',
-      'nvim-neotest/nvim-nio',
-    },
     -- stylua: ignore
     keys = {
       { '<leader>db', function() require('dap').toggle_breakpoint() end, desc = '[d]ebug: toggle [b]reakpoint' },

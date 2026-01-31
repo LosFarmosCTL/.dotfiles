@@ -1,7 +1,7 @@
 return {
   {
     'echasnovski/mini.nvim',
-    lazy = false,
+    event = { 'BufReadPost', 'BufNewFile' },
     config = function()
       -- around/inside textobjects
       require('mini.ai').setup { n_lines = 500 }
