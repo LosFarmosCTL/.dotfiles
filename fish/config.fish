@@ -8,6 +8,8 @@ if status is-interactive
 
     set fish_greeting
 
+    tirith init --shell fish | source
+
     zoxide init fish | source
 
     starship init fish | source
