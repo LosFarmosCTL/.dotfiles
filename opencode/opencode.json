@@ -4,22 +4,34 @@
   "permission": {
     "bash": {
       "*": "ask",
+
       "git status": "allow",
       "git diff *": "allow",
       "git show *": "allow",
       "git log *": "allow",
       "git branch *": "allow",
+
       "ls *": "allow",
+      "tree *": "allow",
       "cat *": "allow",
+      "which *": "allow",
+
+      "mkdir *": "allow",
+      "touch *": "allow",
+
       "find *": "allow",
       "grep *": "allow",
       "rg *": "allow",
+
       "head *": "allow",
       "tail *": "allow",
-      "tree *": "allow",
       "wc *": "allow",
       "ack *": "allow",
+      "jq *": "allow",
+      "sort *": "allow",
+      "uniq *": "allow",
       "echo *": "allow",
+
       "curl *": "allow"
     }
   },
