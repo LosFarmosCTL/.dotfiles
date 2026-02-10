@@ -22,6 +22,24 @@ return {
             },
           },
         },
+        -- custom rooter to ignore .luarc.json in ~/.dotfiles/nvim/ dir
+        -- LSP initialization is handled by lazydev.nvim
+        root_dir = function(bufnr, on_dir)
+          local fname = vim.api.nvim_buf_get_name(bufnr)
+          if fname == '' then
+            return
+          end
+
+          local dotfiles = vim.fs.normalize(vim.fn.expand '~/.dotfiles')
+          local dotfiles_root = vim.fs.root(fname, { '.git' })
+
+          if dotfiles_root and vim.fs.normalize(dotfiles_root) == dotfiles then
+            on_dir(dotfiles_root)
+            return
+          end
+
+          on_dir(vim.fs.root(fname, { '.luarc.json', '.luarc.jsonc', '.git' }))
+        end,
       },
       bashls = {},
       fish_lsp = {},
