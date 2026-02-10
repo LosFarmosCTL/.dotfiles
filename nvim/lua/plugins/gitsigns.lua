@@ -22,21 +22,19 @@ return {
       }):map('<leader>ob')
     end,
     -- stylua: ignore
-    keys = {
+    keys = require('utils.keymap-helpers').keys {
       { ']h', function() if vim.wo.diff then vim.cmd.normal { ']c', bang = true } else require('gitsigns').nav_hunk 'next' end end, },
       { '[h', function() if vim.wo.diff then vim.cmd.normal { '[c', bang = true } else require('gitsigns').nav_hunk 'prev' end end, },
 
-      { '<leader>gs', function() require('gitsigns').stage_hunk { vim.fn.line '.', vim.fn.line 'v' } end, desc = 'git [s]tage hunk', mode = { 'v' }, },
-      { '<leader>gr', function() require('gitsigns').reset_hunk { vim.fn.line '.', vim.fn.line 'v' } end, desc = 'git [r]eset hunk', mode = { 'v' }, },
+      { '<leader>gs', function() require('gitsigns').stage_hunk { vim.fn.line '.', vim.fn.line 'v' } end, desc = 'git [s]tage hunk', mode = { 'v' }, icon = { icon = '', color = 'orange' } },
+      { '<leader>gr', function() require('gitsigns').reset_hunk { vim.fn.line '.', vim.fn.line 'v' } end, desc = 'git [r]eset hunk', mode = { 'v' }, icon = { icon = '󰦛', color = 'orange' } },
 
-      { '<leader>gs', function() require('gitsigns').stage_hunk() end, desc = 'git [s]tage hunk', },
-      { '<leader>gr', function() require('gitsigns').reset_hunk() end, desc = 'git [r]eset hunk', },
-      { '<leader>gS', function() require('gitsigns').stage_buffer() end, desc = 'git [S]tage buffer', },
-      { '<leader>gR', function() require('gitsigns').reset_buffer() end, desc = 'git [R]eset buffer', },
-      { '<leader>gp', function() require('gitsigns').preview_hunk_inline() end, desc = 'git [p]reviw hunk', },
-      { '<leader>gb', function() require('gitsigns').blame_line() end, desc = 'git [b]lame line', },
-
-      { '<leader>ob' }
+      { '<leader>gs', function() require('gitsigns').stage_hunk() end, desc = 'git [s]tage hunk', icon = { icon = '', color = 'orange' } },
+      { '<leader>gr', function() require('gitsigns').reset_hunk() end, desc = 'git [r]eset hunk', icon = { icon = '󰦛', color = 'orange' } },
+      { '<leader>gS', function() require('gitsigns').stage_buffer() end, desc = 'git [S]tage buffer', icon = { icon = '', color = 'orange' } },
+      { '<leader>gR', function() require('gitsigns').reset_buffer() end, desc = 'git [R]eset buffer', icon = { icon = '󱀸', color = 'orange' } },
+      { '<leader>gp', function() require('gitsigns').preview_hunk_inline() end, desc = 'git [p]reviw hunk', icon = { icon = '󰈈', color = 'orange' } },
+      { '<leader>gb', function() require('gitsigns').blame_line() end, desc = 'git [b]lame line', icon = { icon = '󰀈', color = 'orange' } },
     },
   },
 }

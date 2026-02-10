@@ -114,11 +114,12 @@ return {
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('lsp-attach-set-keymap', { clear = true }),
         callback = function(event)
-          local map = function(keys, func, desc)
-            vim.keymap.set('n', keys, func, { buffer = event.buf, desc = desc })
+          local h = require 'utils.keymap-helpers'
+          local map = function(keys, func, desc, icon)
+            h.map('n', keys, func, { buffer = event.buf, desc = desc, icon = icon })
           end
 
-          map('<leader>lr', '<CMD>LspRestart<CR>', '[l]sp [r]estart')
+          map('<leader>lr', '<CMD>LspRestart<CR>', '[l]sp [r]estart', { icon = '󰑐', color = 'azure' })
 
           -- code navigation 
           -- stylua: ignore start
@@ -135,12 +136,12 @@ return {
             layout = { preset = 'ivy', },
           }) end, 'LSP: [G]oto [D]eclaration')
 
-          map('<leader>ss', function() Snacks.picker.lsp_workspace_symbols() end, '[s]earch [s]ymbols')
-          map('<leader>sS', function() Snacks.picker.lsp_symbols() end, '[s]earch [S]ymbols in current file')
+          map('<leader>ss', function() Snacks.picker.lsp_workspace_symbols() end, '[s]earch [s]ymbols', { icon = '󰏢', color = 'cyan' })
+          map('<leader>sS', function() Snacks.picker.lsp_symbols() end, '[s]earch [S]ymbols in current file', { icon = '󰏢', color = 'cyan' })
           -- stylua: ignore end
 
           -- code editing
-          map('<leader>cr', vim.lsp.buf.rename, '[r]ename symbol')
+          map('<leader>cr', vim.lsp.buf.rename, '[r]ename symbol', { icon = '󰘎', color = 'cyan' })
 
           local client = vim.lsp.get_client_by_id(event.data.client_id)
           -- HACK: inlayHintProvider does not appear in sourcekit server_capabilities even though it is supported
@@ -158,7 +159,7 @@ return {
               client.supports_method(client, vim.lsp.protocol.Methods.workspace_didRenameFiles, event.buf)
               or client.supports_method(client, vim.lsp.protocol.Methods.workspace_willRenameFiles, event.buf)
             ) then
-            map('<leader>cR', function() Snacks.rename.rename_file() end, "[R]ename file")
+            map('<leader>cR', function() Snacks.rename.rename_file() end, "[R]ename file", { icon = '󱇧', color = 'cyan' })
           end
         end,
       })
@@ -194,7 +195,7 @@ return {
         },
       },
     },
-    keys = {
+    keys = require('utils.keymap-helpers').keys {
       {
         '<leader>ca',
         function()
@@ -202,6 +203,7 @@ return {
         end,
         mode = { 'n', 'v' },
         desc = '[a]ction',
+        icon = { icon = '󰌵', color = 'cyan' },
       },
     },
   },

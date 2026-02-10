@@ -6,8 +6,8 @@ return {
       'theHamsta/nvim-dap-virtual-text',
     },
     -- stylua: ignore
-    keys = {
-      { '<leader>dv', function() require('dap-view').toggle() end, desc = '[d]ebug: toggle [v]iew' },
+    keys = require('utils.keymap-helpers').keys {
+      { '<leader>dv', function() require('dap-view').toggle() end, desc = '[d]ebug: toggle [v]iew', icon = { icon = '󰃤', color = 'red' } },
       {
         '<leader>dw',
         function()
@@ -15,6 +15,7 @@ return {
         end,
         mode = { 'n', 'v' },
         desc = '[d]ebug: add [w]atch expression',
+        icon = { icon = '󰃤', color = 'red' },
       },
     },
     ---@type dapview.Config

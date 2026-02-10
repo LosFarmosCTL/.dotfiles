@@ -19,16 +19,16 @@ return {
   {
     'mfussenegger/nvim-dap',
     -- stylua: ignore
-    keys = {
-      { '<leader>db', function() require('dap').toggle_breakpoint() end, desc = '[d]ebug: toggle [b]reakpoint' },
-      { '<leader>dB', function() set_breakpoint('Breakpoint condition: ', 'conditional') end, desc = '[d]ebug: conditional [B]reakpoint', },
-      { '<leader>dl', function() set_breakpoint('Log message: ', 'log') end, desc = '[d]ebug: [l]og point', },
-      { '<leader>dh', function() set_breakpoint('Hit condition: ', 'hit') end, desc = '[d]ebug: [h]it condition breakpoint', },
-      { '<leader>dc', function() require('dap').continue() end, desc = '[d]ebug: [c]ontinue / start' },
-      { '<leader>dd', function() require('dap').disconnect() end, desc = '[d]ebug: [d]isconnect' },
-      { '<leader>dt', function() require('dap').terminate() end, desc = '[d]ebug: [t]erminate' },
-      { '<leader>dR', function() require('dap').run_to_cursor() end, desc = '[d]ebug: [R]un to cursor' },
-      { '<leader>dp', function() require('dap').pause() end, desc = '[d]ebug: [p]ause' },
+    keys = require('utils.keymap-helpers').keys {
+      { '<leader>db', function() require('dap').toggle_breakpoint() end, desc = '[d]ebug: toggle [b]reakpoint', icon = { icon = '󰃤', color = 'red' } },
+      { '<leader>dB', function() set_breakpoint('Breakpoint condition: ', 'conditional') end, desc = '[d]ebug: conditional [B]reakpoint', icon = { icon = '󰃤', color = 'red' } },
+      { '<leader>dl', function() set_breakpoint('Log message: ', 'log') end, desc = '[d]ebug: [l]og point', icon = { icon = '󰃤', color = 'red' } },
+      { '<leader>dh', function() set_breakpoint('Hit condition: ', 'hit') end, desc = '[d]ebug: [h]it condition breakpoint', icon = { icon = '󰃤', color = 'red' } },
+      { '<leader>dc', function() require('dap').continue() end, desc = '[d]ebug: [c]ontinue / start', icon = { icon = '󰐌', color = 'green' } },
+      { '<leader>dd', function() require('dap').disconnect() end, desc = '[d]ebug: [d]isconnect', icon = { icon = '󰩈', color = 'red' } },
+      { '<leader>dt', function() require('dap').terminate() end, desc = '[d]ebug: [t]erminate', icon = { icon = '󰩈', color = 'red' } },
+      { '<leader>dR', function() require('dap').run_to_cursor() end, desc = '[d]ebug: [R]un to cursor', icon = { icon = '󰜴', color = 'green' } },
+      { '<leader>dp', function() require('dap').pause() end, desc = '[d]ebug: [p]ause', icon = { icon = '󰏤', color = 'yellow' } },
     },
     config = function()
       local dap = require 'dap'
@@ -130,25 +130,26 @@ return {
       }
 
       local arrow_keys_active = false
+      local h = require('utils.keymap-helpers')
       -- stylua: ignore
       local function setup_debug_keymaps()
         if arrow_keys_active then return end
 
         arrow_keys_active = true
-        vim.keymap.set('n', '<Down>', function() require('dap').step_over() end, { desc = 'Debug: Step over' })
-        vim.keymap.set('n', '<Right>', function() require('dap').step_into() end, { desc = 'Debug: Step into' })
-        vim.keymap.set('n', '<Left>', function() require('dap').step_out() end, { desc = 'Debug: Step out' })
-        vim.keymap.set('n', '<Up>', function() require('dap').step_back() end, { desc = 'Debug: Step back' })
+        h.map('n', '<Down>', function() require('dap').step_over() end, { desc = 'Debug: Step over', icon = { icon = '󰃤', color = 'red' } })
+        h.map('n', '<Right>', function() require('dap').step_into() end, { desc = 'Debug: Step into', icon = { icon = '󰃤', color = 'red' } })
+        h.map('n', '<Left>', function() require('dap').step_out() end, { desc = 'Debug: Step out', icon = { icon = '󰃤', color = 'red' } })
+        h.map('n', '<Up>', function() require('dap').step_back() end, { desc = 'Debug: Step back', icon = { icon = '󰃤', color = 'red' } })
       end
 
       -- stylua: ignore
       local function cleanup_debug_keymaps()
         if not arrow_keys_active then return end
 
-        pcall(vim.keymap.del, 'n', '<Down>')
-        pcall(vim.keymap.del, 'n', '<Right>')
-        pcall(vim.keymap.del, 'n', '<Left>')
-        pcall(vim.keymap.del, 'n', '<Up>')
+        pcall(h.unmap, 'n', '<Down>')
+        pcall(h.unmap, 'n', '<Right>')
+        pcall(h.unmap, 'n', '<Left>')
+        pcall(h.unmap, 'n', '<Up>')
 
         arrow_keys_active = false
       end

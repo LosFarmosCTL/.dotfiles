@@ -1,7 +1,7 @@
 return {
   {
     'luckasRanarison/tailwind-tools.nvim',
-    event = 'VeryLazy',
+    -- ft = { 'html', 'javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'vue', 'svelte', 'astro', 'mdx' },
     name = 'tailwind-tools',
     build = ':UpdateRemotePlugins',
     dependencies = {

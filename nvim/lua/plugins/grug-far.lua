@@ -3,7 +3,7 @@ return {
     'MagicDuck/grug-far.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     cmd = 'GrugFar',
-    keys = {
+    keys = require('utils.keymap-helpers').keys {
       {
         '<leader>sr',
         function()
@@ -18,6 +18,7 @@ return {
         end,
         mode = { 'n', 'v' },
         desc = '[s]earch and [r]eplace',
+        icon = { icon = '󰛔', color = 'green' },
       },
     },
   },

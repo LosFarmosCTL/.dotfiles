@@ -7,9 +7,9 @@ return {
       signs = false,
     },
     -- stylua: ignore
-    keys = {
+    keys = require('utils.keymap-helpers').keys {
       ---@diagnostic disable-next-line: undefined-field
-      { '<leader>st', function() Snacks.picker.todo_comments() end, desc = '[s]earch [t]odos', },
+      { '<leader>st', function() Snacks.picker.todo_comments() end, desc = '[s]earch [t]odos', icon = { icon = '󰄬', color = 'yellow' } },
     },
   },
 }

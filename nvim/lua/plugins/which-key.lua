@@ -7,25 +7,26 @@ return {
       ---@diagnostic disable-next-line: missing-fields
       wk.setup { preset = 'helix' }
 
-      -- TODO: look into setting icons for keymaps
       wk.add {
-        { '<leader>a', group = '[A]I' },
-        { '<leader>b', group = '[B]uffer' },
-        { '<leader>c', group = '[C]ode' },
-        { '<leader>d', group = '[D]ebug' },
-        { '<leader>f', group = '[F]ind' },
-        { '<leader>g', group = '[G]it' },
-        { '<leader>l', group = '[L]sp' },
-        { '<leader>o', group = '[O]ptions' },
-        { '<leader>s', group = '[S]earch' },
-        { '<leader>t', group = '[T]est' },
-        { '<leader>q', group = 'Trouble' },
-        { '<leader>j', group = 'Swap with next...' },
-        { '<leader>k', group = 'Swap with previous...' },
-        { '<leader>x', group = '[X]Code' },
-        { '<leader>xc', group = '[C]lean' },
-        { '<leader><tab>', group = 'Tabs' },
+        { '<leader>a', mode = { 'n', 'x' }, group = '[A]I', icon = { icon = '󰧑', color = 'purple' } },
+        { '<leader>b', group = '[B]uffer', icon = { icon = '󰈙', color = 'blue' } },
+        { '<leader>c', mode = { 'n', 'x' }, group = '[C]ode', icon = { icon = '󰅩', color = 'cyan' } },
+        { '<leader>d', mode = { 'n', 'x' }, group = '[D]ebug', icon = { icon = '󰃤', color = 'red' } },
+        { '<leader>f', group = '[F]ind', icon = { icon = '󰍉', color = 'yellow' } },
+        { '<leader>g', mode = { 'n', 'x' }, group = '[G]it', icon = { icon = '󰊢', color = 'orange' } },
+        { '<leader>l', group = '[L]sp', icon = { icon = '󰒕', color = 'azure' } },
+        { '<leader>o', group = '[O]ptions', icon = { icon = '󰒓', color = 'grey' } },
+        { '<leader>s', mode = { 'n', 'x' }, group = '[S]earch', icon = { icon = '󰑑', color = 'green' } },
+        { '<leader>t', group = '[T]est', icon = { icon = '󰙨', color = 'cyan' } },
+        { '<leader>q', group = 'Trouble', icon = { icon = '󰔫', color = 'red' } },
+        { '<leader>j', group = 'Swap with next...', icon = { icon = '', color = 'azure' } },
+        { '<leader>k', group = 'Swap with previous...', icon = { icon = '', color = 'azure' } },
+        { '<leader>x', group = '[X]Code', icon = { icon = '󰀴', color = 'purple' } },
+        { '<leader>xc', group = '[C]lean', icon = { icon = '󰃢', color = 'green' } },
+        { '<leader><tab>', group = 'Tabs', icon = { icon = '󰓩', color = 'yellow' } },
       }
+
+      require('utils.keymap-registry').flush()
     end,
   },
 }

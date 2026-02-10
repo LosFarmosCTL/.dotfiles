@@ -24,8 +24,8 @@ return {
         end,
       },
     },
-    keys = {
-      { '<leader>gd', '<cmd>DiffviewOpen<CR>', desc = 'git [d]iff against index' },
+    keys = require('utils.keymap-helpers').keys {
+      { '<leader>gd', '<cmd>DiffviewOpen<CR>', desc = 'git [d]iff against index', icon = { icon = '', color = 'orange' } },
     },
   },
 }

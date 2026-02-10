@@ -8,7 +8,7 @@ return {
         enabled = true,
       },
     },
-    keys = {
+    keys = require('utils.keymap-helpers').keys {
       { 'y', '<Plug>(YankyYank)', mode = { 'n', 'x' }, desc = 'Yank text' },
       { 'p', '<Plug>(YankyPutAfter)', mode = { 'n', 'x' }, desc = 'Put yanked text after cursor' },
       { 'P', '<Plug>(YankyPutBefore)', mode = { 'n', 'x' }, desc = 'Put yanked text before cursor' },
@@ -24,8 +24,9 @@ return {
           ---@diagnostic disable-next-line: undefined-field
           require('snacks').picker.yanky()
         end,
-        mode = { 'n', 'x' },
+        mode = { 'n' },
         desc = 'Open yank history',
+        icon = { icon = '󰆏', color = 'green' },
       },
 
       { ']p', '<Plug>(YankyPutIndentAfterLinewise)', desc = 'Put indented after cursor (linewise)' },
@@ -39,7 +40,7 @@ return {
     config = function(_, opts)
       require('yanky').setup(opts)
 
-      vim.keymap.set({ 'o', 'x' }, 'iy', function()
+      require('utils.keymap-helpers').map({ 'o', 'x' }, 'iy', function()
         require('yanky.textobj').last_put()
       end, { desc = 'Last put text' })
     end,

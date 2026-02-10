@@ -5,13 +5,14 @@ return {
     'stevearc/conform.nvim',
     event = { 'BufWritePre', 'VeryLazy' },
     cmd = { 'ConformInfo' },
-    keys = {
+    keys = require('utils.keymap-helpers').keys {
       {
         '<leader>cf',
         function()
           require('conform').format { async = true, lsp_fallback = true }
         end,
         desc = '[f]ormat buffer',
+        icon = { icon = '󰉢', color = 'cyan' },
       },
     },
     opts = {

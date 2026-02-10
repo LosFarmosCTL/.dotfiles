@@ -100,7 +100,7 @@ return {
         return function() require('nvim-treesitter-textobjects.swap').swap_previous(query) end
       end
 
-      return {
+      return require('utils.keymap-helpers').keys {
         { 'af', sel '@function.outer', mode = { 'x', 'o' }, desc = 'Select outer function' },
         { 'if', sel '@function.inner', mode = { 'x', 'o' }, desc = 'Select inner function' },
         { 'ac', sel '@class.outer', mode = { 'x', 'o' }, desc = 'Select outer class' },
@@ -110,12 +110,12 @@ return {
         { 'as', sel '@statement.outer', mode = { 'x', 'o' }, desc = 'Select outer statement' },
         { 'is', sel '@statement.inner', mode = { 'x', 'o' }, desc = 'Select inner statement' },
 
-        { '<leader>jf', swap_n '@function.outer', desc = 'Swap with next function' },
-        { '<leader>kf', swap_p '@function.outer', desc = 'Swap with previous function' },
-        { '<leader>js', swap_n '@statement.outer', desc = 'Swap with next statement' },
-        { '<leader>ks', swap_p '@statement.outer', desc = 'Swap with previous statement' },
-        { '<leader>ji', swap_n '@conditional.outer', desc = 'Swap with next `if`' },
-        { '<leader>ki', swap_p '@conditional.outer', desc = 'Swap with previous `if`' },
+        { '<leader>jf', swap_n '@function.outer', desc = 'Swap with next function', icon = { icon = '󰜯', color = 'azure' } },
+        { '<leader>kf', swap_p '@function.outer', desc = 'Swap with previous function', icon = { icon = '󰜷', color = 'azure' } },
+        { '<leader>js', swap_n '@statement.outer', desc = 'Swap with next statement', icon = { icon = '󰜯', color = 'azure' } },
+        { '<leader>ks', swap_p '@statement.outer', desc = 'Swap with previous statement', icon = { icon = '󰜷', color = 'azure' } },
+        { '<leader>ji', swap_n '@conditional.outer', desc = 'Swap with next `if`', icon = { icon = '󰜯', color = 'azure' } },
+        { '<leader>ki', swap_p '@conditional.outer', desc = 'Swap with previous `if`', icon = { icon = '󰜷', color = 'azure' } },
 
         { '<C-s>', swap_n '@parameter.inner', desc = 'Swap argument right' },
         { '<C-S-s>', swap_p '@parameter.inner', desc = 'Swap argument left' },
@@ -135,8 +135,8 @@ return {
     dependencies = { 'nvim-treesitter/nvim-treesitter' },
     opts = { use_default_keymaps = false },
     -- stylua: ignore
-    keys = {
-      { '<space>J', function() require('treesj').toggle() end, desc = 'Split/[J]oin block' },
+    keys = require('utils.keymap-helpers').keys {
+      { '<space>J', function() require('treesj').toggle() end, desc = 'Split/[J]oin block', icon = { icon = '󰅩', color = 'cyan' } },
     },
   },
 }

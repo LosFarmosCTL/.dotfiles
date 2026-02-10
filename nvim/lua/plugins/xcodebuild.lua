@@ -42,21 +42,21 @@ return {
         end,
       },
     },
-    keys = {
-      { '<leader>xb', '<cmd>XcodebuildBuild<cr>', desc = '[X]Code [B]uild' },
-      { '<leader>xcb', '<cmd>XcodebuildCleanBuild<cr>', desc = '[X]Code [C]lean [B]uild' },
-      { '<leader>xcd', '<cmd>XcodebuildCleanDerivedData<cr>', desc = '[X]Code [C]lean [D]erived Data' },
+    keys = require('utils.keymap-helpers').keys {
+      { '<leader>xb', '<cmd>XcodebuildBuild<cr>', desc = '[X]Code [B]uild', icon = { icon = '󰀴', color = 'purple' } },
+      { '<leader>xcb', '<cmd>XcodebuildCleanBuild<cr>', desc = '[X]Code [C]lean [B]uild', icon = { icon = '󰃢', color = 'green' } },
+      { '<leader>xcd', '<cmd>XcodebuildCleanDerivedData<cr>', desc = '[X]Code [C]lean [D]erived Data', icon = { icon = '󰃢', color = 'green' } },
 
-      { '<leader>xi', '<cmd>XcodebuildInstallApp<cr>', desc = '[X]Code [I]nstall App' },
-      { '<leader>xu', '<cmd>XcodebuildUninstallApp<cr>', desc = '[X]Code [U]ninstall App' },
-      { '<leader>xr', '<cmd>XcodebuildBuildRun<cr>', desc = '[X]Code Build and [R]un' },
+      { '<leader>xi', '<cmd>XcodebuildInstallApp<cr>', desc = '[X]Code [I]nstall App', icon = { icon = '󰀴', color = 'purple' } },
+      { '<leader>xu', '<cmd>XcodebuildUninstallApp<cr>', desc = '[X]Code [U]ninstall App', icon = { icon = '󰀴', color = 'purple' } },
+      { '<leader>xr', '<cmd>XcodebuildBuildRun<cr>', desc = '[X]Code Build and [R]un', icon = { icon = '󰀴', color = 'purple' } },
 
-      { '<leader>xd', '<cmd>XcodebuildSelectDevice<cr>', desc = '[X]Code [S]elect Device' },
-      { '<leader>xs', '<cmd>XcodebuildSelectScheme<cr>', desc = '[X]Code [S]elect Scheme' },
-      { '<leader>xa', '<cmd>XcodebuildAssetsManager<cr>', desc = '[X]Code [A]ssets Manager' },
+      { '<leader>xd', '<cmd>XcodebuildSelectDevice<cr>', desc = '[X]Code [S]elect Device', icon = { icon = '󰀴', color = 'purple' } },
+      { '<leader>xs', '<cmd>XcodebuildSelectScheme<cr>', desc = '[X]Code [S]elect Scheme', icon = { icon = '󰀴', color = 'purple' } },
+      { '<leader>xa', '<cmd>XcodebuildAssetsManager<cr>', desc = '[X]Code [A]ssets Manager', icon = { icon = '󰀴', color = 'purple' } },
       -- TODO: investigate how to prevent neotest overlap
       -- TODO: code coverage?
-      { '<leader>xt', '<cmd>XcodebuildTest<cr>', desc = '[X]Code [T]est' },
+      { '<leader>xt', '<cmd>XcodebuildTest<cr>', desc = '[X]Code [T]est', icon = { icon = '󰀴', color = 'cyan' } },
 
       {
         '<leader>xx',
@@ -86,9 +86,10 @@ return {
           }
         end,
         desc = '[X]Code [X]Actions',
+        icon = { icon = '󰀴', color = 'purple' },
       },
-      { '<leader>xl', '<cmd>XcodebuildToggleLogs<cr>', desc = '[X]Code [T]oggle Logs' },
-      { '<leader>xo', '<cmd>XcodebuildOpenInXcode<cr>', desc = '[X]Code [O]pen in Xcode' },
+      { '<leader>xl', '<cmd>XcodebuildToggleLogs<cr>', desc = '[X]Code [T]oggle Logs', icon = { icon = '󰀴', color = 'purple' } },
+      { '<leader>xo', '<cmd>XcodebuildOpenInXcode<cr>', desc = '[X]Code [O]pen in Xcode', icon = { icon = '󰀴', color = 'purple' } },
     },
   },
 }

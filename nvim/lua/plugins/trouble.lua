@@ -38,15 +38,15 @@ return {
       }
     end,
     cmd = 'Trouble',
-    keys = {
-      { '<leader>qd', '<cmd>Trouble diagnostics toggle<cr>', desc = 'Diagnostics' },
-      { '<leader>qD', '<cmd>Trouble diagnostics toggle filter.buf=0<cr>', desc = 'Buffer Diagnostics' },
-      { '<leader>qs', '<cmd>Trouble symbols toggle focus=false<cr>', desc = 'Symbols' },
-      { '<leader>ql', '<cmd>Trouble loclist toggle<cr>', desc = 'Location List' },
-      { '<leader>qq', '<cmd>Trouble qflist toggle<cr>', desc = 'Quickfix List' },
-      { '<leader>qt', '<cmd>Trouble todo toggle focus=true<cr>', desc = 'Todo' },
-      { '<leader>qT', '<cmd>Trouble todo toggle filter = {tag = {TODO,FIX,FIXME}} focus=true<cr>', desc = 'Todo/Fix/Fixme' },
-      { '<leader>qb', '<cmd>Trouble dap_breakpoints toggle<cr>', desc = 'Breakpoints' },
+    keys = require('utils.keymap-helpers').keys {
+      { '<leader>qd', '<cmd>Trouble diagnostics toggle<cr>', desc = 'Diagnostics', icon = { icon = '󰔫', color = 'red' } },
+      { '<leader>qD', '<cmd>Trouble diagnostics toggle filter.buf=0<cr>', desc = 'Buffer Diagnostics', icon = { icon = '󰔫', color = 'red' } },
+      { '<leader>qs', '<cmd>Trouble symbols toggle focus=false<cr>', desc = 'Symbols', icon = { icon = '󰏢', color = 'cyan' } },
+      { '<leader>ql', '<cmd>Trouble loclist toggle<cr>', desc = 'Location List', icon = { icon = '󰉸', color = 'blue' } },
+      { '<leader>qq', '<cmd>Trouble qflist toggle<cr>', desc = 'Quickfix List', icon = { icon = '󰉸', color = 'blue' } },
+      { '<leader>qt', '<cmd>Trouble todo toggle focus=true<cr>', desc = 'Todo', icon = { icon = '󰄬', color = 'yellow' } },
+      { '<leader>qT', '<cmd>Trouble todo toggle filter = {tag = {TODO,FIX,FIXME}} focus=true<cr>', desc = 'Todo/Fix/Fixme', icon = { icon = '󰄬', color = 'yellow' } },
+      { '<leader>qb', '<cmd>Trouble dap_breakpoints toggle<cr>', desc = 'Breakpoints', icon = { icon = '󰃤', color = 'red' } },
     },
     specs = {
       'folke/snacks.nvim',

@@ -4,7 +4,7 @@ return {
     event = 'VeryLazy',
     opts = {},
     -- stylua: ignore
-    keys = {
+    keys = require('utils.keymap-helpers').keys {
       { "m", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
       { "M", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
       { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
@@ -14,7 +14,7 @@ return {
     config = function(_, opts)
       require('flash').setup(opts)
 
-      vim.keymap.set('n', '<leader>m', 'm', { desc = 'Set [M]ark' })
+      require('utils.keymap-helpers').map('n', '<leader>m', 'm', { desc = 'Set [M]ark', icon = { icon = '󰃃', color = 'yellow' } })
     end,
   },
 }
