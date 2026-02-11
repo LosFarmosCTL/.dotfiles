@@ -1,4 +1,3 @@
--- TODO: toggle to enable/disable
 return {
   {
     'b0o/incline.nvim',
@@ -32,5 +31,18 @@ return {
         }
       end,
     },
+    config = function(_, opts)
+      require('incline').setup(opts)
+
+      -- stylua: ignore
+      Snacks.toggle({
+        name = '[I]ncline',
+        get = function() return require('incline').is_enabled() end,
+        set = function(state)
+          if state then require('incline').enable()
+          else require('incline').disable() end
+        end,
+      }):map '<leader>oi'
+    end,
   },
 }
