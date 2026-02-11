@@ -2,7 +2,13 @@ return {
   {
     'folke/flash.nvim',
     event = 'VeryLazy',
-    opts = {},
+    opts = {
+      modes = {
+        search = {
+          enabled = true,
+        },
+      },
+    },
     -- stylua: ignore
     keys = require('utils.keymap-helpers').keys {
       { "<Tab>", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
