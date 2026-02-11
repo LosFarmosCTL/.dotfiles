@@ -37,9 +37,10 @@ return {
       },
       quickfile = {},
       rename = {},
-      statuscolumn = { -- TODO: investigate the entire statuscolumn + signs + folds etc. situation some more
+      statuscolumn = {
         folds = {
           open = true,
+          git_hl = true,
         },
       },
       toggle = {},
