@@ -53,3 +53,7 @@ map('n', '<C-u>', '<C-u>zz')
 
 -- quicklly replace word under cursor
 map('n', '<C-c>', 'ciw')
+
+-- disable snippet navigation using <Tab> and <S-Tab>
+map({ 'i', 's' }, '<Tab>', '<Tab>', { noremap = true })
+map({ 'i', 's' }, '<S-Tab>', '<S-Tab>', { noremap = true })
