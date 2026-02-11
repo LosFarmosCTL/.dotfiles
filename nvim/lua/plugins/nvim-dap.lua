@@ -10,7 +10,7 @@ local set_breakpoint = function(prompt, type)
         log_message = input
       end
 
-      require('dap').set_breakpoint(input, condition, hit_condition, log_message)
+      require('dap').set_breakpoint(condition, hit_condition, log_message)
     end
   end)
 end
@@ -130,7 +130,7 @@ return {
       }
 
       local arrow_keys_active = false
-      local h = require('utils.keymap-helpers')
+      local h = require 'utils.keymap-helpers'
       -- stylua: ignore
       local function setup_debug_keymaps()
         if arrow_keys_active then return end
