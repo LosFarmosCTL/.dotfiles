@@ -27,3 +27,6 @@ end
 
 # set up orbstack CLI and integration
 source ~/.orbstack/shell/init2.fish 2>/dev/null || :
+
+# set up opam integration
+test -r '/Users/lassepetzel/.opam/opam-init/init.fish' && source '/Users/lassepetzel/.opam/opam-init/init.fish' >/dev/null 2>/dev/null; or true
