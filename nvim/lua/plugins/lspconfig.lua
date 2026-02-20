@@ -94,6 +94,7 @@ return {
         filetypes = { 'swift', 'objective-c', 'objective-cpp' },
       },
       ocamllsp = {},
+      rust_analyzer = {},
     },
     config = function(_, opts)
       -- remove default keybindings
@@ -124,7 +125,7 @@ return {
             io.stdout:write '\027]9;4;1;0\027\\'
           elseif value.kind == 'end' then
             io.stdout:write '\027]9;4;0\027\\'
-          elseif value.kind == 'report' then
+          elseif value.kind == 'report' and value.percentage then
             io.stdout:write(string.format('\027]9;4;1;%d\027\\', value.percentage))
           end
         end,
