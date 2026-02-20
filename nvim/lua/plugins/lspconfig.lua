@@ -160,6 +160,7 @@ return {
 
           -- code editing
           map('<leader>cr', vim.lsp.buf.rename, '[r]ename symbol', { icon = '󰘎', color = 'cyan' })
+          map('<leader>ca', vim.lsp.buf.code_action, '[a]ction', { icon = '󰌵', color = 'cyan' })
 
           local client = vim.lsp.get_client_by_id(event.data.client_id)
           -- HACK: inlayHintProvider does not appear in sourcekit server_capabilities even though it is supported
@@ -200,50 +201,6 @@ return {
       },
       auto_update = true,
     },
-  },
-
-  -- preview code actions
-  {
-    'aznhe21/actions-preview.nvim',
-    opts = {
-      backend = 'snacks',
-      snacks = {
-        layout = {
-          preset = 'ivy',
-        },
-      },
-    },
-    keys = require('utils.keymap-helpers').keys {
-      {
-        '<leader>ca',
-        function()
-          require('actions-preview').code_actions()
-        end,
-        mode = { 'n', 'v' },
-        desc = '[a]ction',
-        icon = { icon = '󰌵', color = 'cyan' },
-      },
-    },
-  },
-
-  -- configures metals LSP for scala
-  {
-    'scalameta/nvim-metals',
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-    },
-    ft = { 'scala', 'sbt' },
-    config = function(self)
-      local nvim_metals_group = vim.api.nvim_create_augroup('nvim-metals', { clear = true })
-      vim.api.nvim_create_autocmd('FileType', {
-        pattern = self.ft,
-        callback = function()
-          local config = require('metals').bare_config()
-          require('metals').initialize_or_attach(config)
-        end,
-        group = nvim_metals_group,
-      })
-    end,
   },
 
   -- configures lua LSP for neovim config
