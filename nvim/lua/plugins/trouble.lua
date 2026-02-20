@@ -1,6 +1,9 @@
 return {
   {
     'folke/trouble.nvim',
+    dependencies = {
+      'folke/todo-comments.nvim',
+    },
     opts = function()
       require('trouble.sources').register('dap', require 'sources.dap')
 
@@ -45,7 +48,6 @@ return {
       { '<leader>ql', '<cmd>Trouble loclist toggle<cr>', desc = 'Location List', icon = { icon = '󰉸', color = 'blue' } },
       { '<leader>qq', '<cmd>Trouble qflist toggle<cr>', desc = 'Quickfix List', icon = { icon = '󰉸', color = 'blue' } },
       { '<leader>qt', '<cmd>Trouble todo toggle focus=true<cr>', desc = 'Todo', icon = { icon = '󰄬', color = 'yellow' } },
-      { '<leader>qT', '<cmd>Trouble todo toggle filter = {tag = {TODO,FIX,FIXME}} focus=true<cr>', desc = 'Todo/Fix/Fixme', icon = { icon = '󰄬', color = 'yellow' } },
       { '<leader>qb', '<cmd>Trouble dap_breakpoints toggle<cr>', desc = 'Breakpoints', icon = { icon = '󰃤', color = 'red' } },
     },
     specs = {
