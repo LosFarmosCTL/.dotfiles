@@ -123,6 +123,11 @@ return {
     end,
   },
   {
+    'nmac427/guess-indent.nvim',
+    event = 'BufReadPre',
+    opts = {},
+  },
+  {
     'davidmh/mdx.nvim',
     event = { 'BufEnter *.mdx' },
     config = function()
