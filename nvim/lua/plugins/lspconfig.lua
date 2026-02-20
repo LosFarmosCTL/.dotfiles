@@ -93,6 +93,7 @@ return {
       sourcekit = {
         filetypes = { 'swift', 'objective-c', 'objective-cpp' },
       },
+      ocamllsp = {},
     },
     config = function(_, opts)
       -- remove default keybindings
@@ -195,6 +196,7 @@ return {
         'prettierd',
         'swiftlint',
         'clang-format',
+        'ocamlformat',
         'js-debug-adapter',
         'codelldb',
         'delve',
