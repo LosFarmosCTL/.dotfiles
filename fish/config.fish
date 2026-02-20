@@ -24,3 +24,6 @@ set -l config_files $DOTFILES/**.fish
 for config_file in (string match -vr 'config.fish$' $config_files)
     source $config_file
 end
+
+# set up orbstack CLI and integration
+source ~/.orbstack/shell/init2.fish 2>/dev/null || :
