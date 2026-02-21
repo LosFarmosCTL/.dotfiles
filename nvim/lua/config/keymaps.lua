@@ -57,3 +57,10 @@ map('n', '<C-c>', 'ciw')
 -- disable snippet navigation using <Tab> and <S-Tab>
 map({ 'i', 's' }, '<Tab>', '<Tab>', { noremap = true })
 map({ 'i', 's' }, '<S-Tab>', '<S-Tab>', { noremap = true })
+
+-- HACK: this is needed to be able to remap <Tab>
+-- while keeping <C-i> for jumplist navigation,
+-- something about this triggers neovim to properly
+-- handle kitty keyboard protocol inputs to be able
+-- to separate the two keys
+map('n', '<C-i>', '<C-i>', { noremap = true })
