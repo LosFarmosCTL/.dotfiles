@@ -1,6 +1,6 @@
 local M = {
-  buffer = {}, -- Buffered icons: { ['n_<leader>w'] = icon_spec }
-  applied = {}, -- Track which icons have been applied
+  buffer = {},
+  applied = {},
   wk_loaded = false,
 }
 
@@ -21,7 +21,6 @@ local function normalize_ft(ft)
   return ft
 end
 
--- Generate unique key for mode+lhs+buffer+ft combination
 local function make_key(mode, lhs, buffer, ft)
   local mode_key = normalize_mode(mode)
   local ft_key = normalize_ft(ft) or ''
@@ -29,7 +28,6 @@ local function make_key(mode, lhs, buffer, ft)
   return table.concat({ mode_key, lhs, buf_key, ft_key }, '_')
 end
 
--- Register an icon (buffer if which-key not loaded, apply immediately if loaded)
 function M.register(lhs, icon_spec, opts)
   opts = opts or {}
   local mode = opts.mode or 'n'
@@ -44,7 +42,7 @@ function M.register(lhs, icon_spec, opts)
   }
 
   if M.wk_loaded then
-    local wk = require('which-key')
+    local wk = require 'which-key'
     wk.add { wk_spec }
     M.applied[key] = wk_spec
   else
@@ -52,23 +50,18 @@ function M.register(lhs, icon_spec, opts)
   end
 end
 
--- Unregister an icon (for vim.keymap.del cleanup)
 function M.unregister(lhs, opts)
   opts = opts or {}
   local mode = opts.mode or 'n'
   local key = make_key(mode, lhs, opts.buffer, opts.ft)
 
-  -- Remove from buffer if present
   M.buffer[key] = nil
-
-  -- Note: which-key doesn't have an unregister API, but we track it
   M.applied[key] = nil
 end
 
--- Flush all buffered icons (called by which-key when loaded)
 function M.flush()
   M.wk_loaded = true
-  local wk = require('which-key')
+  local wk = require 'which-key'
 
   for key, data in pairs(M.buffer) do
     wk.add { data }

@@ -1,5 +1,5 @@
 local M = {}
-local registry = require('utils.keymap-registry')
+local registry = require 'utils.keymap-registry'
 
 local function merge_cond(cond, ft)
   if not ft then
@@ -25,7 +25,6 @@ local function merge_cond(cond, ft)
   return ft_cond
 end
 
--- Wrap a lazy.nvim keys table, extracting and registering icons
 function M.keys(key_table)
   for _, spec in ipairs(key_table) do
     if spec.icon then
@@ -40,7 +39,6 @@ function M.keys(key_table)
   return key_table
 end
 
--- Wrap vim.keymap.set with icon support
 function M.map(mode, lhs, rhs, opts)
   opts = opts or {}
   if opts.icon then
@@ -54,7 +52,6 @@ function M.map(mode, lhs, rhs, opts)
   return vim.keymap.set(mode, lhs, rhs, opts)
 end
 
--- Wrap vim.keymap.del with icon cleanup
 function M.unmap(mode, lhs, opts)
   registry.unregister(lhs, { mode = mode, buffer = opts and opts.buffer })
   return vim.keymap.del(mode, lhs, opts)
