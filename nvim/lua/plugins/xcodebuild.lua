@@ -43,7 +43,11 @@ return {
       },
     },
     keys = require('utils.keymap-helpers').keys {
-      { '<leader>xb', '<cmd>XcodebuildBuild<cr>', desc = '[X]Code [B]uild', icon = { icon = '󰀴', color = 'purple' } },
+      { '<leader>xg', '<cmd>!tuist generate<cr>', desc = '[X]Code [G]enerate Project with Tuist', icon = { icon = '', color = 'purple' } },
+      { '<leader>xG', '<cmd>!tuist generate --no-open<cr>', desc = '[X]Code [G]enerate Project with out opening', icon = { icon = '', color = 'purple' } },
+      { '<leader>xe', '<cmd>!tuist edit<cr>', desc = '[X]Code [E]dit Tuist Project', icon = { icon = '', color = 'purple' } },
+
+      { '<leader>xb', '<cmd>XcodebuildBuild<cr>', desc = '[X]Code [B]uild', icon = { icon = '', color = 'purple' } },
       { '<leader>xcb', '<cmd>XcodebuildCleanBuild<cr>', desc = '[X]Code [C]lean [B]uild', icon = { icon = '󰃢', color = 'green' } },
       { '<leader>xcd', '<cmd>XcodebuildCleanDerivedData<cr>', desc = '[X]Code [C]lean [D]erived Data', icon = { icon = '󰃢', color = 'green' } },
 
