@@ -108,7 +108,7 @@ return {
       { '<leader>s.', function() Snacks.picker.resume() end, desc = '[s]earch resume', icon = { icon = '󰜉', color = 'green' } },
       { '<leader>f.', function() Snacks.picker.resume() end, desc = '[f]ind resume', icon = { icon = '󰜉', color = 'green' } },
 
-      { '<leader>\\', function() Snacks.explorer() end, desc = 'Show file explorer', icon = { icon = '󰉋', color = 'blue' } },
+      { '<leader>e', function() Snacks.explorer() end, desc = 'Toggle file [e]xplorer', icon = { icon = '󰉋', color = 'blue' } },
       { '<leader>go', function() Snacks.gitbrowse() end, desc = 'git [o]pen repository in browser', icon = { icon = '', color = 'orange' } },
       { '<leader>li', function() Snacks.picker.lsp_config() end, desc = '[l]sp info', icon = { icon = '󰙎', color = 'cyan' } },
 
