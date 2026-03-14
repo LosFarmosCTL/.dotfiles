@@ -40,5 +40,6 @@
       "command": ["swift", "format", "-i", "$FILE"],
       "extensions": [".swift"]
     }
-  }
+  },
+  "plugin": ["@mohak34/opencode-notifier@0.1.30"]
 }
