@@ -21,6 +21,11 @@ quick-terminal-size = 40%
 # open new tabs inside of the same directory as the current one
 window-inherit-working-directory = true
 
+# notify when long-running commands finish
+notify-on-command-finish = unfocused
+notify-on-command-finish-action = no-bell,notify
+notify-on-command-finish-after = 10s
+
 # keybinds for moving between and resizing splits
 keybind = cmd+l=goto_split:right
 keybind = cmd+h=goto_split:left
