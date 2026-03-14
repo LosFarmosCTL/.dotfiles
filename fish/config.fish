@@ -12,6 +12,8 @@ if status is-interactive
 
     zoxide init fish | source
 
+    direnv hook fish | source
+
     starship init fish | source
     # clear starship modules after exectuting command
     # @fish-lsp-disable-next-line 7001
