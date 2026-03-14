@@ -41,5 +41,12 @@
       "extensions": [".swift"]
     }
   },
+  // takes up wayyy too much memory after a bunch of files have been opened,
+  // agents should just use `swift build|test` instead to verify results
+  "lsp": {
+    "sourcekit-lsp": {
+      "disabled": true
+    }
+  },
   "plugin": ["@mohak34/opencode-notifier@0.1.30"]
 }
