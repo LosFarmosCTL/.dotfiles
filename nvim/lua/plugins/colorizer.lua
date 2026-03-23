@@ -6,9 +6,17 @@ return {
       filetypes = {
         'css',
       },
-      user_default_options = {
-        css = true,
-        css_fn = true,
+      options = {
+        parsers = {
+          css = true,
+          css_fn = true,
+        },
+        -- display = {
+        --   mode = 'virtualtext',
+        --   virtualtext = {
+        --     position = 'before',
+        --   },
+        -- },
       },
     },
   },
