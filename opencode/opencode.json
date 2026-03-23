@@ -32,7 +32,11 @@
       "uniq *": "allow",
       "echo *": "allow",
 
-      "curl *": "allow"
+      "curl *": "allow",
+
+      "swift build *": "allow",
+      "swift test *": "allow",
+      "xcodebuild *": "allow"
     }
   },
   "formatter": {
