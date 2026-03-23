@@ -78,7 +78,7 @@ return {
         end end, },
 
       -- lsp_config, resume, recent
-      { '<leader><space>', function() Snacks.picker.files() end, desc = 'Find files', icon = { icon = '󰈞', color = 'yellow' } },
+      { '<leader><space>', function() Snacks.picker.smart() end, desc = 'Find files', icon = { icon = '󰈞', color = 'yellow' } },
       { '<leader>,', function() Snacks.picker.buffers() end, desc = 'Switch buffer', icon = { icon = '󰓩', color = 'blue' } },
 
       { '<leader>fp', function() Snacks.picker.projects() end, desc = '[f]ind [p]rojects', icon = { icon = '󰉋', color = 'blue' } },
