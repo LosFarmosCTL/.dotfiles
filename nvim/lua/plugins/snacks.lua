@@ -9,7 +9,22 @@ return {
     opts = {
       bigfile = {},
       bufdelete = {},
-      dashboard = { example = 'advanced' },
+      dashboard = {
+        example = 'advanced',
+        -- replace config key to search all dotfiles, not just nvim config
+        config = function(opts, defaults)
+          opts.preset.keys = vim.deepcopy(defaults.preset.keys)
+          for _, item in ipairs(opts.preset.keys) do
+            if item.key == 'c' or item.desc == 'Config' then
+              item.desc = 'Config (.dotfiles)'
+              item.action = function()
+                Snacks.dashboard.pick('smart', { cwd = vim.fn.expand '~/.dotfiles' })
+              end
+              break
+            end
+          end
+        end,
+      },
       dim = {},
       explorer = {},
       gitbrowse = {},
@@ -83,7 +98,7 @@ return {
 
       { '<leader>fp', function() Snacks.picker.projects() end, desc = '[f]ind [p]rojects', icon = { icon = '󰉋', color = 'blue' } },
       { '<leader>fr', function() Snacks.picker.recent() end, desc = '[f]ind [r]ecent files', icon = { icon = '󰋚', color = 'yellow' } },
-      { '<leader>fc', function() Snacks.picker.files({ cwd = vim.fn.stdpath('config') }) end, desc = '[f]ind neovim [c]onfig file', icon = { icon = '', color = 'green' } },
+      { '<leader>fc', function() Snacks.picker.smart({ cwd = vim.fn.expand '~/.dotfiles' }) end, desc = '[f]ind in [c]onfig (.dotfiles)', icon = { icon = '', color = 'green' } },
 
       { '<leader>s<space>', function() Snacks.picker.pickers({ layout = { preset = "vscode" } }) end, desc = '[s]earch [p]pickers', icon = { icon = '󰭎', color = 'green' } },
 
