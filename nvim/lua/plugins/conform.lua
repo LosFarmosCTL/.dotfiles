@@ -22,7 +22,7 @@ return {
           return
         else
           -- disable LSP formatting fallback for specific languages
-          local disable_filetypes = { c = true, cpp = true }
+          local disable_filetypes = { c = true, cpp = true, fish = true }
           return {
             timeout_ms = 500,
             lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],

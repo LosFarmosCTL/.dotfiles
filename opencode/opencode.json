@@ -36,7 +36,9 @@
 
       "swift build *": "allow",
       "swift test *": "allow",
-      "xcodebuild *": "allow"
+      "xcodebuild *": "allow",
+
+      "pbcopy *": "allow"
     }
   },
   "formatter": {
