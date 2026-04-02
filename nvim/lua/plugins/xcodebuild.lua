@@ -44,7 +44,7 @@ return {
     },
     keys = require('utils.keymap-helpers').keys {
       { '<leader>xg', '<cmd>!tuist generate<cr>', desc = '[X]Code [G]enerate Project with Tuist', icon = { icon = '', color = 'purple' } },
-      { '<leader>xG', '<cmd>!tuist generate --no-open<cr>', desc = '[X]Code [G]enerate Project with out opening', icon = { icon = '', color = 'purple' } },
+      { '<leader>xG', '<cmd>!tuist generate --no-open<cr>', desc = '[X]Code [G]enerate Project without opening', icon = { icon = '', color = 'purple' } },
       { '<leader>xe', '<cmd>!tuist edit<cr>', desc = '[X]Code [E]dit Tuist Project', icon = { icon = '', color = 'purple' } },
 
       { '<leader>xb', '<cmd>XcodebuildBuild<cr>', desc = '[X]Code [B]uild', icon = { icon = '', color = 'purple' } },
@@ -55,7 +55,7 @@ return {
       { '<leader>xu', '<cmd>XcodebuildUninstallApp<cr>', desc = '[X]Code [U]ninstall App', icon = { icon = '', color = 'purple' } },
       { '<leader>xr', '<cmd>XcodebuildBuildRun<cr>', desc = '[X]Code Build and [R]un', icon = { icon = '', color = 'purple' } },
 
-      { '<leader>xd', '<cmd>XcodebuildSelectDevice<cr>', desc = '[X]Code [S]elect Device', icon = { icon = '', color = 'purple' } },
+      { '<leader>xd', '<cmd>XcodebuildSelectDevice<cr>', desc = '[X]Code Select [D]evice', icon = { icon = '', color = 'purple' } },
       { '<leader>xs', '<cmd>XcodebuildSelectScheme<cr>', desc = '[X]Code [S]elect Scheme', icon = { icon = '', color = 'purple' } },
       { '<leader>xa', '<cmd>XcodebuildAssetsManager<cr>', desc = '[X]Code [A]ssets Manager', icon = { icon = '', color = 'purple' } },
       -- TODO: investigate how to prevent neotest overlap
