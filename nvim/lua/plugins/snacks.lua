@@ -28,7 +28,13 @@ return {
       dim = {},
       explorer = {},
       gitbrowse = {},
-      image = {},
+      image = {
+        doc = {
+          inline = false,
+          max_width = 20,
+          max_height = 10,
+        },
+      },
       input = {},
       lazygit = {
         configure = true,
