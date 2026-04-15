@@ -10,6 +10,7 @@
       "git show *": "allow",
       "git log *": "allow",
       "git branch *": "allow",
+      "git ls-files *": "allow",
 
       "ls *": "allow",
       "tree *": "allow",
@@ -31,6 +32,7 @@
       "sort *": "allow",
       "uniq *": "allow",
       "echo *": "allow",
+      "printf *": "allow",
 
       "curl *": "allow",
 
