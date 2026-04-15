@@ -15,5 +15,5 @@ function ??
   This is the users request: $argv
   "
 
-  opencode run -m opencode/big-pickle "$prompt"
+  opencode run -m openai/gpt-5.4 "$prompt"
 end
