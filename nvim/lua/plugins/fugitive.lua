@@ -19,5 +19,6 @@ return {
       { '<leader>gl', '<cmd>Git log<cr>', desc = 'git [l]og', icon = { icon = '󰋚', color = 'orange' } },
       { '<leader>gP', '<cmd>Git push<cr>', desc = 'git [P]ush', icon = { icon = '', color = 'orange' } },
     },
+    cmd = { 'Git' },
   },
 }
