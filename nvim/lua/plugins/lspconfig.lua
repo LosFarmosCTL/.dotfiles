@@ -10,6 +10,18 @@ return {
 
       -- status updates for LSP
       { 'j-hui/fidget.nvim', opts = {} },
+
+      {
+        'SmiteshP/nvim-navbuddy',
+        dependencies = {
+          'SmiteshP/nvim-navic',
+          'MunifTanjim/nui.nvim',
+        },
+        opts = { lsp = { auto_attach = true } },
+        keys = require('utils.keymap-helpers').keys {
+          { 'g<leader>', '<cmd>Navbuddy<CR>', desc = 'LSP: [G]oto any location', icon = { icon = '󰙅', color = 'purple' } },
+        },
+      },
     },
     opts = {
       clangd = {},
@@ -145,16 +157,16 @@ return {
           -- stylua: ignore start
           map('gd', function() Snacks.picker.lsp_definitions({
             layout = { preset = 'ivy', },
-          }) end, 'LSP: [G]oto [D]efinition')
+          }) end, 'LSP: [G]oto [D]efinition', { icon = '󰈞', color = 'purple' })
           map('gr', function() Snacks.picker.lsp_references({
             layout = { preset = 'ivy', },
-          }) end, 'LSP: [G]oto [R]eferences')
+          }) end, 'LSP: [G]oto [R]eferences', { icon = '󰍉', color = 'purple' })
           map('gI', function() Snacks.picker.lsp_implementations({
             layout = { preset = 'ivy', },
-          }) end, 'LSP: [G]oto [I]mplementation')
+          }) end, 'LSP: [G]oto [I]mplementation', { icon = '󰊕', color = 'purple' })
           map('gD', function() Snacks.picker.lsp_declarations({
             layout = { preset = 'ivy', },
-          }) end, 'LSP: [G]oto [D]eclaration')
+          }) end, 'LSP: [G]oto [D]eclaration', { icon = '󰈞', color = 'purple' })
 
           map('<leader>ss', function() Snacks.picker.lsp_workspace_symbols() end, '[s]earch [s]ymbols', { icon = '󰏢', color = 'cyan' })
           map('<leader>sS', function() Snacks.picker.lsp_symbols() end, '[s]earch [S]ymbols in current file', { icon = '󰏢', color = 'cyan' })
