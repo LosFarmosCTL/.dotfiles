@@ -98,7 +98,7 @@ return {
     },
     config = function(_, opts)
       -- remove default keybindings
-      for _, key in ipairs { 'gra', 'gri', 'grn', 'grr', 'grt' } do
+      for _, key in ipairs { 'gra', 'gri', 'grn', 'grr', 'grt', 'grx' } do
         vim.keymap.del('n', key)
       end
 
