@@ -187,6 +187,11 @@ return {
             }):map('<leader>oh')
           end
 
+          if client and client:supports_method('textDocument/codeLens', event.buf) then
+            vim.lsp.codelens.enable(true, { bufnr = event.buf })
+            map('<leader>cl', vim.lsp.codelens.run, '[l]ens', { icon = '󰌵', color = 'cyan' })
+          end
+
           -- stylua: ignore
           if client and (
               client.supports_method(client, vim.lsp.protocol.Methods.workspace_didRenameFiles, event.buf)
