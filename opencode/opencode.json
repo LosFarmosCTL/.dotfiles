@@ -12,6 +12,7 @@
       "git branch *": "allow",
       "git ls-files *": "allow",
 
+      "pwd *": "allow",
       "ls *": "allow",
       "tree *": "allow",
       "cat *": "allow",
