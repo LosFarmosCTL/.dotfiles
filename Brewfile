@@ -27,7 +27,7 @@ brew "onefetch"
 brew "opam"
 brew "opencode"
 brew "openjdk"
-brew "oven-sh/bun/bun"
+brew "pnpm"
 brew "ripgrep"
 brew "rust"
 brew "scc"
@@ -47,6 +47,8 @@ cask "adguard"
 cask "alt-tab"
 cask "appcleaner"
 cask "chatterino"
+cask "codex"
+cask "codex-app"
 cask "discord"
 cask "firefox"
 cask "fluor"
@@ -69,17 +71,14 @@ cask "swish"
 cask "theboredteam/boring-notch/boring-notch"
 cask "tuist"
 cask "whatsapp"
+cask "zed"
 cask "zen"
 mas "AusweisApp", id: 948660805
 mas "Craft", id: 1487937127
-mas "Dark Reader for Safari", id: 1438243180
 mas "DevCleaner", id: 1388020431
 mas "Developer", id: 640199958
 mas "Goodnotes", id: 1444383602
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
-mas "SponsorBlock", id: 1573461917
-mas "Wayback Machine", id: 1472432422
 mas "Xcode", id: 497799835
-mas "iMovie", id: 408981434
