@@ -18,9 +18,6 @@ return {
           'MunifTanjim/nui.nvim',
         },
         opts = { lsp = { auto_attach = true } },
-        keys = require('utils.keymap-helpers').keys {
-          { 'g<leader>', '<cmd>Navbuddy<CR>', desc = 'LSP: [G]oto any location', icon = { icon = '󰙅', color = 'purple' } },
-        },
       },
     },
     opts = {
@@ -177,6 +174,12 @@ return {
           map('<leader>ca', vim.lsp.buf.code_action, '[a]ction', { icon = '󰌵', color = 'cyan' })
 
           local client = vim.lsp.get_client_by_id(event.data.client_id)
+          if client and client.server_capabilities.documentSymbolProvider then
+            map('g<leader>', function()
+              require('nvim-navbuddy').open(event.buf)
+            end, 'LSP: [G]oto any location', { icon = '󰙅', color = 'purple' })
+          end
+
           -- HACK: inlayHintProvider does not appear in sourcekit server_capabilities even though it is supported
           if client and (client.supports_method(client, vim.lsp.protocol.Methods.textDocument_inlayHint) or client.name == 'sourcekit') then
             -- stylua: ignore
