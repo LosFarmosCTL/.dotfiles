@@ -29,10 +29,16 @@ return {
         icon = { icon = '󰐃', color = 'purple' },
       },
       {
-        '<leader>ad',
+        '<leader>aD',
         function() require('sidekick.cli').close() end,
         desc = 'Detach a CLI Session',
         icon = { icon = '󰐄', color = 'purple' },
+      },
+      {
+        '<leader>ad',
+        function() require('sidekick.cli').send { msg = '{diagnostics}' } end,
+        desc = 'Send [d]iagnostic to CLI',
+        icon = { icon = '', color = 'purple' },
       },
       {
         '<leader>at',
