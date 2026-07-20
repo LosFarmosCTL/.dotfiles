@@ -22,6 +22,13 @@ return {
     },
     opts = {
       clangd = {},
+      zls = {
+        settings = {
+          zls = {
+            enable_build_on_save = true,
+          },
+        },
+      },
       gopls = {},
       lua_ls = {
         settings = {
