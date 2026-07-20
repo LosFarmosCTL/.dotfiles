@@ -102,7 +102,6 @@ return {
       sourcekit = {
         filetypes = { 'swift', 'objective-c', 'objective-cpp' },
       },
-      ocamllsp = {},
       rust_analyzer = {},
     },
     config = function(_, opts)
@@ -217,7 +216,6 @@ return {
         'prettierd',
         'swiftlint',
         'clang-format',
-        'ocamlformat',
         'js-debug-adapter',
         'codelldb',
         'delve',
