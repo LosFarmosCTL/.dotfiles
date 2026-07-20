@@ -30,9 +30,9 @@ return {
       { '<leader>gr', function() require('gitsigns').reset_hunk { vim.fn.line '.', vim.fn.line 'v' } end, desc = 'git [r]eset hunk', mode = { 'v' }, icon = { icon = '󰦛', color = 'orange' } },
 
       { '<leader>gs', function() require('gitsigns').stage_hunk() end, desc = 'git [s]tage hunk', icon = { icon = '', color = 'orange' } },
-      { '<leader>gr', function() require('gitsigns').reset_hunk() end, desc = 'git [r]eset hunk', icon = { icon = '󰦛', color = 'orange' } },
+      { '<leader>gr', function() require('gitsigns').reset_hunk() end, desc = 'git [r]estore hunk', icon = { icon = '󰦛', color = 'orange' } },
       { '<leader>gS', function() require('gitsigns').stage_buffer() end, desc = 'git [S]tage buffer', icon = { icon = '', color = 'orange' } },
-      { '<leader>gR', function() require('gitsigns').reset_buffer() end, desc = 'git [R]eset buffer', icon = { icon = '󱀸', color = 'orange' } },
+      { '<leader>gR', function() require('gitsigns').reset_buffer() end, desc = 'git [R]estore buffer', icon = { icon = '󱀸', color = 'orange' } },
       { '<leader>gp', function() require('gitsigns').preview_hunk_inline() end, desc = 'git [p]reviw hunk', icon = { icon = '󰈈', color = 'orange' } },
       { '<leader>gb', function() require('gitsigns').blame_line() end, desc = 'git [b]lame line', icon = { icon = '󰀈', color = 'orange' } },
     },
