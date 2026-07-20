@@ -41,7 +41,9 @@
       "swift test *": "allow",
       "xcodebuild *": "allow",
 
-      "pbcopy *": "allow"
+      "pbcopy *": "allow",
+
+      "ffprobe *": "allow"
     }
   },
   "formatter": {
