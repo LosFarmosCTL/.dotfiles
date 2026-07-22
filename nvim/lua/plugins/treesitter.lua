@@ -21,8 +21,8 @@ return {
         -- Scripting
         'python', 'ruby', 'bash', 'fish',
         -- Config files
-        'toml', 'ini', 'dockerfile', 'gitignore', 'gitcommit',
-        'git_config', 'ssh_config', 'tmux', 'make',
+        'toml', 'ini', 'dockerfile', 'gitignore', 'gitcommit', 'git_config',
+        'ssh_config', 'make',
         -- Data/Docs
         'markdown', 'markdown_inline', 'xml', 'sql', 'diff', 'jsdoc', 'comment',
         -- Other
