@@ -1,0 +1,2 @@
+severity_overrides:
+  mass_file_deletion: INFO

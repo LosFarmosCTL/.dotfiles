@@ -101,6 +101,7 @@ create_symlink "$PWD/git/" ~/.config/git/
 create_symlink "$PWD/nvim/" ~/.config/nvim/
 create_symlink "$PWD/opencode/" ~/.config/opencode/
 create_symlink "$PWD/starship/" ~/.config/starship/
+create_symlink "$PWD/tirith/" ~/.config/tirith/
 create_symlink "$PWD/tmux/" ~/.config/tmux/
 
 # Set up shell color scripts
