@@ -51,8 +51,21 @@ return {
       picker = {
         hidden = true,
         sources = {
+          explorer = {
+            include = { '.env*' },
+          },
           files = {
             hidden = true,
+          },
+          env_files = {
+            finder = 'files',
+            cmd = 'rg',
+            hidden = true,
+            ignored = true,
+            args = { '--glob', '.env*' },
+          },
+          smart = {
+            multi = { 'buffers', 'recent', 'files', 'env_files' },
           },
         },
       },
