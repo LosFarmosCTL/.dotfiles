@@ -1,63 +1,43 @@
 {
-  "$schema": "https://opencode.ai/config.json",
-  "autoupdate": false,
-  "permission": {
-    "bash": {
-      "*": "ask",
-
-      "git status *": "allow",
-      "git diff *": "allow",
-      "git show *": "allow",
-      "git log *": "allow",
-      "git branch *": "allow",
-      "git ls-files *": "allow",
-
-      "pwd *": "allow",
-      "ls *": "allow",
-      "tree *": "allow",
-      "cat *": "allow",
-      "which *": "allow",
-
-      "mkdir *": "allow",
-      "touch *": "allow",
-
-      "find *": "allow",
-      "grep *": "allow",
-      "rg *": "allow",
-
-      "head *": "allow",
-      "tail *": "allow",
-      "wc *": "allow",
-      "ack *": "allow",
-      "jq *": "allow",
-      "sort *": "allow",
-      "uniq *": "allow",
-      "echo *": "allow",
-      "printf *": "allow",
-
-      "curl *": "allow",
-
-      "swift build *": "allow",
-      "swift test *": "allow",
-      "xcodebuild *": "allow",
-
-      "pbcopy *": "allow",
-
-      "ffprobe *": "allow"
-    }
-  },
+  "update": "disable",
+  "permissions": [
+    { "action": "shell", "resource": "*", "effect": "ask" },
+    { "action": "shell", "resource": "git status *", "effect": "allow" },
+    { "action": "shell", "resource": "git diff *", "effect": "allow" },
+    { "action": "shell", "resource": "git show *", "effect": "allow" },
+    { "action": "shell", "resource": "git log *", "effect": "allow" },
+    { "action": "shell", "resource": "git branch *", "effect": "allow" },
+    { "action": "shell", "resource": "git ls-files *", "effect": "allow" },
+    { "action": "shell", "resource": "pwd *", "effect": "allow" },
+    { "action": "shell", "resource": "ls *", "effect": "allow" },
+    { "action": "shell", "resource": "tree *", "effect": "allow" },
+    { "action": "shell", "resource": "cat *", "effect": "allow" },
+    { "action": "shell", "resource": "which *", "effect": "allow" },
+    { "action": "shell", "resource": "mkdir *", "effect": "allow" },
+    { "action": "shell", "resource": "touch *", "effect": "allow" },
+    { "action": "shell", "resource": "find *", "effect": "allow" },
+    { "action": "shell", "resource": "grep *", "effect": "allow" },
+    { "action": "shell", "resource": "rg *", "effect": "allow" },
+    { "action": "shell", "resource": "head *", "effect": "allow" },
+    { "action": "shell", "resource": "tail *", "effect": "allow" },
+    { "action": "shell", "resource": "wc *", "effect": "allow" },
+    { "action": "shell", "resource": "ack *", "effect": "allow" },
+    { "action": "shell", "resource": "jq *", "effect": "allow" },
+    { "action": "shell", "resource": "sort *", "effect": "allow" },
+    { "action": "shell", "resource": "uniq *", "effect": "allow" },
+    { "action": "shell", "resource": "echo *", "effect": "allow" },
+    { "action": "shell", "resource": "printf *", "effect": "allow" },
+    { "action": "shell", "resource": "curl *", "effect": "allow" },
+    { "action": "shell", "resource": "swift build *", "effect": "allow" },
+    { "action": "shell", "resource": "swift test *", "effect": "allow" },
+    { "action": "shell", "resource": "xcodebuild *", "effect": "allow" },
+    { "action": "shell", "resource": "pbcopy *", "effect": "allow" },
+    { "action": "shell", "resource": "ffprobe *", "effect": "allow" }
+  ],
   "formatter": {
     "swift-format": {
       "command": ["swift", "format", "-i", "$FILE"],
       "extensions": [".swift"]
     }
-  },
-  // takes up wayyy too much memory after a bunch of files have been opened,
-  // agents should just use `swift build|test` instead to verify results
-  "lsp": {
-    "sourcekit-lsp": {
-      "disabled": true
-    }
-  },
-  "plugin": ["@mohak34/opencode-notifier@0.1.30"]
+  }
 }
